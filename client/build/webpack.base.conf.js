@@ -64,10 +64,6 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "scss"]
-      },
-       {
         test: /\.less$/,
         loaders: ["style", "css", "less"]
       }
