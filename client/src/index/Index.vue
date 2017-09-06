@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="header">
   	
 	<swiper :options="swiperOption" ref="mySwiper">
@@ -24,26 +25,44 @@
 
 	 <div class="swiper-scrollbar"   slot="scrollbar"></div>
 	</swiper>
-	
-	<div class="goodlist">
-		
-	</div>
 
-
-  
-    <router-view></router-view>
   </div>
+  <WawaList  v-bind:wawadata="wawadata"></WawaList>
+
+  <router-view></router-view>
+  <div class="footerbar">
+  	<div class="footerli">设置</div>
+  	<div class="footerpaddig">|</div>
+  	<div class="footerli">首页</div>
+  	<div class="footerpaddig">|</div>
+  	<div class="footerli">排行</div>
+  	<div class="footerpaddig">|</div>
+  	<div class="footerli">我的</div>
+  </div>
+</div>
 </template>
 
 <script>
 
- import { swiper, swiperSlide } from 'vue-awesome-swiper'  
+ 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
+	import WawaList from './../components/wawalist'
 
 export default {
     name: 'app',
     data () {
 	    return {
 	        msg: 'Welcome to Your Vue.js App',
+	        wawadata: [
+		      { id: 0, text: ' 轻松熊',img:require('../assets/images/bear.jpg'),price:'33',status:'1' },
+		      { id: 1,text: ' 轻松熊1',img:require('../assets/images/bear.jpg'),price:'34',status:'0'},
+		      { id: 2, text: ' 轻松熊2',img:require('../assets/images/bear.jpg'),price:'35',status:'1'},
+		      { id: 3, text: ' 轻松熊',img:require('../assets/images/bear.jpg'),price:'33',status:'1' },
+		      { id: 4,text: ' 轻松熊1',img:require('../assets/images/bear.jpg'),price:'34',status:'0'},
+		      { id: 5, text: ' 轻松熊2',img:require('../assets/images/bear.jpg'),price:'35',status:'1'},
+		      { id: 6, text: ' 轻松熊',img:require('../assets/images/bear.jpg'),price:'33',status:'1' },
+		      { id: 7,text: ' 轻松熊1',img:require('../assets/images/bear.jpg'),price:'34',status:'0'},
+		      { id: 8, text: ' 轻松熊2',img:require('../assets/images/bear.jpg'),price:'35',status:'1'}
+		    ],
 	        swiperOption: {  
 	        //是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true  
 	        notNextTick: true,  
@@ -62,7 +81,8 @@ export default {
     },
 	components: {
 		swiper,  
-		swiperSlide  
+		swiperSlide,
+		WawaList
 	},
     computed: {  
   

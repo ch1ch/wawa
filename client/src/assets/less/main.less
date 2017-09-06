@@ -9,7 +9,7 @@ input,button,select,textarea{outline:none}
 
 
 html,body{
-  overflow: hidden;
+  overflow: scroll;
   height: 100%;
 }
 @media screen and (min-width: 500px) {
@@ -29,7 +29,7 @@ body{
 }
 .headerimg{
   width:100%;
-  height: 5rem;
+  height: 280px;
   img{
     width: 100%;
     height: auto;
@@ -39,14 +39,98 @@ body{
 .goodlist{
   background-color: #f9b0b9;
   width:100%;
-  height: 9rem;
+  position: relative;
+
+  //height: 9rem;
+  margin: 0px 0px 20px 0px;
+  padding: 10px 10px 70px 10px;
+
+  li{
+    height: 226px;
+    width: 150px;
+    display: inline-block;
+    position: relative;
+    background-color: #da4859;
+    margin: 0 4px 10px 4px;
+    border-radius: 5px;
+    border: 1px solid #da4859;
+    .titlebar{
+      height: 36px;
+      width: 149px;
+      background-color: #d5f0eb;
+      line-height: 36px;
+      color:#946969;
+      .titleimg{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      .wawastatus{
+        position: relative;
+        font-size: 18px;
+        display: inline-block;
+        left: 38px;
+      }
+      .wawaprice{
+        display: inline-block;
+        position: relative;
+        left: 38px;
+      }
+    }
+    .wawaimg{
+      width: 152px;
+      left: 0%;
+      position: relative;
+      height: 155px;
+      img{
+        height: 100%;
+        width: auto;
+        max-width: 98%;
+      }
+    }
+    .wawaname{
+      position: relative;
+      font-size: 24px;
+      text-align: center;
+      color:#fff;
+    }
+  }
 }
 
+.footerbar{
+  background: url('./../images/bottombg.jpg');
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  bottom: 0px;
+  color:#fff;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  .footerli{
+    display: inline-block;
+    position: relative;
+    bottom: 1px;
+    font-size: 36px;
+    width: 22%;
+    text-align: center;
+    top: 18px;
+  }
+  .footerpaddig{
+    display: inline-block;
+    font-size: 36px;
+    top: 18px;
+    position: relative;
 
-
-.wrapper div {
-  height: 1rem;
+  }
 }
+
 
 
 
