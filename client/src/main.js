@@ -6,9 +6,12 @@ require('swiper/dist/css/swiper.css')
 import Vue from 'vue'
 import Index from './index/Index'
 import router from './router'
+import $ from 'jquery'
 import 'lib-flexible'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import'./assets/js/TcPlayer-2.2.0.js'
 Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 
