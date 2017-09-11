@@ -9,14 +9,14 @@ import router from './router'
 import $ from 'jquery'
 import 'lib-flexible'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import'./assets/js/TcPlayer-2.2.0.js'
+import flv_js from 'flv.js'
 Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
 
 
 new Vue({
-  el: '#header',
+  el: '#main',
   router,
   template: '<Index/>',
   components: { Index }
