@@ -19,6 +19,9 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  externals:{
+    'TcPlayer':'TcPlayer'
+  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
