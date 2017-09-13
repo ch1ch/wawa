@@ -9,8 +9,6 @@ import router from './router'
 import $ from 'jquery'
 import 'lib-flexible'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import flv_js from 'flv.js'
-Vue.use(flv_js)
 Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false

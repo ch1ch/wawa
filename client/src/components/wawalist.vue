@@ -3,6 +3,7 @@
     <li
       v-for="item in wawadata"
       v-bind:key="item.id">
+      <button v-on:click='getList'>close</button>
       <a href="./#/live">
         <div class="titlebar">
           <div class="titleimg">
@@ -26,13 +27,53 @@
 </template>
 
 <script>
+const BaseUrl = "http://testapi.legendream.cn/api/machine/";
+//47.94.236.45:9000
+
+
+function buildUrl (url) {
+  return BaseUrl + url 
+}
+
   export default {
     props: {
       wawadata:  {
       type: Array,
       required : true
       },
+    },
+    data(){
+      results: []
+      return{
+
+      }
+    },
+    mounted() {
+      // axios.get("http://47.94.236.45:9000/machine/getMachineList")
+      // .then(response => {this.results = response.data.results})
+    },
+    methods:{
+      getList:function() {
+        let url = buildUrl('getMachineList');
+        axios.get(url).then((response) => {
+          console.log(response);
+          this.results = response.data.results;
+        }).catch( error => { console.log(error); });
+      },
+      _getList: function () {
+        console.log(this)
+        this.$http.get('http://47.94.236.45:9000/machine/getMachineList').then(function (response) {
+          console.log(response);
+          
+          }, function (response) {
+            // console.log(response)
+        });
+      }
+    },
+    created () {
+      this.getList();
     }
+
 
   }
 </script>
