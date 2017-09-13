@@ -20,7 +20,8 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   externals:{
-    'TcPlayer':'TcPlayer'
+    'TcPlayer':'TcPlayer',
+    'flvjs':'flvjs'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
