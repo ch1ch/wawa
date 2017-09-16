@@ -27,9 +27,7 @@
 </template>
 
 <script>
-const BaseUrl = "http://192.168.1.229:9001/";
-//47.94.236.45:9000
-
+const BaseUrl = "http://47.94.236.45:9000/";
 
 function buildUrl (url) {
   return BaseUrl + url;
@@ -49,27 +47,18 @@ function buildUrl (url) {
       }
     },
     mounted() {
-      // axios.get("http://47.94.236.45:9000/machine/getMachineList")
-      // .then(response => {this.results = response.data.results})
+     
     },
     methods:{
       getList:function() {
-        let url = buildUrl('action?action=1&time=100');
+        let url = buildUrl('machine/getMachineList');
         axios.get(url).then((response) => {
           console.log(response);
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });
       },
-      // _getList: function () {
-      //   console.log(this)
-      //   this.$http.get('http://47.94.236.45:9000/machine/getMachineList').then(function (response) {
-      //     console.log(response);
-          
-      //     }, function (response) {
-      //       // console.log(response)
-      //   });
-      // }
+     
     },
     created () {
       this.getList();
