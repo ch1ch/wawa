@@ -21,7 +21,13 @@
 
 
 <script>
- // import { flvjs } from 'flv.js'
+const BaseUrl = "http://192.168.1.229:9001/";
+//47.94.236.45:9000
+
+
+function buildUrl (url) {
+  return BaseUrl + url;
+}
 
 
 export default {
@@ -56,7 +62,21 @@ export default {
         flvPlayer.load();
         flvPlayer.play();
     }
-  }
+  },
+  methods:{
+      getList:function() {
+        let url = buildUrl('action?action=1&time=100');
+        axios.get(url).then((response) => {
+          console.log(response);
+          this.results = response.data.results;
+
+        }).catch( error => { console.log(error); });
+      },
+     
+    },
+    created () {
+      this.getList();
+    }
   
 }
 </script>
