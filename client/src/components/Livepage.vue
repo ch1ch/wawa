@@ -9,11 +9,19 @@
     <div class="livebox">
     </div>
     <video id="videoElement"></video>
-    <div class="gamestart" v-on:click="front_zhua">
+    <div class="gamestart" v-on:click="startGame" v-if="startsee">
     </div>
-    <div class="game_control">
+    <div class="game_control" v-if="controlsee">
+      <div class="zhua_up" v-on:click="front_zhua" ></div>
+      <div class="zhua_left" v-on:click="left_zhua"></div>
+      <div class="zhua_right" v-on:click="right_zhua"></div>
+      <div class="zhua_down" v-on:click="back_zhua"></div>
+    </div>
+
+    <div class="game_downzhua" v-if="controlsee" v-on:click="down_zhua">
       
     </div>
+
     <div class="gameinfo"></div>
 
     <div id="id_test_video"></div>
@@ -40,16 +48,25 @@ function buildUrl (url) {
 export default {
   name: 'Livepage',
   data () {
+
     return {
-      msg: 'live'
+      msg: 'live',
+      startsee:true,
+      controlsee:false,
+      machineId:this.$route.params.liveid
+
     }
   },
   components: {
 
   },
+  computed:{
+
+  },
   mounted:function(){
+    console.log()
     var player =  new TcPlayer('id_test_video', {
-        // "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc.m3u8",
+        "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc.m3u8",
         "flv": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
         "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
         "coverpic" : "http://www.legendream.cn/myjs/start.png",
@@ -73,15 +90,21 @@ export default {
   //1 前 2后 3左 4右 0
   methods:{
       startGame:function() {
+        axios.get("http://47.94.236.45:9000/order/createOrder?machineId="+this.machineId).then((response) => {
+          console.log(response);
+        }).catch( error => { console.log(error); });
+
         let url = buildUrl('start');
         axios.get(url).then((response) => {
           console.log(response);
+          this.startsee=false;
+          this.controlsee=true;
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });
       },
       front_zhua:function() {
-        let url = buildUrl('action?action=1&time=100');
+        let url = buildUrl('action?action=1&time=150');
 
         axios.get(url).then((response) => {
           console.log(response);
@@ -91,41 +114,43 @@ export default {
         }).catch( error => { console.log(error); });
       },
       back_zhua:function() {
-        let url = buildUrl('action?action=2&time=100');
+        let url = buildUrl('action?action=2&time=150');
 
         axios.get(url).then((response) => {
           console.log(response);
-          console.log('front')
+          console.log('back')
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });
       },
       left_zhua:function() {
-        let url = buildUrl('action?action=3&time=100');
+        let url = buildUrl('action?action=3&time=150');
 
         axios.get(url).then((response) => {
           console.log(response);
-          console.log('front')
+          console.log('left')
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });
       },
       right_zhua:function() {
-        let url = buildUrl('action?action=4&time=100');
+        let url = buildUrl('action?action=4&time=150');
 
         axios.get(url).then((response) => {
           console.log(response);
-          console.log('front')
+          console.log('right')
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });
       },
       down_zhua:function() {
-        let url = buildUrl('action?action=6&time=100');
+        let url = buildUrl('action?action=6&time=200');
 
         axios.get(url).then((response) => {
           console.log(response);
-          console.log('front')
+          console.log('down');
+           this.startsee=true;
+          this.controlsee=false;
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });

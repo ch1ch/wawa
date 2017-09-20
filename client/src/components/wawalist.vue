@@ -1,25 +1,25 @@
 <template>
   <ul class="goodlist">
     <li
-      v-for="item in wawadata"
+      v-for="item in results"
       v-bind:key="item.id">
       <!-- <button v-on:click='getList'>close</button> -->
-      <a href="./#/live">
+      <a v-on:click="gotoLivePage(item.id)">
         <div class="titlebar">
           <div class="titleimg">
             <img src="~assets/images/zhua1.png" alt="">
           </div>
-          <div class="wawastatus" v-if="item.status==1">游戏中</div>
-          <div  class="wawastatus" v-if="item.status==0">空闲中</div>
+          <div class="wawastatus" v-if="item.status==2">游戏中</div>
+          <div  class="wawastatus" v-if="item.status==1">空闲中</div>
 
-          <div class="wawaprice">{{item.price}}/次</div>
+          <div class="wawaprice">{{item.gameMoney}}/次</div>
         </div>
 
         <div class="wawaimg">
-          <img v-bind:src="item.img" alt="">
+          <img v-bind:src="item.machineImg" alt="">
         </div>
         <div class="wawaname">
-          {{item.text}}
+          {{item.machineName}}
         </div>
       </a>
     </li>
@@ -38,26 +38,36 @@ function buildUrl (url) {
       wawadata:  {
       type: Array,
       required : true
-      },
+      }
     },
     data(){
-      results: []
+      
       return{
-
+        results: [
+      { id: 0, text: ' 轻松熊',machineImg:require('../assets/images/bear.jpg'),price:'33',status:'1' }]
       }
     },
     mounted() {
-     
+      let url = buildUrl('machine/getMachineList');
+        axios.get(url).then((response) => {
+          console.log(response.data.data);
+          this.results = response.data.data;
+          for (var i = 0; i < this.results.length; i++) {
+            this.results[i].machineImg=require('../assets/images/bear.jpg');
+          }
+          console.log(this.results);
+        }).catch( error => { console.log(error); });
     },
     methods:{
       getList:function() {
-        let url = buildUrl('machine/getMachineList');
-        axios.get(url).then((response) => {
-          console.log(response);
-          this.results = response.data.results;
-
-        }).catch( error => { console.log(error); });
+        
       },
+      gotoLivePage:function(id){
+        this.$router.push({
+          name:'livepage',
+          params:{liveid:id}
+        })
+      }
      
     },
     created () {
