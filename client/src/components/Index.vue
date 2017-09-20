@@ -1,42 +1,42 @@
 <template>
-  <div class="hello">
+  <div class="indexpage">
     <swiper :options="swiperOption" ref="mySwiper">
-   <!-- slides -->
-    <swiper-slide>
-      <div class="headerimg">
-          <img src="./../assets/images/header1.jpg">    
-        </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="headerimg">
-          <img src="./../assets/images/header1.jpg">    
-        </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="headerimg">
-          <img src="./../assets/images/header1.jpg">    
-        </div>
-    </swiper-slide>
+     <!-- slides -->
+      <swiper-slide>
+        <div class="headerimg">
+            <img src="./../assets/images/header1.jpg">    
+          </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="headerimg">
+            <img src="./../assets/images/header1.jpg">    
+          </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="headerimg">
+            <img src="./../assets/images/header1.jpg">    
+          </div>
+      </swiper-slide>
 
-   <!-- Optional controls -->
-   <div class="swiper-pagination"  slot="pagination"></div>
+     <!-- Optional controls -->
+     <div class="swiper-pagination"  slot="pagination"></div>
 
-   <div class="swiper-scrollbar"   slot="scrollbar"></div>
-  </swiper>
+     <div class="swiper-scrollbar"   slot="scrollbar"></div>
+    </swiper>
 
-  <WawaList  v-bind:wawadata="wawadata"></WawaList>
+    <WawaList  v-bind:wawadata="wawadata"></WawaList>
   
  
     <div class="footerbar">
       <div class="footerli">设置</div>
       <div class="footerpaddig">|</div>
-      <div class="footerli">首页</div>
+      <div class="footerli" v-on:click="gotoHomePage()">首页</div>
       <div class="footerpaddig">|</div>
       <div class="footerli">排行</div>
       <div class="footerpaddig">|</div>
-      <div class="footerli">我的</div>
+      <div class="footerli" v-on:click="gotoMyPage()">我的</div>
     </div>
-</div>
+  </div>
 </template>
 
 
@@ -87,6 +87,19 @@ export default {
           return this.$refs.mySwiper.swiper;  
         }  
   },  
+  methods:{
+    gotoHomePage:function(id){
+      this.$router.push({
+        name:'Index'
+      })
+    },
+    gotoMyPage:function(id){
+      this.$router.push({
+        name:'mypage'
+      })
+    }
+     
+  },
   mounted () {  
      // you can use current swiper instance object to do something(swiper methods)
     // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了

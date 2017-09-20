@@ -112,7 +112,7 @@ html,body{
     display: inline-block;
     position: relative;
     bottom: 1px;
-    font-size: 36px;
+    font-size: 28px;
     width: 22%;
     text-align: center;
     top: 18px;
@@ -126,7 +126,14 @@ html,body{
   }
 }
 
-
+.topbar{
+  background: url('./../images/my/topbg.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+}
 .live{
   width: 100%;
 
@@ -270,6 +277,28 @@ html,body{
   top: 10px;
   left: 0px;
 }
+
+.mypage{
+  width: 100%;
+  height: 100%;
+  background-color: #f9b0b9;
+  background: url('./../images/my/bg.jpg');
+  background-size: 100% 100%;
+  .back{
+    position: absolute;
+    z-index: 100;
+    top: 10px;
+    left: 10px;
+    height: 40px;
+    width: 40px;
+    img{
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+
 
 @media screen and (min-width: 500px) {
   body{ 
