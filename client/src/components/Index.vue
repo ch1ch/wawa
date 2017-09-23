@@ -21,14 +21,14 @@
      <!-- Optional controls -->
      <div class="swiper-pagination"  slot="pagination"></div>
 
-     <div class="swiper-scrollbar"   slot="scrollbar"></div>
+     <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
     </swiper>
 
     <WawaList  v-bind:wawadata="wawadata"></WawaList>
   
  
     <div class="footerbar">
-      <div class="footerli">设置</div>
+      <div class="footerli" v-on:click="wxpage()">设置</div>
       <div class="footerpaddig">|</div>
       <div class="footerli" v-on:click="gotoHomePage()">首页</div>
       <div class="footerpaddig">|</div>
@@ -97,6 +97,14 @@ export default {
       this.$router.push({
         name:'mypage'
       })
+    },
+    wxpage:function(id){
+      var address = 'mywawa';
+      var call_back_uri = "http%3A%2F%2Fwww.legendream.cn%2F"+address+"%2Findex.php";
+        
+      var grant_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb575a2aa9f43050&redirect_uri="+call_back_uri+"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+      location.href=grant_url;
+      
     }
      
   },

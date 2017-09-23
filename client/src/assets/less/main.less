@@ -31,30 +31,44 @@ html,body{
   }
 }
 
+.indexpage{
+  background: url('./../images/bg.jpg');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  height: 100%;
+}
+
+
 .goodlist{
-  background-color: #f9b0b9;
+  // background-color: #f9b0b9;
   width:100%;
   position: relative;
 
   //height: 9rem;
   margin: 0px 0px 20px 0px;
-  padding: 10px 10px 70px 10px;
+  padding: 10px 10px 70px 10px !important;
 
   li{
-    height: 226px;
-    width: 150px;
+    height: 250px;
+    width: 210px;
     display: inline-block;
     position: relative;
-    background-color: #da4859;
+    background: url('./../images/goodbg.png');
+    background-size: 100% 100%;
+    background-color: #fff;
     margin: 0 4px 10px 4px;
     border-radius: 5px;
     border: 1px solid #da4859;
     .titlebar{
       height: 36px;
-      width: 149px;
+      width: 203px;
       background-color: #d5f0eb;
-      line-height: 36px;
+      line-height: 30px;
       color:#946969;
+      position: relative;
+      top: 2px;
+      left: 2px;
+      font-size: 18px;
       .titleimg{
         display: inline-block;
         width: 30px;
@@ -69,21 +83,22 @@ html,body{
       }
       .wawastatus{
         position: relative;
-        font-size: 18px;
+        
         display: inline-block;
         left: 38px;
       }
       .wawaprice{
         display: inline-block;
         position: relative;
-        left: 38px;
+        left: 80px;
       }
     }
     .wawaimg{
-      width: 152px;
-      left: 0%;
+      width: 180px;
+      left: 20px;
+      top: 10px;
       position: relative;
-      height: 155px;
+      height: 165px;
       img{
         height: 100%;
         width: auto;
@@ -91,10 +106,14 @@ html,body{
       }
     }
     .wawaname{
+      border-top: 1px dashed #da4859;
+      margin-left: 20px;
+      margin-right: 20px;
       position: relative;
       font-size: 24px;
       text-align: center;
-      color:#fff;
+      color:#dd5767;
+      padding-top: 5px;
     }
   }
 }
@@ -165,20 +184,24 @@ html,body{
     height: 200px;
     z-index:20;
     position: absolute;
-    top: 290px;
+    top: 240px;
     left: 150px;
     margin: 0 auto;
 
   }
   .gameinfo{
-    background: url('./../images/live/bg.png');
-    background-size: 100% 100%;
+    background: url('./../images/live/listbgtop.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     width:100%;
-    height: 400px;
-    top: 290px;
-    z-index:10;
+    height: 160px;
+    top: 235px;
+    z-index:18;
     position: absolute;
   }
+ 
+ 
+
   .front_zhua{
     background: url('./../images/live/zhua_up.png');
     background-size: 100% 100%;
@@ -189,16 +212,58 @@ html,body{
     top: 290px;
     left: 150px;
   }
+
   .game_control{
     background: url('./../images/live/controlbg.png');
     background-size: 100% 100%;
     width: 200px;
     height: 200px;
-    z-index:20;
+    z-index:22;
     position: absolute;
     top: 290px;
     left: 150px;
+    .zhua_up{
+      background: url('./../images/live/zhua_up.png');
+      background-size: 100% 100%;
+      width: 60px;
+      height: 60px;
+      z-index:20;
+      position: absolute;
+      top: 25px;
+      left: 65px;
+    }
+    .zhua_left{
+      background: url('./../images/live/zhua_left.png');
+      background-size: 100% 100%;
+      width: 60px;
+      height: 60px;
+      z-index:20;
+      position: absolute;
+      top: 75px;
+      left: 10px;
+    }
+    .zhua_right{
+      background: url('./../images/live/zhua_right.png');
+      background-size: 100% 100%;
+      width: 60px;
+      height: 60px;
+      z-index:20;
+      position: absolute;
+      top: 75px;
+      left: 118px;
+    }
+    .zhua_down{
+      background: url('./../images/live/zhua_down.png');
+      background-size: 100% 100%;
+      width: 60px;
+      height: 60px;
+      z-index:20;
+      position: absolute;
+      top: 130px;
+      left: 65px;
+    }
   }
+
   .game_downzhua{
     background: url('./../images/live/ok.png');
     background-size: 100% 100%;
@@ -209,45 +274,145 @@ html,body{
     top: 310px;
     left: 390px;
   }
-  .zhua_up{
-    background: url('./../images/live/zhua_up.png');
-    background-size: 100% 100%;
-    width: 60px;
+
+  .mycoin{
+    background: url('./../images/live/mycoin.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 220px;
     height: 60px;
     z-index:20;
     position: absolute;
-    top: 25px;
-    left: 65px;
+    top: 140px;
+    left: 0px;
+    margin: 0 auto;
   }
-  .zhua_left{
-    background: url('./../images/live/zhua_left.png');
-    background-size: 100% 100%;
-    width: 60px;
-    height: 60px;
-    z-index:20;
+
+  .wawalist{
+    background: url('./../images/live/listbg.jpg');
+    // background-repeat: no-repeat;
+    background-size: 100% auto;
+    width:100%;
+    height: 170%;
+    top: 350px;
+    z-index:12;
     position: absolute;
-    top: 75px;
-    left: 10px;
   }
-  .zhua_right{
-    background: url('./../images/live/zhua_right.png');
-    background-size: 100% 100%;
-    width: 60px;
-    height: 60px;
-    z-index:20;
-    position: absolute;
-    top: 75px;
-    left: 118px;
-  }
-  .zhua_down{
-    background: url('./../images/live/zhua_down.png');
-    background-size: 100% 100%;
-    width: 60px;
-    height: 60px;
-    z-index:20;
-    position: absolute;
+
+  .gamedetail{
+    width:90%;
+    height: 800px;
     top: 130px;
-    left: 65px;
+    z-index:8;
+    left: 10px;
+    padding-left: 5%;
+    position: relative;
+    padding-top: 40px;
+    border: 2px solid #785334;
+    border-radius: 10px;
+    background-color: #fff;
+    // padding-bottom: 60px;
+    img{
+      width: 95%;
+      height: auto;
+      padding-bottom: 20px;
+    }
+    .gamedetailtop{
+      background: url('./../images/live/detailbg.png');
+      background-size: 100% auto;
+      width: 60%;
+      height: 60px;
+      z-index:20;
+      position: absolute;
+      top: -20px;
+      left: 0px;
+    }
+    .gamedetailbottom{
+      background: url('./../images/live/detailbottom.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 10px;
+      z-index:20;
+      position: absolute;
+      bottom: 0px;
+      left: -1px;
+    }
+  }
+
+  .catchlist{
+    width:90%;
+    height: 400px;
+    top: 180px;
+    z-index:8;
+    left: 10px;
+    padding-left: 5%;
+    position: relative;
+    padding-top: 40px;
+    border: 2px solid #785334;
+    border-radius: 10px;
+    background-color: #fff;
+
+    .historytop{
+      background: url('./../images/live/historytop.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      width: 75%;
+      height: 60px;
+      z-index:20;
+      position: absolute;
+      top: -20px;
+      right: 0px;
+    }
+    .gamedetailbottom{
+      background: url('./../images/live/detailbottom.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 10px;
+      z-index:20;
+      position: absolute;
+      bottom: 0px;
+      left: -1px;
+    }
+    .hitoryitem{
+      background: url('./../images/live/historyitem.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      width: 90%;
+      height: 80px;
+      z-index:20;
+      position: relative;
+      top: 10px;
+      left: 10px;
+      .headimg{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        img{
+          width: 100%;
+          height: auto;
+          border-radius: 25px;
+        }
+      }
+      .playername{
+        position: absolute;
+        top: 6px;
+        left: 66px;
+        font-size: 20px;
+        color:#785334;
+      }
+      .playertime{
+        position: absolute;
+        top: 28px;
+        left: 66px;
+        font-size: 16px;
+        color:#5b5b5b;
+      }
+  
+    }
   }
 }
 
@@ -296,6 +461,94 @@ html,body{
       width: auto;
     }
   }
+  .leftbox{
+    background: url('./../images/my/leftbg.png');
+    background-size: 100% 100%;
+    width: 200px;
+    height: 600px;
+    z-index:20;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .headimg{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 140px;
+    left: 60px;
+    img{
+      height: 100%;
+      width: auto;
+      border-radius: 40px;
+    }
+  }
+
+  .nickname{
+    position: absolute;
+    top: 220px;
+    left: 20px;
+    width: 160px;
+    color:#da4859;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .catchwawanum{
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    width: 160px;
+    color:#da4859;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .moneynum{
+    position: absolute;
+    top: 278px;
+    left: 124px;
+    width: 30px;
+    color:#fff;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .wawalist{
+    position: absolute;
+    top: 0px;
+    left: 220px;
+  }
+  .wawabox{
+    background: url('./../images/my/wawabg.png');
+    background-size: 100% 100%;
+    width: 255px;
+    height: 200px;
+    z-index:20;
+    position: relative;
+    top: 100px;
+    left: 10px;
+    margin-top: -40px;
+    .wawaitem1,.wawaitem2{
+      position: absolute;
+      top: 50px;
+      left: 12px;
+      width: 90px;
+      height: 110px;
+      img{
+        height: 100%;
+        width: auto;
+
+      }
+    }
+    .wawaitem2{
+      left: 137px;
+    }
+  }
+  .wawabox:first-child{
+    margin-top:0px;
+  }
+
 }
 
 
@@ -315,6 +568,7 @@ html,body{
     }
     .gamestart{
       margin-left: 2rem;
+      left: 0px;
     }
     .game_control{
       left: 2rem;

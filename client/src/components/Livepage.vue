@@ -3,13 +3,14 @@
     
     <a href="./..">
       <div class="back">
-        <img src="./../assets/images/live/back.png"> 
+        <img src="~assets/images/live/back.png"> 
       </div>
     </a>
     <div class="livebox">
     </div>
     <video id="videoElement"></video>
     <div class="gamestart" v-on:click="startGame" v-if="startsee">
+      <div class="mycoin" v-on:click="addcoin"></div>
     </div>
     <div class="game_control" v-if="controlsee">
       <div class="zhua_up" v-on:click="front_zhua" ></div>
@@ -19,10 +20,73 @@
     </div>
 
     <div class="game_downzhua" v-if="controlsee" v-on:click="down_zhua">
-      
     </div>
 
-    <div class="gameinfo"></div>
+    <div class="gameinfo">
+    </div>
+    <div class="wawalist">
+      <div class="gamedetail">
+        <div class="gamedetailtop"></div>
+        <div class="gamedetailbottom"></div>
+        <div>
+          <img src="~assets/images/live/wawadetail1.jpg" alt="">
+        </div>
+        
+        <div>
+          <img src="~assets/images/live/wawadetail1.jpg" alt="">
+        </div>
+      </div>
+      <div class="catchlist">
+        <div class="historytop"></div>
+        <div class="gamedetailbottom"></div>
+        <div class="historylist">
+          <div class="hitoryitem">
+            <div class="headimg">
+              <img src="~assets/images/live/head.jpg" alt="">
+            </div>
+            <p class="playername">玩家1</p>
+            <p class="playertime">2小时前</p>
+          </div>
+
+          <div class="hitoryitem">
+            <div class="headimg">
+              <img src="~assets/images/live/head.jpg" alt="">
+            </div>
+            <p class="playername">玩家1</p>
+            <p class="playertime">2小时前</p>
+          </div>
+
+          <div class="hitoryitem">
+            <div class="headimg">
+              <img src="~assets/images/live/head.jpg" alt="">
+            </div>
+            <p class="playername">玩家1</p>
+            <p class="playertime">2小时前</p>
+          </div>
+
+          <div class="hitoryitem">
+            <div class="headimg">
+              <img src="~assets/images/live/head.jpg" alt="">
+            </div>
+            <p class="playername">玩家1</p>
+            <p class="playertime">2小时前</p>
+          </div>
+
+          <div class="hitoryitem">
+            <div class="headimg">
+              <img src="~assets/images/live/head.jpg" alt="">
+            </div>
+            <p class="playername">玩家1</p>
+            <p class="playertime">2小时前</p>
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+
+    
+    
 
     <div id="id_test_video"></div>
 
@@ -154,6 +218,9 @@ export default {
           this.results = response.data.results;
 
         }).catch( error => { console.log(error); });
+      },
+      addcoin:function(){
+
       }
      
     },
