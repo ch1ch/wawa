@@ -100,7 +100,7 @@ export default {
     },
     wxpage:function(id){
       var address = 'mywawa';
-      var call_back_uri = "http%3A%2F%2Fwww.legendream.cn%2F"+address+"%2Findex.php";
+      var call_back_uri = "http%3A%2F%2Fwww.legendream.cn%2F"+address+"%2Findex1.php";
         
       var grant_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb575a2aa9f43050&redirect_uri="+call_back_uri+"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
       location.href=grant_url;
