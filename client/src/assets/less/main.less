@@ -294,7 +294,7 @@ html,body{
     background-size: 100% auto;
     width:100%;
     height: 170%;
-    top: 600px;
+    top: 620px;
     z-index:12;
     position: absolute;
   }
@@ -320,6 +320,7 @@ html,body{
     .gamedetailtop{
       background: url('./../images/live/detailbg.png');
       background-size: 100% auto;
+      background-repeat: no-repeat;
       width: 60%;
       height: 60px;
       z-index:20;
@@ -443,6 +444,9 @@ html,body{
   }
   .vcp-controls-panel{
     bottom: 30px;
+  }
+  .vcp-controls-panel{
+    display: none;
   }
 }
 .vcp-player{
@@ -602,10 +606,12 @@ html,body{
 
 
   #id_test_video {
+    top: 2.2rem;
+    left: -190px;
     .vcp-player{
-      width: 8rem !important;
-
+      // width: 8rem !important;
     }
+
   }
   .footerbar{
     width: 8rem;
