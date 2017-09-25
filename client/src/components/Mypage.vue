@@ -105,7 +105,7 @@ export default {
   methods:{
     gotoHomePage:function(id){
       this.$router.push({
-        name:'Index'
+        name:'Home'
       })
     },
     gotoMyPage:function(id){

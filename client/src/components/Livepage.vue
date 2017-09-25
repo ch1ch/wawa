@@ -85,12 +85,6 @@
       </div>
 
     </div>
-
-    
-    
-
-    
-
   </div>
 
 </template>
@@ -99,13 +93,23 @@
 <script>
 // const BaseUrl = "http://192.168.1.229:9001/";
 // const BaseUrl = "http://fjchao.vicp.io:9001/";
-const BaseUrl = "http://fjchao.in.3322.org:42404/";
+
 // const BaseUrl = "http://fjchao.7766.org:9001/";
 // const BaseUrl = "http://90946475.800.si/";
 //47.94.236.45:9000
 
 
-function buildUrl (url) {
+function buildUrl (url,id) {
+  var  BaseUrl;
+  console.log(id);
+  if (id=='1') {
+    BaseUrl="http://185345i08w.51mypc.cn:35126/";
+    BaseUrl="http://fjchao.in.3322.org:42404/";
+    // BaseUrl="http://fjc.in.8866.org:42864/";
+  }else{
+    BaseUrl="http://fujx.zicp.net:28530/";
+  }
+
   return BaseUrl + url;
 }
 
@@ -129,8 +133,11 @@ export default {
 
   },
   mounted:function(){
-    console.log()
-    var player =  new TcPlayer('id_test_video', {
+    var macid=this.$route.params.liveid;
+    console.log(macid);
+
+    if (macid=='1') {
+      var player =  new TcPlayer('id_test_video', {
         "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc_900.m3u8",
         "flv": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc_900.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
         "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
@@ -140,7 +147,23 @@ export default {
         "h5_flv":true,
         "x5_player":true
      
-    })
+      })
+      
+    }else{
+      var player =  new TcPlayer('id_test_video', {
+        "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_de258f20a1.m3u8",
+        "flv": "http://10799.liveplay.myqcloud.com/live/10799_de258f20a1.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+        "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+        "coverpic" : "http://www.legendream.cn/myjs/start.png",
+        "width" :  '960',//视频的显示宽度，请尽量使用视频分辨率宽度
+        "height" : '540',//视频的显示高度，请尽量使用视频分辨率高度
+        "h5_flv":true,
+        "x5_player":true
+     
+      })
+     
+    }
+    
 
 
     //   if (flvjs.isSupported()) {
@@ -161,7 +184,7 @@ export default {
           console.log(response);
         }).catch( error => { console.log(error); });
 
-        let url = buildUrl('start');
+        let url = buildUrl('start',this.machineId);
         axios.get(url).then((response) => {
           console.log(response);
           this.startsee=false;
@@ -171,7 +194,7 @@ export default {
         }).catch( error => { console.log(error); });
       },
       front_zhua:function() {
-        let url = buildUrl('action?action=1&time=150');
+        let url = buildUrl('action?action=1&time=150',this.machineId);
 
         axios.get(url).then((response) => {
           console.log(response);
@@ -181,7 +204,7 @@ export default {
         }).catch( error => { console.log(error); });
       },
       back_zhua:function() {
-        let url = buildUrl('action?action=2&time=150');
+        let url = buildUrl('action?action=2&time=150',this.machineId);
 
         axios.get(url).then((response) => {
           console.log(response);
@@ -191,7 +214,7 @@ export default {
         }).catch( error => { console.log(error); });
       },
       left_zhua:function() {
-        let url = buildUrl('action?action=3&time=150');
+        let url = buildUrl('action?action=3&time=150',this.machineId);
 
         axios.get(url).then((response) => {
           console.log(response);
@@ -201,7 +224,7 @@ export default {
         }).catch( error => { console.log(error); });
       },
       right_zhua:function() {
-        let url = buildUrl('action?action=4&time=150');
+        let url = buildUrl('action?action=4&time=150',this.machineId);
 
         axios.get(url).then((response) => {
           console.log(response);
@@ -211,7 +234,7 @@ export default {
         }).catch( error => { console.log(error); });
       },
       down_zhua:function() {
-        let url = buildUrl('action?action=6&time=200');
+        let url = buildUrl('action?action=6&time=200',this.machineId);
 
         axios.get(url).then((response) => {
           console.log(response);
