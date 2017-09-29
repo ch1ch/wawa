@@ -13,9 +13,25 @@
     <script src="http://legendream.cn/myjs/flvjs/flv.js" charset="utf-8"></script>
     <script src="http://legendream.cn/myjs/axios.min.js"></script>
     <script type="text/javascript">
+      function setCookie(c_name,value,expiredays)
+        {
+          var exdate=new Date()
+          exdate.setDate(exdate.getDate()+expiredays)
+          document.cookie=c_name+ "=" +escape(value)+
+          ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+        }
       function getUserInfo(info) {
         console.log(info);
         alert(info);
+        setCookie("id",info.id);
+        setCookie("headimgurl",info.headUrl);
+        setCookie("userLevel",info.userLevel);
+        setCookie("openid",info.token);
+        setCookie("nickname",info.nickName);
+        setCookie("gameMoney",info.gameMoney);
+        setCookie("dollCount",info.dollCount);
+        
+        location.href="http://wawa.legendream.cn/#/home";
       }
     </script>
     
