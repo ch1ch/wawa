@@ -63,10 +63,12 @@ function buildUrl (url) {
         
       },
       gotoLivePage:function(id){
-        this.$router.push({
-          name:'livepage',
-          params:{liveid:id}
-        })
+        joinRoom(id);
+        
+        // this.$router.push({
+        //   name:'livepage',
+        //   params:{liveid:id}
+        // })
       }
      
     },

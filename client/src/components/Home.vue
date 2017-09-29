@@ -41,9 +41,7 @@
 
 
 <script>
-function getUserInfo(info) {
-  console.log(info);
-}
+
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
   import WawaList from './../components/wawalist'
 
