@@ -37,11 +37,11 @@
     </div>
 
     <div class="footerbar">
-      <div class="footerli">设置</div>
+      <div class="footerli" v-on:click="gotoSetPage()">设置</div>
       <div class="footerpaddig">|</div>
       <div class="footerli" v-on:click="gotoHomePage()">首页</div>
       <div class="footerpaddig">|</div>
-      <div class="footerli">排行</div>
+      <div class="footerli" v-on:click="gotoRankPage()">排行</div>
       <div class="footerpaddig">|</div>
       <div class="footerli" v-on:click="gotoMyPage()">我的</div>
     </div>
@@ -76,6 +76,7 @@ export default {
   },
   mounted:function(){
     console.log();
+    // alert(getCookie("nickname"));
     var headimgurl=getCookie("headimgurl")?getCookie("headimgurl"):'http://wx.qlogo.cn/mmopen/mia54phWuEaibj8eNcMVuBMBCwh6qfD6LbXFKiazNdK7GxssznMcx4F6atFO164rW2k2V1QE7BASuOWPibR17SicN7w/0';
     var nickname=getCookie("nickname")?getCookie("headimgurl"):'传传';
     var openid=getCookie("openid")?getCookie("headimgurl"):'oIrAps3LRdZIvvEHLQfKAx67pZiI';
@@ -111,6 +112,16 @@ export default {
     gotoMyPage:function(id){
       this.$router.push({
         name:'mypage'
+      })
+    },
+    gotoSetPage:function(id){
+      this.$router.push({
+        name:'Setpage'
+      })
+    },
+    gotoRankPage:function(){
+      this.$router.push({
+        name:'Rankpage'
       })
     }
      

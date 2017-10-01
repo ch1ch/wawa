@@ -28,11 +28,11 @@
   
  
     <div class="footerbar">
-      <div class="footerli" v-on:click="wxpage()">设置</div>
+      <div class="footerli" v-on:click="gotoSetPage()">设置</div>
       <div class="footerpaddig">|</div>
       <div class="footerli" v-on:click="gotoHomePage()">首页</div>
       <div class="footerpaddig">|</div>
-      <div class="footerli">排行</div>
+      <div class="footerli" v-on:click="gotoRankPage()">排行</div>
       <div class="footerpaddig">|</div>
       <div class="footerli" v-on:click="gotoMyPage()">我的</div>
     </div>
@@ -83,14 +83,24 @@ export default {
         }  
   },  
   methods:{
-    gotoHomePage:function(id){
+    gotoHomePage:function(){
       this.$router.push({
         name:'Home'
       })
     },
-    gotoMyPage:function(id){
+    gotoMyPage:function(){
       this.$router.push({
         name:'mypage'
+      })
+    },
+    gotoSetPage:function(){
+      this.$router.push({
+        name:'Setpage'
+      })
+    },
+    gotoRankPage:function(){
+      this.$router.push({
+        name:'Rankpage'
       })
     },
     wxpage:function(id){
