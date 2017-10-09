@@ -4,7 +4,7 @@
       v-for="item in results"
       v-bind:key="item.id">
       <!-- <button v-on:click='getList'>close</button> -->
-      <a v-on:click="gotoLivePage(item.id)">
+      <a v-on:click="gotoLivePage(item.conutid)">
         <div class="titlebar">
           <div class="titleimg">
             <img src="~assets/images/zhua1.png" alt="">
@@ -33,6 +33,8 @@ function buildUrl (url) {
   return BaseUrl + url;
 }
 
+var machineList={};
+
   export default {
     props: {
       wawadata:  {
@@ -52,7 +54,9 @@ function buildUrl (url) {
         axios.get(url).then((response) => {
           console.log(response.data.data);
           this.results = response.data.data;
+          machineList=response.data.data;
           for (var i = 0; i < this.results.length; i++) {
+            this.results[i].conutid=i;
             this.results[i].machineImg=require('../assets/images/bear.jpg');
           }
           console.log(this.results);
@@ -63,7 +67,9 @@ function buildUrl (url) {
         
       },
       gotoLivePage:function(id){
-        joinRoom(id);
+        console.log(id);
+        console.log(machineList[id]);
+        joinRoom(machineList[id]);
         
         // this.$router.push({
         //   name:'livepage',
