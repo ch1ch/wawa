@@ -69,7 +69,8 @@ var machineList={};
       gotoLivePage:function(id){
         console.log(id);
         console.log(machineList[id]);
-        joinRoom(machineList[id]);
+        var str= JSON.stringify(machineList[id]); 
+        joinRoom(str);
         
         // this.$router.push({
         //   name:'livepage',
