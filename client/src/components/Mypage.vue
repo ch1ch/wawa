@@ -49,22 +49,18 @@
   </div>
 
 </template>
-
-
 <script>
-
 
 export default {
   name: 'Mypage',
   data () {
-
     return {
       msg: 'live',
       headimgurl:'',
       nickname:'',
       openid:'',
-      wawanumber:'5',
-      mymoney:36
+      wawanumber:'0',
+      mymoney:0
 
     }
   },
@@ -75,15 +71,21 @@ export default {
 
   },
   mounted:function(){
-    console.log();
-    // alert(getCookie("nickname"));
-    var headimgurl=getCookie("headimgurl")?getCookie("headimgurl"):'http://wx.qlogo.cn/mmopen/mia54phWuEaibj8eNcMVuBMBCwh6qfD6LbXFKiazNdK7GxssznMcx4F6atFO164rW2k2V1QE7BASuOWPibR17SicN7w/0';
-    var nickname=getCookie("nickname")?getCookie("headimgurl"):'传传';
-    var openid=getCookie("openid")?getCookie("headimgurl"):'oIrAps3LRdZIvvEHLQfKAx67pZiI';
+    // alert(localStorage.openid);
+    // alert(localStorage.nickname);
+    // alert(localStorage.headimgurl);
+
+    var headimgurl=localStorage.headimgurl?localStorage.headimgurl:'http://wx.qlogo.cn/mmopen/mia54phWuEaibj8eNcMVuBMBCwh6qfD6LbXFKiazNdK7GxssznMcx4F6atFO164rW2k2V1QE7BASuOWPibR17SicN7w/0';
+    var nickname=localStorage.nickname?localStorage.nickname:'传传';
+    var openid=localStorage.openid?localStorage.openid:'oIrAps3LRdZIvvEHLQfKAx67pZiI';
+    var gameMoney=localStorage.gameMoney?localStorage.gameMoney:0;
+    var dollcount=localStorage.dollCount;
 
     this.headimgurl=headimgurl;
     this.nickname=nickname;
     this.openid=openid;
+    this.mymoney=gameMoney;
+    this.wawanumber=dollcount;
 
     function getCookie(c_name){
       if (document.cookie.length>0)

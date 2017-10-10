@@ -110,6 +110,9 @@ function buildUrl (url,id) {
     BaseUrl="http://fujx.zicp.net:28530/";
   }
 
+  BaseUrl="http://fjchao.in.3322.org:42404/";
+  BaseUrl="http://185345i08w.51mypc.cn:35126/";
+
   return BaseUrl + url;
 }
 
@@ -122,7 +125,7 @@ export default {
       msg: 'live',
       startsee:true,
       controlsee:false,
-      machineId:this.$route.params.liveid
+      machineId:this.$route.params.liveid?this.$route.params.liveid:1
 
     }
   },
@@ -136,33 +139,45 @@ export default {
     var macid=this.$route.params.liveid;
     console.log(macid);
 
-    if (macid=='1') {
-      var player =  new TcPlayer('id_test_video', {
+    // if (macid=='1') {
+    //   var player =  new TcPlayer('id_test_video', {
+    //     "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc_900.m3u8",
+    //     "flv": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc_900.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+    //     "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+    //     "coverpic" : "http://www.legendream.cn/myjs/start.png",
+    //     "width" :  '960',//视频的显示宽度，请尽量使用视频分辨率宽度
+    //     "height" : '540',//视频的显示高度，请尽量使用视频分辨率高度
+    //     "h5_flv":true,
+    //     "x5_player":true
+     
+    //   })
+      
+    // }else{
+    //   var player =  new TcPlayer('id_test_video', {
+    //     "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_de258f20a1.m3u8",
+    //     "flv": "http://10799.liveplay.myqcloud.com/live/10799_de258f20a1.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+    //     "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+    //     "coverpic" : "http://www.legendream.cn/myjs/start.png",
+    //     "width" :  '960',//视频的显示宽度，请尽量使用视频分辨率宽度
+    //     "height" : '540',//视频的显示高度，请尽量使用视频分辨率高度
+    //     "h5_flv":true,
+    //     "x5_player":true
+     
+    //   })
+     
+    // }
+
+     var player =  new TcPlayer('id_test_video', {
         "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc_900.m3u8",
         "flv": "http://10799.liveplay.myqcloud.com/live/10799_784387bddc_900.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
         "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
-        "coverpic" : "http://www.legendream.cn/myjs/start.png",
+        "coverpic" : "http://www.legendream.cn/myjs/120.png",
         "width" :  '960',//视频的显示宽度，请尽量使用视频分辨率宽度
         "height" : '540',//视频的显示高度，请尽量使用视频分辨率高度
         "h5_flv":true,
         "x5_player":true
      
       })
-      
-    }else{
-      var player =  new TcPlayer('id_test_video', {
-        "m3u8": "http://10799.liveplay.myqcloud.com/live/10799_de258f20a1.m3u8",
-        "flv": "http://10799.liveplay.myqcloud.com/live/10799_de258f20a1.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
-        "autoplay" : true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
-        "coverpic" : "http://www.legendream.cn/myjs/start.png",
-        "width" :  '960',//视频的显示宽度，请尽量使用视频分辨率宽度
-        "height" : '540',//视频的显示高度，请尽量使用视频分辨率高度
-        "h5_flv":true,
-        "x5_player":true
-     
-      })
-     
-    }
     
 
 
