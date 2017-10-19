@@ -1,9 +1,7 @@
 <template>
   <div class="orderpage">
     <div class="orderbox">
-      <div class="topbar">
-      </div>
-      <orderList></orderList>
+      订单详情～{{orderid}}
     </div>
 
     <footerBlock></footerBlock>
@@ -15,7 +13,6 @@
 
 <script>
 import footerBlock from './../components/block/footer'
-import orderList from './../components/block/orderlist'
 
 
 export default {
@@ -23,27 +20,28 @@ export default {
   data () {
 
     return {    
+      orderid:this.$route.params.orderid?this.$route.params.orderid:1,
+      
 
     }
   },
   components: {
     footerBlock,
-    orderList
   },
   computed:{
 
   },
   mounted:function(){
+    var orderid=this.$route.params.orderid;
+    console.log(orderid);
     console.log();
-   
    
   },
   methods:{
-   
+  
      
   },
   created () {
-   // this.startGame();
   }
   
 }

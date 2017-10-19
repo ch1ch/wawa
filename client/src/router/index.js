@@ -6,6 +6,7 @@ import Livepage from '@/components/Livepage'
 import Mypage from '@/components/Mypage'
 import Setpage from '@/components/Setpage'
 import Orderpage from '@/components/OrderPage'
+import OrdershowPage from '@/components/OrderShowPage'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/order',
       name: 'orderpage',
       component: Orderpage
+    },
+    {
+      path: '/ordershow',
+      name: 'ordershowPage',
+      component: OrdershowPage
     }
   ]
 })

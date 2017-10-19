@@ -9,8 +9,8 @@ input,button,select,textarea{outline:none}
 
 
 html,body{
-  overflow: scroll;
-  // height: 100%;
+  overflow: auto;
+  height: 100%;
 }
 
 body{
@@ -667,13 +667,61 @@ body{
 }
 
 
-.rankpage {
+.orderpage {
   width: 100%;
   height: 100%;
   background-color: #f9b0b9;
   background: url('./../images/my/bg.jpg');
   background-size: 100% 100%;
   position: relative;
+}
+.orderlist{
+  position: relative;
+  top: 13vh;
+  padding: 5px 30px 2px 15px;
+  li{
+    position: relative;
+    width: 100%;
+    border: 1px solid #da4859;
+    padding: 5px;
+    background-color: #fff;
+    height: 10vh;
+    margin-bottom: 5px;
+  }
+  .titleimg{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  .goodname{
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    font-size: 20px;
+  }
+  .statusbox{
+    position: absolute;
+    left: 25%;
+    top: 40%;
+    font-size: 20px;
+  }
+
+  .timebox{
+    position: absolute;
+    left: 25%;
+    top: 68%;
+    font-size: 20px;
+  }
+  .goodmore{
+    position: absolute;
+    left: 75%;
+    top: 25%;
+    font-size: 20px;
+  }
 }
 
 
@@ -725,7 +773,12 @@ body{
   }
   .footerbar{
     width: 8rem;
+    .footerli{
+      width: 21%;
+      top: 12px;
+    }
   }
+
   .goodlist li{
     width: 3.5rem;
     .titlebar{
@@ -800,6 +853,12 @@ body{
         }
       }
       
+    }
+  }
+
+  .orderbox{
+    .goodname,.statusbox,.timebox,.goodmore{
+      font-size: 16px;
     }
   }
   
