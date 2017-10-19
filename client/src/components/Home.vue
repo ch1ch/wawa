@@ -4,19 +4,12 @@
      <!-- slides -->
       <swiper-slide>
         <div class="headerimg">
+        <a href="http://wawa.legendream.cn/study.html">
             <img src="./../assets/images/header1.jpg">    
+            </a>
           </div>
       </swiper-slide>
-      <swiper-slide>
-        <div class="headerimg">
-            <img src="./../assets/images/header1.jpg">    
-          </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="headerimg">
-            <img src="./../assets/images/header1.jpg">    
-          </div>
-      </swiper-slide>
+     
 
      <!-- Optional controls -->
      <div class="swiper-pagination"  slot="pagination"></div>
