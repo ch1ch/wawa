@@ -26,16 +26,9 @@
 
     <WawaList  v-bind:wawadata="wawadata"></WawaList>
   
- 
-    <div class="footerbar">
-      <div class="footerli" v-on:click="gotoSetPage()">设置</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoHomePage()">首页</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoRankPage()">排行</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoMyPage()">我的</div>
-    </div>
+    <footerBlock></footerBlock>
+    
+   
   </div>
 </template>
 
@@ -43,7 +36,8 @@
 <script>
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-  import WawaList from './../components/wawalist'
+import WawaList from './../components/block/wawalist'
+import footerBlock from './../components/block/footer'
 
 export default {
   name: 'Home',
@@ -74,7 +68,8 @@ export default {
   components: {
     swiper,  
     swiperSlide,
-    WawaList
+    WawaList,
+    footerBlock
   },
   computed: {  
   

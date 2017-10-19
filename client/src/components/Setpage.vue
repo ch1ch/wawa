@@ -28,24 +28,11 @@
         <p><span>关</span>于我们</p>
       </div>
 
-      <p class="copyright">
-        <span>Copyright © 2016-2017</span>
-        <br>
-        <span>易创云（大连）科技有限公司</span>
-      </p>
 
       
     </div>
 
-    <div class="footerbar">
-      <div class="footerli" v-on:click="gotoSetPage()">设置</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoHomePage()">首页</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoRankPage()">排行</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoMyPage()">我的</div>
-    </div>
+    <footerBlock></footerBlock>
 
   </div>
 
@@ -53,6 +40,7 @@
 
 
 <script>
+import footerBlock from './../components/block/footer'
 
 
 export default {
@@ -68,6 +56,7 @@ export default {
     }
   },
   components: {
+    footerBlock
 
   },
   computed:{
@@ -75,8 +64,6 @@ export default {
   },
   mounted:function(){
     console.log();
-   
-
    
    
   },

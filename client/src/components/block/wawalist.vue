@@ -46,7 +46,7 @@ var machineList={};
       
       return{
         results: [
-      { id: 0, text: ' 轻松熊',machineImg:require('../assets/images/bear.jpg'),price:'33',status:'1' }]
+      { id: 0, text: ' 轻松熊',machineImg:require('../../assets/images/bear.jpg'),price:'33',status:'1' }]
       }
     },
     mounted() {
@@ -57,7 +57,7 @@ var machineList={};
           machineList=response.data.data;
           for (var i = 0; i < this.results.length; i++) {
             this.results[i].conutid=i;
-            this.results[i].machineImg=require('../assets/images/bear.jpg');
+            this.results[i].machineImg=require('../../assets/images/bear.jpg');
           }
           console.log(this.results);
         }).catch( error => { console.log(error); });

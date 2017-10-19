@@ -4,15 +4,7 @@
       <p>敬请期待</p>
     </div>
 
-    <div class="footerbar">
-      <div class="footerli" v-on:click="gotoSetPage()">设置</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoHomePage()">首页</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoRankPage()">排行</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoMyPage()">我的</div>
-    </div>
+    <footerBlock></footerBlock>
 
   </div>
 
@@ -20,6 +12,7 @@
 
 
 <script>
+import footerBlock from './../components/block/footer'
 
 
 export default {
@@ -32,7 +25,7 @@ export default {
     }
   },
   components: {
-
+    footerBlock
   },
   computed:{
 

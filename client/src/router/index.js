@@ -5,7 +5,7 @@ import Home from '@/components/Home'
 import Livepage from '@/components/Livepage'
 import Mypage from '@/components/Mypage'
 import Setpage from '@/components/Setpage'
-import Rankpage from '@/components/Rankpage'
+import Orderpage from '@/components/OrderPage'
 
 Vue.use(Router)
 
@@ -37,9 +37,9 @@ export default new Router({
       component: Setpage
     },
     {
-      path: '/rank',
-      name: 'Rankpage',
-      component: Rankpage
+      path: '/order',
+      name: 'orderpage',
+      component: Orderpage
     }
   ]
 })
