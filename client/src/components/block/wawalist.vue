@@ -77,7 +77,11 @@ var machineList={};
         // console.log( machineList[id].video1)
         // console.log( machineList[id].video3)
         var str= JSON.stringify(machineList[id]); 
-        joinRoom(str);
+        if (typeof (androidApp) !="undefined") {
+          androidApp.joinRoom(str);
+        }else{
+          joinRoom(str);
+        }
         
         // this.$router.push({
         //   name:'livepage',
