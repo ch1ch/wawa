@@ -69,6 +69,13 @@ var machineList={};
       gotoLivePage:function(id){
         console.log(id);
         console.log(machineList[id]);
+        // alert(machineList[id])
+
+        if(machineList[id].video3==null || machineList[id].video3=='<null>'){
+          machineList[id].video3='10799.liveplay.myqcloud.com/live/10799_784387bddc';
+        }
+        // console.log( machineList[id].video1)
+        // console.log( machineList[id].video3)
         var str= JSON.stringify(machineList[id]); 
         joinRoom(str);
         
