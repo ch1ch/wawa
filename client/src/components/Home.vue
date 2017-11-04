@@ -1,5 +1,7 @@
 <template>
   <div class="homepage">
+    <div class="topbar">
+    </div>
     <swiper :options="swiperOption" ref="mySwiper">
      <!-- slides -->
       <swiper-slide>
@@ -11,7 +13,6 @@
       </swiper-slide>
      
 
-     <!-- Optional controls -->
      <div class="swiper-pagination"  slot="pagination"></div>
 
      <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
@@ -19,7 +20,7 @@
 
     <WawaList  v-bind:wawadata="wawadata"></WawaList>
   
-    <footerBlock></footerBlock>
+    <footerBlock v-bind:hover="1"></footerBlock>
     
    
   </div>

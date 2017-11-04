@@ -14,20 +14,11 @@
         <p><span>输</span>入邀请码</p>
       </div>
 
-      <div class="setitem ">
-        <p><span>背</span>景音乐</p>
-      </div>
-      <div class="setitem setitem2">
-        <p><span>音</span>效</p>
-      </div>
+
 
       <div class="setitem">
         <p><span>问</span>题反馈</p>
       </div>
-      <div class="setitem setitem2">
-        <p><span>关</span>于我们</p>
-      </div>
-
 
       
     </div>

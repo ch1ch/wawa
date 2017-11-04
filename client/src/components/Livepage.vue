@@ -111,7 +111,7 @@ function buildUrl (url,id) {
   }
 
   BaseUrl="http://fjchao.in.3322.org:42404/";
-  BaseUrl="http://185345i08w.51mypc.cn:35126/";
+  // BaseUrl="http://185345i08w.51mypc.cn:35126/";
 
   return BaseUrl + url;
 }

@@ -1,7 +1,10 @@
 <template>
   <div class="footerbar">
       
-      <div class="footerli" v-on:click="gotoHomePage()">首页</div>
+      <!-- <div class="footerli hover" v-on:click="gotoHomePage()" v-if="hover==1">首页 -->
+
+      <div class="footerli" v-on:click="gotoHomePage()">首页
+      </div>
       <div class="footerpaddig">|</div>
       <div class="footerli" v-on:click="gotoRankPage()">订单</div>
       <div class="footerpaddig">|</div>
@@ -15,6 +18,12 @@
 
   export default {
     name:"footer",
+    // props: {
+    //   'hover':{
+    //   type: Number,
+    //   required : true
+    //   }
+    // },
     data () {
 
       return {
