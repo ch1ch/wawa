@@ -18,22 +18,22 @@
      
     </div>
     <div class="wawalist">
-      <div class="wawabox">
+     <!--  <div class="wawabox">
         <div class="wawaitem1">
           <img src="~assets/images/bear.jpg" alt="">
         </div>
         <div class="wawaitem2">
           <img src="~assets/images/bear.jpg" alt="">
         </div>
-      </div>
-      <div class="wawabox">
+      </div> -->
+    <!--   <div class="wawabox">
         <div class="wawaitem1">
           <img src="~assets/images/bear.jpg" alt="">
         </div>
         <div class="wawaitem2">
           <img src="~assets/images/bear.jpg" alt="">
         </div>
-      </div>
+      </div> -->
     </div>
 
     <footerBlock></footerBlock>

@@ -36,7 +36,12 @@
 </template>
 
 <script>
+const BaseUrl = "http://47.94.236.45:9000/";
 
+function buildUrl (url) {
+  return BaseUrl + url;
+}
+var orderList={};
 
   export default {
     data(){
@@ -86,6 +91,25 @@
       
     },
     mounted() {
+      var token=localStorage.openid;
+      let url = buildUrl('order/getUserOrder');
+        axios.get(url, {
+          params: {
+            'token': 4128,
+            'doll':1
+          }
+        }).then((response) => {
+          console.log(response);
+          this.results = response.data;
+          orderList=response.data;
+          // alert(response.code);
+          // alert(response.data);
+          for (var i = 0; i < this.results.length; i++) {
+            // this.results[i].conutid=i;
+            // this.results[i].machineImg=require('../../assets/images/bear.jpg');
+          }
+          console.log(this.results);
+        }).catch( error => { console.log(error); });
      
     },
     methods:{
