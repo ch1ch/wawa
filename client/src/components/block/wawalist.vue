@@ -6,20 +6,20 @@
       <!-- <button v-on:click='getList'>close</button> -->
       <a v-on:click="gotoLivePage(item.conutid)">
         <div class="titlebar">
-          <div class="titleimg">
-            <img src="~assets/images/zhua1.png" alt="">
-          </div>
-          <div class="wawastatus" v-if="item.status==2">游戏中</div>
-          <div  class="wawastatus" v-if="item.status==1">空闲中</div>
-
-          <div class="wawaprice">{{item.gameMoney}}/次</div>
+        {{item.dollName}}
         </div>
 
         <div class="wawaimg">
           <img v-bind:src="item.machineImg" alt="">
         </div>
         <div class="wawaname">
-          {{item.machineName}}
+          <div class="titleimg">
+            <img src="~assets/images/zhua1.png" alt="">
+          </div>
+          <div class="wawastatus" v-if="item.status==2">游戏中</div>
+          <div  class="wawastatus" v-if="item.status==1">空闲中</div>
+           <div class="wawaprice">{{item.gameMoney}}/次</div>
+          
         </div>
       </a>
     </li>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-const BaseUrl = "http://47.94.236.45:9000/";
+const BaseUrl = "http://47.94.236.45:9900/";
 
 function buildUrl (url) {
   return BaseUrl + url;

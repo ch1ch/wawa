@@ -4,7 +4,7 @@
       敬请期待
     </div> -->
     <li
-      v-for="item in orderlist.data"
+      v-for="item in results"
       v-bind:key="item.id">
       <a v-on:click="gotoOrderPage(item.id)">
         <div class="titleimg">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="timebox">
-          游戏时间：{{item.createTime}}
+          游戏时间：{{item.time}}
         </div>
         
         <button class="goodmore">查看更多</button>
@@ -36,13 +36,18 @@
 </template>
 
 <script>
+const BaseUrl = "http://47.94.236.45:9900/";
 
+function buildUrl (url) {
+  return BaseUrl + url;
+}
+var orderList={};
 
   export default {
     data(){
       
       return{
-        orderlist:{
+        results:{
         "code": 200,
         "error": "正常",
         "data": [
@@ -86,6 +91,32 @@
       
     },
     mounted() {
+      var token=localStorage.openid;
+      // token="0d40742f4aad4d82ad041ebdb6a6a391";
+      // alert(token);
+      let url = buildUrl('order/getUserOrder');
+        axios.get(url, {
+          params: {
+            'token': token,
+            'doll':0
+          }
+        }).then((response) => {
+          // console.log(response.data.data);
+          this.results = response.data.data;
+          orderList=response.data;
+          // alert(response.code);
+          // alert(response.data);
+          for (var i = 0; i < this.results.length; i++) {
+            this.results[i].conutid=i;
+            this.results[i].time=getLocalTime(this.results[i].createTime);
+             this.results[i].dollImg=this.results[i].dollImg?this.results[i].dollImg:require('../../assets/images/bear.jpg');
+             this.results[i].dollName=this.results[i].dollName?this.results[i].dollName:"小猫咪";
+            // this.results[i].machineImg=require('../../assets/images/bear.jpg');
+          }
+          console.log(this.results);
+        }).catch( error => { console.log(error); });
+
+
      
     },
     methods:{
@@ -104,5 +135,9 @@
     }
 
 
+  }
+
+  function getLocalTime(nS) {     
+   return new Date(parseInt(nS) ).toLocaleString().replace(/:\d{1,2}$/,' ');     
   }
 </script>
