@@ -6,7 +6,7 @@
       <!-- <button v-on:click='getList'>close</button> -->
       <a v-on:click="gotoLivePage(item.conutid)">
         <div class="titlebar">
-        {{item.machineName}}
+        {{item.dollName}}
         </div>
 
         <div class="wawaimg">
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-const BaseUrl = "http://47.94.236.45:9000/";
+const BaseUrl = "http://47.94.236.45:9900/";
 
 function buildUrl (url) {
   return BaseUrl + url;
