@@ -15,8 +15,19 @@
        <div class="moneynum">
         <p>{{mymoney}}</p>
       </div>
+      <div class="address"  v-on:click="showAddress">
+        
+      </div>
      
     </div>
+
+    <div class="address-box" v-if="showadd">
+        <input type="text" name="name" ref="add_name" class="name-input" maxlength="8" min="2" max="10" placeholder="输入姓名">
+        <input type="text" name="phone" ref="add_phone" class="phone-input" min="8" max="13" maxlength="13" placeholder="输入手机号">
+        <textarea name="adddress" ref="add_address" rows="4" cols="20" placeholder="详细地址" class="addresstext"></textarea>
+        <div class="addressbtn" v-on:click="editAddress"></div>
+    </div>
+
     <div class="wawalist">
      <!--  <div class="wawabox">
         <div class="wawaitem1">
@@ -45,16 +56,21 @@
 <script>
 import footerBlock from './../components/block/footer'
 
+
 export default {
   name: 'Mypage',
   data () {
     return {
-      msg: 'live',
+      msg: 'mypage',
+      add_name:null,
+      add_phone:null,
+      add_address:null,
       headimgurl:'',
       nickname:'',
       openid:'',
       wawanumber:'0',
-      mymoney:0
+      mymoney:0,
+      showadd:false,
 
     }
   },
@@ -101,6 +117,33 @@ export default {
   },
   //1 前 2后 3左 4右 0
   methods:{
+    showAddress:function(){
+      this.showadd=true;
+    },
+    editAddress:function(){
+      var token=localStorage.openid;
+      token="0d40742f4aad4d82ad041ebdb6a6a391";
+      let url = buildUrl('user/addUserAddress');
+      var name= this.$refs.add_name.value;
+      var phone= this.$refs.add_phone.value;
+      var address= this.$refs.add_address.value;
+ 
+        axios.get(url, {
+          params: {
+            'token': token,
+            'person':name,
+            'mobile':phone,
+            'address':address,
+
+          }
+        }).then((response) => {
+          console.log(response.data);
+          this.showadd=false;
+          // this.results = response.data.data;
+         
+          // console.log(this.results);
+        }).catch( error => { console.log(error); });
+    },
     gotoHomePage:function(id){
       this.$router.push({
         name:'Home'

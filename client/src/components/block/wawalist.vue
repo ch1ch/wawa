@@ -6,20 +6,20 @@
       <!-- <button v-on:click='getList'>close</button> -->
       <a v-on:click="gotoLivePage(item.conutid)">
         <div class="titlebar">
-        {{item.dollName}}
+          <div class="titleimg">
+            <img src="~assets/images/zhua1.png" alt="">
+          </div>
+          <div class="wawastatus" v-if="item.status==2">游戏中</div>
+          <div  class="wawastatus" v-if="item.status==1">空闲中</div>
+
+          <div class="wawaprice">{{item.gameMoney}}/次</div>
         </div>
 
         <div class="wawaimg">
           <img v-bind:src="item.machineImg" alt="">
         </div>
         <div class="wawaname">
-          <div class="titleimg">
-            <img src="~assets/images/zhua1.png" alt="">
-          </div>
-          <div class="wawastatus" v-if="item.status==2">游戏中</div>
-          <div  class="wawastatus" v-if="item.status==1">空闲中</div>
-           <div class="wawaprice">{{item.gameMoney}}/次</div>
-          
+          {{item.dollName}}
         </div>
       </a>
     </li>
@@ -27,11 +27,6 @@
 </template>
 
 <script>
-const BaseUrl = "http://47.94.236.45:9000/";
-
-function buildUrl (url) {
-  return BaseUrl + url;
-}
 
 var machineList={};
 
@@ -57,6 +52,7 @@ var machineList={};
           machineList=response.data.data;
           for (var i = 0; i < this.results.length; i++) {
             this.results[i].conutid=i;
+
             // this.results[i].machineImg=require('../../assets/images/bear.jpg');
           }
           console.log(this.results);

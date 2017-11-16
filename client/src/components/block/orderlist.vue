@@ -36,11 +36,7 @@
 </template>
 
 <script>
-const BaseUrl = "http://47.94.236.45:9000/";
 
-function buildUrl (url) {
-  return BaseUrl + url;
-}
 var orderList={};
 
   export default {
@@ -101,19 +97,17 @@ var orderList={};
             'doll':0
           }
         }).then((response) => {
-          // console.log(response.data.data);
-          this.results = response.data.data;
-          orderList=response.data;
-          // alert(response.code);
-          // alert(response.data);
-          for (var i = 0; i < this.results.length; i++) {
-            this.results[i].conutid=i;
-            this.results[i].time=getLocalTime(this.results[i].createTime);
-             this.results[i].dollImg=this.results[i].dollImg?this.results[i].dollImg:require('../../assets/images/bear.jpg');
-             this.results[i].dollName=this.results[i].dollName?this.results[i].dollName:"小猫咪";
-            // this.results[i].machineImg=require('../../assets/images/bear.jpg');
-          }
-          console.log(this.results);
+          // // console.log(response.data.data);
+          // this.results = response.data.data;
+          // orderList=response.data;
+          // for (var i = 0; i < this.results.length; i++) {
+          //   this.results[i].conutid=i;
+          //   this.results[i].time=getLocalTime(this.results[i].createTime);
+          //    this.results[i].dollImg=this.results[i].dollImg?this.results[i].dollImg:require('../../assets/images/bear.jpg');
+          //    this.results[i].dollName=this.results[i].dollName?this.results[i].dollName:"小猫咪";
+          //   // this.results[i].machineImg=require('../../assets/images/bear.jpg');
+          // }
+          // console.log(this.results);
         }).catch( error => { console.log(error); });
 
 
