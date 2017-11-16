@@ -27,7 +27,7 @@
 </template>
 
 <script>
-const BaseUrl = "http://47.94.236.45:9900/";
+const BaseUrl = "http://47.94.236.45:9000/";
 
 function buildUrl (url) {
   return BaseUrl + url;
@@ -57,7 +57,7 @@ var machineList={};
           machineList=response.data.data;
           for (var i = 0; i < this.results.length; i++) {
             this.results[i].conutid=i;
-            this.results[i].machineImg=require('../../assets/images/bear.jpg');
+            // this.results[i].machineImg=require('../../assets/images/bear.jpg');
           }
           console.log(this.results);
         }).catch( error => { console.log(error); });

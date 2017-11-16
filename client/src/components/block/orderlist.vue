@@ -36,7 +36,7 @@
 </template>
 
 <script>
-const BaseUrl = "http://47.94.236.45:9900/";
+const BaseUrl = "http://47.94.236.45:9000/";
 
 function buildUrl (url) {
   return BaseUrl + url;
