@@ -42,9 +42,16 @@
       <div class="doll-person">{{orderperson}}</div>
       <div class="doll-address">{{orderaddress}}</div>
       <div class="doll-phone">{{orderphone}}</div>
+      <div class="statusbox">
+           
+        <div  class="wawastatus" v-if="thestatus==1">状态：游戏中</div>
+        <div class="wawastatus" v-if="thestatus==2">状态：未抓到</div>
+        <div class="wawastatus" v-if="thestatus==3">状态：抓取成功</div>
+        <div class="wawastatus" v-if="thestatus==4">状态：已发货</div>
+      </div>
 
       <div class="sure-btn" v-on:click="hideOrder()" ></div>
-      <div class="fahuo-btn" v-on:click="faOrder()" ></div>
+      <div class="fahuo-btn" v-on:click="faOrder()" v-if="needfa==true"></div>
 
     </div>
 
@@ -72,6 +79,8 @@ var orderList={};
         logs:"",
         logshow:false,
         orderid:0,
+        needfa:false,
+        thestatus:0,
         addresss:[],
         results: [
             {
@@ -123,7 +132,7 @@ var orderList={};
             'doll':0
           }
         }).then((response) => {
-          // console.log(response.data.data);
+          console.log(response.data.data);
           this.results = response.data.data;
           orderList=response.data;
           for (var i = 0; i < this.results.length; i++) {
@@ -143,9 +152,7 @@ var orderList={};
           }
         }).then((response) => {
           console.log(response.data.data);
-          this.orderperson=response.data.data[0].person;
           this.addresss=response.data.data.address;
-          this.orderphone=response.data.data[0].mobile;
           // this.results = response.data.data;
     
           // console.log(this.results);
@@ -168,13 +175,19 @@ var orderList={};
         }).then((response) => {
           console.log(response.data.data);
           // this.results = response.data.data;
+          if (response.data.code!=200) {
+            that.logshow=true;
+            that.logs=response.data.error;
+          }
           this.ordername=response.data.data.dollName;
           var addressid=response.data.data.userAdressId?response.data.data.userAdressId:"0";
-          this.orderperson=response.data.data[addressid].person;
-          this.orderaddress=response.data.data[addressid].address;
-          this.orderphone=response.data.data[addressid].mobile;
+          this.orderperson=response.data.data[addressid]&&response.data.data[addressid].person?response.data.data[addressid].person:"";
+          this.orderaddress=response.data.data[addressid]&&response.data.data[addressid].address?response.data.data[addressid].address:"";
+          this.orderphone=response.data.data[addressid]&&response.data.data[addressid].mobile?response.data.data[addressid].mobile:"";
+          this.needfa=response.data.data.status==3?true:false;
+          this.thestatus=response.data.data.status;
 
-          // console.log(this.results);
+          console.log(response.data.data.status);
         }).catch( error => { console.log(error); });
 
         // this.$router.push({
