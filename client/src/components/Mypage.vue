@@ -113,6 +113,30 @@ export default {
       return ""
     }
 
+    var token=localStorage.openid;
+    // token="0d40742f4aad4d82ad041ebdb6a6a391";
+    // alert(token);
+    let url = buildUrl('order/getUserOrder');
+      axios.get(url, {
+        params: {
+          'token': token,
+          'doll':1
+        }
+      }).then((response) => {
+        // // console.log(response.data.data);
+        // this.results = response.data.data;
+        // orderList=response.data;
+        // for (var i = 0; i < this.results.length; i++) {
+        //   this.results[i].conutid=i;
+        //   this.results[i].time=getLocalTime(this.results[i].createTime);
+        //    this.results[i].dollImg=this.results[i].dollImg?this.results[i].dollImg:require('../../assets/images/bear.jpg');
+        //    this.results[i].dollName=this.results[i].dollName?this.results[i].dollName:"小猫咪";
+        //   // this.results[i].machineImg=require('../../assets/images/bear.jpg');
+        // }
+        // console.log(this.results);
+      }).catch( error => { console.log(error); });
+
+
    
   },
   //1 前 2后 3左 4右 0
@@ -122,7 +146,7 @@ export default {
     },
     editAddress:function(){
       var token=localStorage.openid;
-      token="0d40742f4aad4d82ad041ebdb6a6a391";
+      // token="0d40742f4aad4d82ad041ebdb6a6a391";
       let url = buildUrl('user/addUserAddress');
       var name= this.$refs.add_name.value;
       var phone= this.$refs.add_phone.value;
@@ -144,26 +168,6 @@ export default {
           // console.log(this.results);
         }).catch( error => { console.log(error); });
     },
-    gotoHomePage:function(id){
-      this.$router.push({
-        name:'Home'
-      })
-    },
-    gotoMyPage:function(id){
-      this.$router.push({
-        name:'mypage'
-      })
-    },
-    gotoSetPage:function(id){
-      this.$router.push({
-        name:'Setpage'
-      })
-    },
-    gotoRankPage:function(){
-      this.$router.push({
-        name:'Rankpage'
-      })
-    }
      
   },
   created () {
