@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="theorderlist">
     <ul class="orderlist">
      <!--  <div>
         敬请期待
@@ -129,7 +129,7 @@ var orderList={};
         axios.get(url, {
           params: {
             'token': token,
-            'doll':0
+            'doll':1
           }
         }).then((response) => {
           console.log(response.data.data);
@@ -166,7 +166,7 @@ var orderList={};
         console.log(id);
         this.showorder=true;
         this.orderid=id;
-        id="0b298a5f630d4b5b80c753b13bac304b";
+        // id="0b298a5f630d4b5b80c753b13bac304b";
         let url = buildUrl('order/getOrderById');
         axios.get(url, {
           params: {

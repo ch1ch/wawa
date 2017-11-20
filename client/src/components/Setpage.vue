@@ -79,6 +79,19 @@ export default {
   },
   mounted:function(){
     console.log();
+    var token=localStorage.openid;
+
+    let url = buildUrl('user/getUserInfo');
+      axios.get(url, {
+        params: {
+          'token': token
+         
+        }
+      }).then((response) => {
+        console.log(response.data.data);
+        this.myinves=response.data.data.invitationCode;
+      
+      }).catch( error => { console.log(error); });
   },
   methods:{
     gotoHelp:function(){
@@ -94,7 +107,7 @@ export default {
       var that=this;
       that.inveshow=false;
       var token=localStorage.openid;
-      this.myinves=localStorage.invitationCode;
+      // this.myinves=localStorage.invitationCode;
 
       // token="0d40742f4aad4d82ad041ebdb6a6a391";
       let url = buildUrl('user/invitation');

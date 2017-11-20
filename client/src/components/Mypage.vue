@@ -114,9 +114,26 @@ export default {
     }
 
     var token=localStorage.openid;
-    // token="0d40742f4aad4d82ad041ebdb6a6a391";
-    // alert(token);
-    let url = buildUrl('order/getUserOrder');
+
+     let url = buildUrl('user/getUserInfo');
+      axios.get(url, {
+        params: {
+          'token': token
+         
+        }
+      }).then((response) => {
+        console.log(response.data.data);
+        this.headimgurl=response.data.data.headUrl;
+        this.nickname=response.data.data.nickName;
+        this.mymoney=response.data.data.gameMoney;
+        this.wawanumber=response.data.data.dollcount;
+      
+      }).catch( error => { console.log(error); });
+
+
+
+
+    url = buildUrl('order/getUserOrder');
       axios.get(url, {
         params: {
           'token': token,
