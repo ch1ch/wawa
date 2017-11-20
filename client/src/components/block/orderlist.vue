@@ -99,23 +99,6 @@ var orderList={};
                 "gamevideo":null,
                 "status":2,
                 "createTime": "2017-09-10 02:29:06"
-            },
-            {
-                "id": "31cf3bd2f58449aa8ce36b1351412064",
-                "userId": 1,
-                "userName": "hexu",
-                "commodityId": null,
-                "commodityName": null,
-                "machineId": 2,
-                "machineName": "小猫咪",
-                "userAdressId": null,
-                "gameMoneyPrice": 20,
-                "dollName": "小猫咪",
-                "dollIntroduce": null,
-                "dollImg": "http://legendream.cn/myjs/bear.jpg",
-                "gamevideo":null,
-                "status": 3,
-                "createTime": "2017-09-10 02:22:30"
             }
         ],
        
@@ -129,7 +112,7 @@ var orderList={};
         axios.get(url, {
           params: {
             'token': token,
-            'doll':1
+            'doll':0
           }
         }).then((response) => {
           console.log(response.data.data);
@@ -152,7 +135,8 @@ var orderList={};
           }
         }).then((response) => {
           console.log(response.data.data);
-          this.addresss=response.data.data.address;
+          this.addresss=response.data.data;
+          localStorage.def_add_id=this.addresss[0].id;
           // this.results = response.data.data;
     
           // console.log(this.results);
@@ -180,10 +164,12 @@ var orderList={};
             that.logs=response.data.error;
           }
           this.ordername=response.data.data.dollName;
-          var addressid=response.data.data.userAdressId?response.data.data.userAdressId:"0";
-          this.orderperson=response.data.data[addressid]&&response.data.data[addressid].person?response.data.data[addressid].person:"";
-          this.orderaddress=response.data.data[addressid]&&response.data.data[addressid].address?response.data.data[addressid].address:"";
-          this.orderphone=response.data.data[addressid]&&response.data.data[addressid].mobile?response.data.data[addressid].mobile:"";
+          var addressid= localStorage.def_add_id;
+           console.log("add",addressid);
+           console.log(this.addresss)
+          this.orderperson=this.addresss[0].person;
+          this.orderphone=this.addresss[0].mobile;
+          this.orderaddress=this.addresss[0].address;
           this.needfa=response.data.data.status==3?true:false;
           this.thestatus=response.data.data.status;
 
@@ -200,7 +186,7 @@ var orderList={};
         var token=localStorage.openid;
 
         let url = buildUrl('order/addExpress');
-        let adressId=0;
+        let adressId= localStorage.def_add_id;
         var orderid=this.orderid;
         axios.get(url, {
           params: {
