@@ -36,7 +36,7 @@
     </ul>
     <div class="ordermore"  v-if="showorder==true">
       <div class="doll-img">
-        <img src='http://doll.oss-cn-beijing.aliyuncs.com/data/head/75b98021fd844c578e89d49048717b58.jpg' alt="">
+        <img v-bind:src="orderimg" alt="">
       </div>
       <div class="doll-name">{{ordername}}</div>
       <div class="doll-person">{{orderperson}}</div>
@@ -76,6 +76,7 @@ var orderList={};
         orderperson:"",
         orderaddress:"",
         orderphone:"",
+        orderimg:"",
         logs:"",
         logshow:false,
         orderid:0,
@@ -158,15 +159,17 @@ var orderList={};
           }
         }).then((response) => {
           console.log(response.data.data);
+          var orderinfo=response.data.data;
           // this.results = response.data.data;
           if (response.data.code!=200) {
             that.logshow=true;
             that.logs=response.data.error;
           }
-          this.ordername=response.data.data.dollName;
+          this.ordername=orderinfo.dollName;
+          this.orderimg=orderinfo.dollImg;
           var addressid= localStorage.def_add_id;
-           console.log("add",addressid);
-           console.log(this.addresss)
+           // console.log("add",addressid);
+           // console.log(this.addresss)
           this.orderperson=this.addresss[0].person;
           this.orderphone=this.addresss[0].mobile;
           this.orderaddress=this.addresss[0].address;

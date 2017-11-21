@@ -30,6 +30,8 @@
           <div class="addr-person">姓名：{{item.person}}</div>
           <div class="addr-mobile">电话：{{item.mobile}}</div>
           <div class="addr-address">地址：{{item.address}}</div>
+          <div class="addr-del" v-on:click="delAddress(item.id)" >
+          </div>
         </li>
       </ul>
 
@@ -45,6 +47,7 @@
     </div>
 
     <div class="wawalist">
+      <div class="list-title">抓到的娃娃</div>
       <div class="wawabox"
       v-for="item in mywawalist"
       v-bind:key="item.id">
@@ -156,21 +159,21 @@ export default {
 
 
       url = buildUrl('user/getUserAddress');
-        axios.get(url, {
-          params: {
-            'token': token
-          }
-        }).then((response) => {
-          console.log(response.data.data);
-          this.addresss=response.data.data;
-          if(this.addresss.length>=4){
-            this.canaddadd=false;
-          }
-           localStorage.def_add_id=this.addresss[0].id;
-          // this.results = response.data.data;
-    
-          console.log(localStorage.def_add_id);
-        }).catch( error => { console.log(error); });
+      axios.get(url, {
+        params: {
+          'token': token
+        }
+      }).then((response) => {
+        console.log(response.data.data);
+        this.addresss=response.data.data;
+        if(this.addresss.length>=4){
+          this.canaddadd=false;
+        }
+         localStorage.def_add_id=this.addresss[0].id;
+        // this.results = response.data.data;
+  
+        console.log(localStorage.def_add_id);
+      }).catch( error => { console.log(error); });
 
 
    
@@ -186,6 +189,41 @@ export default {
     showAddAddress:function(){
       this.showaddadd=true;
     },
+    delAddress:function(addid){
+      var token=localStorage.openid;
+
+      let url = buildUrl('user/deleteAddress');
+ 
+        axios.get(url, {
+          params: {
+            'token': token,
+            'id':addid
+          }
+        }).then((response) => {
+          console.log(response.data);
+          
+          url = buildUrl('user/getUserAddress');
+          axios.get(url, {
+            params: {
+              'token': token
+            }
+          }).then((response1) => {
+            console.log(response1.data.data);
+            this.addresss=response1.data.data;
+            if(this.addresss.length>=4){
+              this.canaddadd=false;
+            }
+             localStorage.def_add_id=this.addresss[0].id;
+            // this.results = response.data.data;
+      
+            console.log(localStorage.def_add_id);
+          }).catch( error1 => { console.log(error1); });
+
+         
+          // console.log(this.results);
+        }).catch( error => { console.log(error); });
+    },
+
     editAddress:function(){
       var token=localStorage.openid;
       // token="0d40742f4aad4d82ad041ebdb6a6a391";
