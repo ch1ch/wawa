@@ -21,7 +21,8 @@
             <div  class="wawastatus" v-if="item.status==1">状态：游戏中</div>
             <div class="wawastatus" v-if="item.status==2">状态：未抓到</div>
             <div class="wawastatus" v-if="item.status==3">状态：抓取成功</div>
-            <div class="wawastatus" v-if="item.status==4">状态：已发货</div>
+            <div class="wawastatus" v-if="item.status==4">状态：已申请邮寄</div>
+            <div class="wawastatus" v-if="item.status==5">状态：已发货</div>
           </div>
 
           <div class="timebox">
@@ -47,7 +48,8 @@
         <div  class="wawastatus" v-if="thestatus==1">状态：游戏中</div>
         <div class="wawastatus" v-if="thestatus==2">状态：未抓到</div>
         <div class="wawastatus" v-if="thestatus==3">状态：抓取成功</div>
-        <div class="wawastatus" v-if="thestatus==4">状态：已发货</div>
+        <div class="wawastatus" v-if="thestatus==4">状态：已申请邮寄</div>
+        <div class="wawastatus" v-if="thestatus==5">状态：已发货</div>
       </div>
 
       <div class="sure-btn" v-on:click="hideOrder()" ></div>
