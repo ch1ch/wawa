@@ -59,7 +59,18 @@
         setCookie("gameMoney",infos.gameMoney,1);
         setCookie("dollCount",infos.dollCount,1);
 
-        location.href="http://miao.legendream.cn/#/home";
+        location.href="../#/home";
+      }
+
+      var currentUrl = window.location.href;
+    
+      const BaseUrl = "http://47.94.236.45:9900/";
+      if (/wawa/ig.test(currentUrl)) {
+        BaseUrl = "http://47.94.236.45:9000/";
+      }     
+
+      function buildUrl (url) {
+        return BaseUrl + url;
       }
      
     </script>
