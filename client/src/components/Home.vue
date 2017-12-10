@@ -6,22 +6,9 @@
      <!-- slides -->
       <swiper-slide>
         <div class="headerimg">
-          <a href="../banner1.html">
-            <img src="http://efun-oss.oss-cn-beijing.aliyuncs.com/banner/banner-1.jpg">    
-          </a>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="headerimg">
-          <a href="../banner2.html">
-            <img src="http://efun-oss.oss-cn-beijing.aliyuncs.com/banner/banner-2.jpg">    
-          </a>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="headerimg">
-          <a href="../banner3.html">
-            <img src="http://efun-oss.oss-cn-beijing.aliyuncs.com/banner/banner-3.jpg">    
+          <a href="../study.html">
+            <img src="~assets/images/header1.jpg" alt="">
+            <!-- <img src="http://efun-oss.oss-cn-beijing.aliyuncs.com/banner/banner-1.jpg">     -->
           </a>
         </div>
       </swiper-slide>

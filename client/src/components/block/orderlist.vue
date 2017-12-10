@@ -189,6 +189,7 @@ var orderList={};
       faOrder:function(){
         let that=this;
         var token=localStorage.openid;
+        that.needfa=false;
 
         let url = buildUrl('order/addExpress');
         let adressId= localStorage.def_add_id;
@@ -204,9 +205,13 @@ var orderList={};
           if (response.data.code!=200) {
             that.logshow=true;
             that.logs=response.data.error;
+            that.needfa=false;
+            that.thestatus=4;
+
           }else{
             that.logshow=true;
             that.logs=response.data.error;
+            that.needfa=true;
           };
           // this.results = response.data.data;
     
