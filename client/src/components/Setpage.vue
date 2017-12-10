@@ -89,7 +89,11 @@ export default {
         }
       }).then((response) => {
         console.log(response.data.data);
-        this.myinves=response.data.data.invitationCode;
+
+        if (response&&response.data&&response.data.data&&response.data.data.invitationCode) {
+          this.myinves=response.data.data.invitationCode;
+        };
+        
       
       }).catch( error => { console.log(error); });
   },

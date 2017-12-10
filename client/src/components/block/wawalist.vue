@@ -5,6 +5,9 @@
       v-bind:key="item.id">
       <!-- <button v-on:click='getList'>close</button> -->
       <a v-on:click="gotoLivePage(item.conutid)">
+        <div class="wawaname">
+          {{item.dollName}}
+        </div>
         <div class="titlebar">
           <div class="titleimg">
             <img src="~assets/images/zhua1.png" alt="">
@@ -18,9 +21,7 @@
         <div class="wawaimg">
           <img v-bind:src="item.machineImg" alt="">
         </div>
-        <div class="wawaname">
-          {{item.dollName}}
-        </div>
+       
       </a>
     </li>
   </ul>
