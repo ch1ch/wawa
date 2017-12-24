@@ -3,16 +3,16 @@
     <div class="settop">
     </div>
     <div class="leftbox">
-      <div class="setitem setitem2">
+     <!--  <div class="setitem setitem2">
         <p><span>通</span>知中心</p>
       </div>
-
-      <div class="setitem " v-on:click="gotoMyInve()">
+ -->
+    <!--   <div class="setitem " v-on:click="gotoMyInve()">
         <p><span>邀</span>请奖励</p>
       </div>
       <div class="setitem setitem2" v-on:click="gotoInve()">
         <p><span>输</span>入邀请码</p>
-      </div>
+      </div> -->
 
 
 

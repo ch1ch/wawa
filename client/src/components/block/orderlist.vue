@@ -108,9 +108,8 @@ var orderList={};
       } 
     },
     mounted() {
+      // localStorage.openid="0d40742f4aad4d82ad041ebdb6a6a391";
       var token=localStorage.openid;
-      // token="0d40742f4aad4d82ad041ebdb6a6a391";
-      // alert(token);
       let url = buildUrl('order/getUserOrder');
         axios.get(url, {
           params: {
@@ -128,8 +127,10 @@ var orderList={};
              this.results[i].dollName=this.results[i].dollName?this.results[i].dollName:"小猫咪";
             // this.results[i].machineImg=require('../../assets/images/bear.jpg');
           }
-          console.log(this.results);
-        }).catch( error => { console.log(error); });
+          // console.log(this.results);
+        }).catch( error => { 
+          console.log(error); 
+        });
 
         url = buildUrl('user/getUserAddress');
         axios.get(url, {
@@ -150,10 +151,9 @@ var orderList={};
     },
     methods:{
       gotoOrderPage:function(id){
-        console.log(id);
+        console.log('order',id);
         this.showorder=true;
         this.orderid=id;
-        // id="0b298a5f630d4b5b80c753b13bac304b";
         let url = buildUrl('order/getOrderById');
         axios.get(url, {
           params: {
@@ -175,11 +175,13 @@ var orderList={};
           this.orderperson=this.addresss[0].person;
           this.orderphone=this.addresss[0].mobile;
           this.orderaddress=this.addresss[0].address;
+          console.log(response.data.data.status)
           this.needfa=response.data.data.status==3?true:false;
           this.thestatus=response.data.data.status;
 
-          console.log(response.data.data.status);
-        }).catch( error => { console.log(error); });
+        }).catch( error => { 
+          console.log(error); 
+        });
 
         // this.$router.push({
         //   name:'ordershowPage',
@@ -188,7 +190,7 @@ var orderList={};
       },
       faOrder:function(){
         let that=this;
-        var token=localStorage.openid;
+        var token=localStorage.openid;  
         that.needfa=false;
 
         let url = buildUrl('order/addExpress');
@@ -201,12 +203,15 @@ var orderList={};
             orderId:orderid
           }
         }).then((response) => {
+          // alert(response.data.data)
           console.log(response.data.data);
-          if (response.data.code!=200) {
-            that.logshow=true;
-            that.logs=response.data.error;
+          if (response.data.code==200) {
+            alert("支付运费15元。")
+            window.location.href=response.data.data;
+            // that.logshow=true;
+            // that.logs=response.data.error;
             that.needfa=false;
-            that.thestatus=4;
+            // that.thestatus=4;
 
           }else{
             that.logshow=true;

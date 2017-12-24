@@ -107,9 +107,25 @@ export default {
      
   },
   mounted () {  
-     // you can use current swiper instance object to do something(swiper methods)
-    // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-    //console.log('this is current swiper instance object', this.swiper)
+    // localStorage.openid="0d40742f4aad4d82ad041ebdb6a6a391";
+    // var token=localStorage.openid;
+     // let url = buildUrl('order/recharge');
+     //    axios.get(url, {
+     //      params: {
+     //        'token': token            
+     //      }
+     //    }).then((response) => {
+     //      console.log(response.data);
+     //      var data=response.data;
+     //      if (data.code==6001) {
+     //        console.log(data.error)
+     //      }
+
+     //    }).catch( error => { 
+     //      console.log(error); 
+     //    });
+
+    
     this.swiper.slideTo(3, 1000, false)
   },
   created () {

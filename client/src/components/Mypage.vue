@@ -114,6 +114,8 @@ export default {
 
   },
   mounted:function(){
+      // localStorage.openid="0d40742f4aad4d82ad041ebdb6a6a391";
+    
 
     var token=localStorage.openid;
 
