@@ -48,7 +48,7 @@ var machineList={};
     mounted() {
       let url = buildUrl('machine/getMachineList');
         axios.get(url).then((response) => {
-          console.log(response.data.data);
+          // console.log(response.data.data);
           this.results = response.data.data;
           machineList=response.data.data;
           for (var i = 0; i < this.results.length; i++) {
@@ -56,7 +56,7 @@ var machineList={};
 
             // this.results[i].machineImg=require('../../assets/images/bear.jpg');
           }
-          console.log(this.results);
+          // console.log(this.results);
         }).catch( error => { console.log(error); });
     },
     methods:{

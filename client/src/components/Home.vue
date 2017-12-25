@@ -12,6 +12,12 @@
           </a>
         </div>
       </swiper-slide>
+
+      <swiper-slide>
+        <div class="headerimg" v-on:click="doQuest()">
+            <img src="~assets/images/header2.jpg" alt="">         
+        </div>
+      </swiper-slide>
      
 
      <div class="swiper-pagination"  slot="pagination"></div>
@@ -22,6 +28,17 @@
     <WawaList  v-bind:wawadata="wawadata"></WawaList>
   
     <footerBlock v-bind:hover="1"></footerBlock>
+
+    <div class="activebox" v-if="showquest==true">
+      <div class="quest-box">
+        <div class="quest-text">{{questtext}}</div>
+        <input type="text" name="name" ref="answer" class="answer-input" maxlength="10" min="1" max="10" placeholder="输入答案">
+
+        <div class='answer-btn'  v-on:click="subAnswer()" ></div>
+        <div class='close-btn'  v-on:click="hideQuest()" ></div>
+      </div>
+
+    </div>
     
    
   </div>
@@ -39,13 +56,16 @@ export default {
   data () {
     return {
       msg: '',
+      questid:0,
+      questtext:"",
+      showquest:false,
       wawadata: [
           { id: 0, text: ' 轻松熊',img:require('../assets/images/bear.jpg'),price:'33',status:'1' },
           { id: 1,text: ' 轻松熊1',img:require('../assets/images/bear.jpg'),price:'34',status:'0'},
           
         ],
           swiperOption: {  
-          //是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true  
+           
           notNextTick: true,  
           pagination: '.swiper-pagination',  
           slidesPerView: 'auto',  
@@ -67,65 +87,150 @@ export default {
     footerBlock
   },
   computed: {  
-  
         swiper() {  
           return this.$refs.mySwiper.swiper;  
         }  
   },  
   methods:{
-    gotoHomePage:function(){
-      this.$router.push({
-        name:'Home'
-      })
-    },
-    gotoMyPage:function(){
-      this.$router.push({
-        name:'mypage'
-      })
-    },
-    gotoSetPage:function(){
-      this.$router.push({
-        name:'Setpage'
-      })
-    },
-    gotoRankPage:function(){
-      this.$router.push({
-        name:'Rankpage'
-      })
+
+    subAnswer:function(){
+      var answer= this.$refs.answer.value;
+      console.log(answer);
+
+      switch(this.questid){
+        case 0:
+          if (answer=='3') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };
+          break;
+        case 1:
+          if (answer=='天山六阳掌') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };
+          break;
+        case 2:
+          if (answer=='30') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };break;
+        case 3:
+          if (answer=='舒尔') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };
+          break;
+        case 4:
+          if (answer=='球场没有球') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };
+          break;
+        case 5:
+          if (answer=='轻功') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };
+          break;
+        case 6:
+          if (answer=='4') {
+            tureAnswer()
+          }else{
+            falseAnswer()
+          };
+          break;
+        default:
+        
+      }
+
+      function tureAnswer(){
+        console.log("yes")
+        alert("回答正确～");
+        // localStorage.openid="0d40742f4aad4d82ad041ebdb6a6a391";
+        var token=localStorage.openid;
+        let url = buildUrl('order/recharge');
+            axios.get(url, {
+              params: {
+                'token': token            
+              }
+        }).then((response) => {
+          console.log(response.data);
+          var data=response.data;
+          if (data.code==6001) {
+            alert(data.error);
+            console.log(data.error)
+          }
+        }).catch( error => { 
+          console.log(error); 
+        });
+
+      }
+      function falseAnswer(){
+        console.log("no");
+        alert("回答错误～")
+      }
+       
     },
     wxpage:function(id){
-      // var address = 'mywawa';
-      // var call_back_uri = "http%3A%2F%2Fwww.legendream.cn%2F"+address+"%2Findex1.php";
-        
-      // var grant_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb575a2aa9f43050&redirect_uri="+call_back_uri+"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
-      // location.href=grant_url;
+     
       
     },
+    doQuest:function(id){
+      this.showquest=true;
+      
+    },
+
+    hideQuest:function(id){
+      this.showquest=false;
+      
+    },
+
     getUserInfo:function(){
       
-    }
-     
+    },
+
   },
   mounted () {  
-    // localStorage.openid="0d40742f4aad4d82ad041ebdb6a6a391";
-    // var token=localStorage.openid;
-     // let url = buildUrl('order/recharge');
-     //    axios.get(url, {
-     //      params: {
-     //        'token': token            
-     //      }
-     //    }).then((response) => {
-     //      console.log(response.data);
-     //      var data=response.data;
-     //      if (data.code==6001) {
-     //        console.log(data.error)
-     //      }
-
-     //    }).catch( error => { 
-     //      console.log(error); 
-     //    });
-
+    var now=Date.now();
+    var times=now-1514218816000;
+    var questid=parseInt(times/86400000);
+    this.questid=questid;
+    //1514218816
+    console.log(this.questid);
+    switch(questid)
+    {
+    case 0:
+      this.questtext="剧中的令儿一共出现了几次";
+      break;
+    case 1:
+      this.questtext="秦斩救开封的时候，用的绝招叫什么";
+      break;
+    case 2:
+      this.questtext=" 秦斩带雨晨刷完辽国副本之后升到了多少级";
+      break;
+    case 3:
+      this.questtext="秦斩穿越后，第一个抱宫主大腿的是谁";
+      break;
+    case 4:
+      this.questtext="舒尔形容明月平胸时说了什么";
+      break;
+    case 5:
+      this.questtext="舒尔的绝技是什么";
+      break;
+    case 6:
+      this.questtext=" 秦斩第一次说要跟雨晨双修，出现在第几集";
+      break;
+    default:
     
+    }
+
     this.swiper.slideTo(3, 1000, false)
   },
   created () {
@@ -134,7 +239,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h1, h2 {
   font-weight: normal;
