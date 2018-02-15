@@ -244,6 +244,9 @@ export default {
           }
         }).then((response) => {
           console.log(response.data);
+          if (response.data.code!=200) {
+            alert(response.data.error);
+          };
           this.showaddadd=false;
           // this.results = response.data.data;
           url = buildUrl('user/getUserAddress');

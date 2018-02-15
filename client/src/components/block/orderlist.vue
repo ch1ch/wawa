@@ -140,6 +140,13 @@ var orderList={};
         }).then((response) => {
           console.log(response.data.data);
           this.addresss=response.data.data;
+          if (this.addresss.length==0) {
+            alert('请先去我的页面填写地址信息！')
+            this.$router.push({
+              name:'mypage'
+            })
+
+          };
           localStorage.def_add_id=this.addresss[0].id;
           // this.results = response.data.data;
     
