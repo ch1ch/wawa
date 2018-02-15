@@ -204,6 +204,8 @@ var orderList={};
           if (response.data.code!=200) {
             that.logshow=true;
             that.logs=response.data.error;
+            that.needfa=false;
+            that.thestatus=4;
           }else{
             that.logshow=true;
             that.logs=response.data.error;

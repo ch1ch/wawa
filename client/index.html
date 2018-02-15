@@ -1,76 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>E fun</title>
-    <meta id="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
-  </head>
-  <body>
-    <div id="header"></div>
-    <div id="main"></div>
-    <div id="footer"></div>
-    
-    <!-- <script src="http://legendream.cn/myjs/flvjs/flv.js" charset="utf-8"></script> -->
-    <script src="http://legendream.cn/myjs/axios.min.js"></script>
-    <script type="text/javascript">
-      function setCookie(c_name,value,expiredays)
-        {
-          var exdate=new Date()
-          exdate.setDate(exdate.getDate()+expiredays)
-          document.cookie=c_name+ "=" +escape(value)+
-          ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
-        }
-      function getCookie(c_name){
-        if (document.cookie.length>0)
-          {
-          c_start=document.cookie.indexOf(c_name + "=")
-          if (c_start!=-1)
-            { 
-            c_start=c_start + c_name.length+1 
-            c_end=document.cookie.indexOf(";",c_start)
-            if (c_end==-1) c_end=document.cookie.length
-            return unescape(document.cookie.substring(c_start,c_end))
-            } 
-          }
-        return ""
+
+<head>
+  <meta charset="utf-8">
+  <title>E fun</title>
+  <meta id="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="main"></div>
+  <div id="footer"></div>
+  <div id="alert-box">
+    <div id="alert-info">
+      <h1>eFun2.0升级公告</h1>
+      <p> 小可爱们，App升级啦～你们要的这都有～ </p>
+      
+      <p>解决了游戏半屏的问题； </p>
+      
+      <p>解决了游戏闪退的BUG； </p>
+      
+      <p>优化了邀请、申请发货、充值等体验；</p>
+      <p>1.9以下的用户需要更新后才能继续使用「eFun抓娃娃」，不然无法看到游戏房间的。为您带来的不便，小e深表歉意。</p>
+      <p>点击链接直接进入更新！</p>
+      <p>IOS用户也可以去App Store自行更新！</p>
+      <p>安卓用户请在公众号「eFun抓娃娃」下载游戏</p>
+      <p>下载地址：<a href="http://efun.efuny.net/download">http://efun.efuny.net/download</a> 
+
+      </p>
+      <p>备注：如果下载地址无法下载，请在公众号「eFun抓娃娃」下载</p>
+    </div>
+  </div>
+  <!-- <script src="http://legendream.cn/myjs/flvjs/flv.js" charset="utf-8"></script> -->
+  <style type="text/css">
+  #alert-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+  }
+  #alert-info{
+      width: 70%;
+      height: 40%;
+      top: 25%;
+      left: 10%;
+      position: absolute;
+      background-color: #fff;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+     
+  }
+  </style>
+  <script src="http://legendream.cn/myjs/axios.min.js"></script>
+  <script type="text/javascript">
+  // alert("目前已升级到新版本，请至市场更新")
+
+  function setCookie(c_name, value, expiredays) {
+    var exdate = new Date()
+    exdate.setDate(exdate.getDate() + expiredays)
+    document.cookie = c_name + "=" + escape(value) +
+      ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString())
+  }
+
+  function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+      c_start = document.cookie.indexOf(c_name + "=")
+      if (c_start != -1) {
+        c_start = c_start + c_name.length + 1
+        c_end = document.cookie.indexOf(";", c_start)
+        if (c_end == -1) c_end = document.cookie.length
+        return unescape(document.cookie.substring(c_start, c_end))
       }
+    }
+    return ""
+  }
 
-      function getUserInfo(info) {
-        console.log(info);
-        // alert(info);
-        var infos=JSON.parse(info);
-        localStorage.id=infos.id;
-        localStorage.headimgurl=infos.headUrl;
-        localStorage.userLevel=infos.userLevel;
-        localStorage.openid=infos.token;
-        localStorage.nickname=infos.nickName;
-        localStorage.gameMoney=infos.gameMoney;
-        localStorage.dollCount=infos.dollCount;
-        localStorage.invitationCode=infos.invitationCode;
-        invitationCode
-        localStorage.info=info;
-        setCookie("info",info,1);
-        // alert(getCookie("info"));
-        // alert(localStorage.headimgurl);
+  function getUserInfo(info) {
+    console.log(info);
+    // alert(info);
+    var infos = JSON.parse(info);
+    localStorage.id = infos.id;
+    localStorage.headimgurl = infos.headUrl;
+    localStorage.userLevel = infos.userLevel;
+    localStorage.openid = infos.token;
+    localStorage.nickname = infos.nickName;
+    localStorage.gameMoney = infos.gameMoney;
+    localStorage.dollCount = infos.dollCount;
+    localStorage.invitationCode = infos.invitationCode;
+    invitationCode
+    localStorage.info = info;
+    setCookie("info", info, 1);
+    // alert(getCookie("info"));
+    // alert(localStorage.headimgurl);
 
-        setCookie("id",infos.id,1);
-        setCookie("headimgurl",infos.headUrl,1);
-        setCookie("userLevel",infos.userLevel,1);
-        setCookie("openid",infos.token,1);
-        setCookie("nickname",infos.nickName,1);
-        setCookie("gameMoney",infos.gameMoney,1);
-        setCookie("dollCount",infos.dollCount,1);
-         setCookie("invitationCode",infos.invitationCode,1);
+    setCookie("id", infos.id, 1);
+    setCookie("headimgurl", infos.headUrl, 1);
+    setCookie("userLevel", infos.userLevel, 1);
+    setCookie("openid", infos.token, 1);
+    setCookie("nickname", infos.nickName, 1);
+    setCookie("gameMoney", infos.gameMoney, 1);
+    setCookie("dollCount", infos.dollCount, 1);
+    setCookie("invitationCode", infos.invitationCode, 1);
 
-        location.href="../#/home";
-      }
-      const BaseUrl = "http://47.94.236.45:9000/";
 
-      function buildUrl (url) {
-        return BaseUrl + url;
-      }
-      // localStorage.openid="cb2a72a72ce04546bbbec7a673640bd3";
-    </script>
-    
-  </body>
+
+    // location.href="../#/home";
+  }
+  const BaseUrl = "http://47.94.236.45:9000/";
+
+  function buildUrl(url) {
+    return BaseUrl + url;
+  }
+  // localStorage.openid="cb2a72a72ce04546bbbec7a673640bd3";
+
+  </script>
+</body>
+
 </html>
