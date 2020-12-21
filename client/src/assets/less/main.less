@@ -1,21 +1,70 @@
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td { margin:0; padding:0; }
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
 
-html{ height:100%;-webkit-text-size-adjust: none; opacity: 1;}
+html {
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  opacity: 1;
+}
 
-em,i,strong{font-style:normal;}
-ul,ol{list-style:none;}
-a{text-decoration:none;}
-input,button,select,textarea{outline:none}
+em,
+i,
+strong {
+  font-style: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none
+}
 
 
-html,body{
+html,
+body {
   overflow: auto;
   height: 100%;
 }
 
-body{
+body {
   overflow-x: hidden;
-  
+
   // overflow-y: scroll;
 }
 
@@ -24,113 +73,116 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
- 
+
 }
-.headerimg{
-  width:100%;
+
+.headerimg {
+  width: 100%;
   height: 260px;
-  img{
+
+  img {
     width: 100%;
     height: 100%;
   }
 }
 
-.indexpage{
+.indexpage {
   background: url('./../images/login/loginbg.jpg');
   background-size: 100% 100%;
   padding-top: 20px;
   height: 100%;
 }
 
-.homepage{
+.homepage {
   background: url('./../images/bg.jpg');
   background-size: 100% 100%;
   padding-top: 5px;
   // height: 100%;
 }
 
-.wxlogin{
+.wxlogin {
   background: url('./../images/login/login.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   width: 200px;
   height: 100px;
-  z-index:20;
+  z-index: 20;
   position: absolute;
   top: 400px;
   left: 100px;
 }
 
-.swiper-container{
-  z-index:3;
+.swiper-container {
+  z-index: 3;
 }
 
-.activebox{
+.activebox {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  z-index:10;
-  .quest-box{
+  z-index: 10;
+
+  .quest-box {
     background: url('./../images/quest/bg.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 90vw;
     height: 300px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 250px;
     left: 5vw;
   }
 
-  .quest-text{
+  .quest-text {
     width: 80vw;
     height: 100px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 60px;
     left: 5vw;
     font-size: 30px;
-    color:#000;
+    color: #000;
     text-align: center;
   }
 
-  .answer-input{
+  .answer-input {
     width: 30vw;
     height: 30px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 185px;
     left: 30vw;
     font-size: 30px;
-    color:#fff;
+    color: #fff;
     text-align: center;
     background-color: transparent;
     border-radius: 5px;
     border: 0px;
   }
 
-  .answer-btn{
+  .answer-btn {
     background: url('./../images/quest/sure.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 35vw;
     height: 50px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 240px;
     left: 5vw;
   }
 
-  .close-btn{
+  .close-btn {
     background: url('./../images/quest/close.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 35vw;
     height: 50px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 240px;
     left: 45vw;
@@ -140,16 +192,16 @@ body{
 }
 
 
-.goodlist{
+.goodlist {
   // background-color: #f9b0b9;
-  width:100%;
+  width: 100%;
   position: relative;
   overflow-x: hidden;
   //height: 9rem;
   margin: 20px 0px 20px 0px;
   padding: 0px 10px 70px 10px !important;
 
-  li{
+  li {
     height: 250px;
     width: 210px;
     display: inline-block;
@@ -159,63 +211,71 @@ body{
     background-color: #fff;
     margin: 0 15px 10px 4px;
     border-radius: 5px;
+
     // border: 1px solid #da4859;
-    .titlebar{
+    .titlebar {
       height: 36px;
       width: 203px;
       // background-color: #d5f0eb;
       line-height: 30px;
-      color:#fff;
+      color: #fff;
       position: relative;
       top: 205px;
       left: 2px;
       font-size: 18px;
-      .titleimg{
+
+      .titleimg {
         display: inline-block;
         width: 30px;
         height: 30px;
         position: absolute;
         top: 4px;
         left: 4px;
-        img{
+
+        img {
           width: 100%;
           height: auto;
         }
       }
-      .wawastatus{
+
+      .wawastatus {
         position: relative;
-        
+
         display: inline-block;
         left: 38px;
       }
-      .wawaprice{
+
+      .wawaprice {
         display: inline-block;
         position: relative;
         left: 80px;
       }
     }
-    .wawaimg{
+
+    .wawaimg {
       width: 180px;
       left: 15px;
       top: 25px;
       position: relative;
       height: 165px;
       position: absolute;
-      img{
+
+      img {
         height: 100%;
         width: auto;
         max-width: 98%;
       }
     }
-    .wawaname{
+
+    .wawaname {
       // border-top: 1px dashed #da4859;
       top: 15px;
       left: 10px;
       width: 190px;
       height: 24px;
       line-height: 24px;
-      font-size: 22px;     
-      color:#99ccff;
+      font-size: 22px;
+      color: #99ccff;
       position: absolute;
       z-index: 1;
       text-align: center;
@@ -223,34 +283,8 @@ body{
   }
 }
 
-.footerbar{
-  background: url('./../images/bottombg.jpg');
-  width: 100%;
-  height: 75px;
-  position: fixed;
-  bottom: 0px;
-  color:#fff;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  .footerli{
-    display: inline-block;
-    position: relative;
-    bottom: 1px;
-    font-size: 28px;
-    width: 22%;
-    text-align: center;
-    top: 18px;
-  }
-  .footerpaddig{
-    display: inline-block;
-    font-size: 36px;
-    top: 18px;
-    position: relative;
 
-  }
-}
-
-.topbar{
+.topbar {
   background: url('./../images/my/topbg.png');
   background-repeat: no-repeat;
   width: 100%;
@@ -259,23 +293,27 @@ body{
   top: 0px;
   z-index: 2;
 }
-.live{
+
+.live {
   width: 100%;
 
   background-color: #f9b0b9;
-  .back{
+
+  .back {
     position: absolute;
     z-index: 100;
     top: 10px;
     left: 10px;
     height: 40px;
     width: 40px;
-    img{
+
+    img {
       height: 100%;
       width: auto;
     }
   }
-  .livebox{
+
+  .livebox {
     background: url('./../images/live/border.png');
     background-size: 100% 100%;
     width: 100%;
@@ -283,133 +321,139 @@ body{
     position: relative;
     z-index: 10;
   }
-  .gamestart{
+
+  .gamestart {
     background: url('./../images/live/start.png');
     background-size: 100% 100%;
     width: 200px;
     height: 200px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 520px;
     left: 150px;
     margin: 0 auto;
 
   }
-  .gameinfo{
+
+  .gameinfo {
     background: url('./../images/live/listbgtop.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    width:100%;
+    width: 100%;
     height: 160px;
     top: 550px;
-    z-index:18;
+    z-index: 18;
     position: absolute;
   }
- 
- 
 
-  .front_zhua{
+
+
+  .front_zhua {
     background: url('./../images/live/zhua_up.png');
     background-size: 100% 100%;
     width: 30px;
     height: 30px;
-    z-index:20;
+    z-index: 20;
     position: relative;
     top: 290px;
     left: 150px;
   }
 
-  .game_control{
+  .game_control {
     background: url('./../images/live/controlbg.png');
     background-size: 100% 100%;
     width: 200px;
     height: 200px;
-    z-index:22;
+    z-index: 22;
     position: absolute;
     top: 490px;
     left: 150px;
-    .zhua_up{
+
+    .zhua_up {
       background: url('./../images/live/zhua_up.png');
       background-size: 100% 100%;
       width: 60px;
       height: 60px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       top: 25px;
       left: 65px;
     }
-    .zhua_left{
+
+    .zhua_left {
       background: url('./../images/live/zhua_left.png');
       background-size: 100% 100%;
       width: 60px;
       height: 60px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       top: 75px;
       left: 10px;
     }
-    .zhua_right{
+
+    .zhua_right {
       background: url('./../images/live/zhua_right.png');
       background-size: 100% 100%;
       width: 60px;
       height: 60px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       top: 75px;
       left: 118px;
     }
-    .zhua_down{
+
+    .zhua_down {
       background: url('./../images/live/zhua_down.png');
       background-size: 100% 100%;
       width: 60px;
       height: 60px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       top: 130px;
       left: 65px;
     }
   }
 
-  .game_downzhua{
+  .game_downzhua {
     background: url('./../images/live/ok.png');
     background-size: 100% 100%;
     width: 70px;
     height: 70px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 580px;
     left: 390px;
   }
 
-  .mycoin{
+  .mycoin {
     background: url('./../images/live/mycoin.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 220px;
     height: 60px;
-    z-index:20; 
+    z-index: 20;
     position: absolute;
     top: 140px;
     left: 0px;
     margin: 0 auto;
   }
 
-  .wawalist{
+  .wawalist {
     background: url('./../images/live/listbg.jpg');
     // background-repeat: no-repeat;
     background-size: 100% auto;
-    width:100%;
+    width: 100%;
     height: 170%;
     top: 620px;
-    z-index:12;
+    z-index: 12;
     position: absolute;
   }
 
-  .gamedetail{
-    width:90%;
+  .gamedetail {
+    width: 90%;
     height: 800px;
     top: 130px;
-    z-index:8;
+    z-index: 8;
     left: 10px;
     padding-left: 5%;
     position: relative;
@@ -417,41 +461,44 @@ body{
     border: 2px solid #785334;
     border-radius: 10px;
     background-color: #fff;
+
     // padding-bottom: 60px;
-    img{
+    img {
       width: 95%;
       height: auto;
       padding-bottom: 20px;
     }
-    .gamedetailtop{
+
+    .gamedetailtop {
       background: url('./../images/live/detailbg.png');
       background-size: 100% auto;
       background-repeat: no-repeat;
       width: 60%;
       height: 60px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       top: -20px;
       left: 0px;
     }
-    .gamedetailbottom{
+
+    .gamedetailbottom {
       background: url('./../images/live/detailbottom.png');
       background-size: 100% auto;
       background-repeat: no-repeat;
       width: 100%;
       height: 10px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       bottom: 0px;
       left: -1px;
     }
   }
 
-  .catchlist{
-    width:90%;
+  .catchlist {
+    width: 90%;
     height: 400px;
     top: 180px;
-    z-index:8;
+    z-index: 8;
     left: 10px;
     padding-left: 5%;
     position: relative;
@@ -460,109 +507,118 @@ body{
     border-radius: 10px;
     background-color: #fff;
 
-    .historytop{
+    .historytop {
       background: url('./../images/live/historytop.png');
       background-size: 100% auto;
       background-repeat: no-repeat;
       width: 75%;
       height: 60px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       top: -20px;
       right: 0px;
     }
-    .gamedetailbottom{
+
+    .gamedetailbottom {
       background: url('./../images/live/detailbottom.png');
       background-size: 100% auto;
       background-repeat: no-repeat;
       width: 100%;
       height: 10px;
-      z-index:20;
+      z-index: 20;
       position: absolute;
       bottom: 0px;
       left: -1px;
     }
-    .hitoryitem{
+
+    .hitoryitem {
       background: url('./../images/live/historyitem.png');
       background-size: 100% auto;
       background-repeat: no-repeat;
       width: 90%;
       height: 80px;
-      z-index:20;
+      z-index: 20;
       position: relative;
       top: 10px;
       left: 10px;
-      .headimg{
+
+      .headimg {
         width: 50px;
         height: 50px;
         position: absolute;
         top: 3px;
         left: 2px;
-        img{
+
+        img {
           width: 100%;
           height: auto;
           border-radius: 25px;
         }
       }
-      .playername{
+
+      .playername {
         position: absolute;
         top: 6px;
         left: 66px;
         font-size: 20px;
-        color:#785334;
+        color: #785334;
       }
-      .playertime{
+
+      .playertime {
         position: absolute;
         top: 28px;
         left: 66px;
         font-size: 16px;
-        color:#5b5b5b;
+        color: #5b5b5b;
       }
-  
+
     }
   }
 }
 
-#id_test_video{
+#id_test_video {
   // width: 375px;
   // height: 400px;
-  width: 720px !important; 
-  height: 450px !important; 
+  width: 720px !important;
+  height: 450px !important;
   position: absolute;
   top: 10px;
-  left:-80px;
+  left: -80px;
   // margin: 0 auto;
   transform: rotate(90deg);
 
-  .vcp-player{
+  .vcp-player {
     background-color: #eee;
-    height:450px !important;
-    width:720px !important;
+    height: 450px !important;
+    width: 720px !important;
+
     // width: 640px !important; 
     // height: 360px !important; 
-    video{
-      height:500px !important;
-      width:880px !important;
+    video {
+      height: 500px !important;
+      width: 880px !important;
       // left: -175px;
       position: relative;
       overflow: visible;
     }
   }
-  .vcp-controls-panel{
+
+  .vcp-controls-panel {
     bottom: 30px;
   }
-  .vcp-controls-panel{
+
+  .vcp-controls-panel {
     display: none;
   }
 }
-.vcp-player{
-  
-  video{
-  }
+
+.vcp-player {
+
+  video {}
 
 }
 
-#videoElement{
+#videoElement {
   width: 100%;
   height: 390px;
   position: absolute;
@@ -571,7 +627,7 @@ body{
   transform: rotate(90deg);
 }
 
-.mypage{
+.mypage {
   width: 100%;
   height: 100%;
   position: relative;
@@ -579,97 +635,102 @@ body{
   background: url('./../images/my/bg.jpg');
   background-size: 100% 100%;
   overflow: hidden;
-  .back{
+
+  .back {
     position: absolute;
     z-index: 100;
     top: 10px;
     left: 10px;
     height: 40px;
     width: 40px;
-    img{
+
+    img {
       height: 100%;
       width: auto;
     }
   }
-  .leftbox{
+
+  .leftbox {
     background: url('./../images/my/leftbg.png');
     background-size: 100% 100%;
     width: 200px;
     height: 335px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 10px;
     left: 10px;
   }
 
-  .address{
+  .address {
     background: url('./../images/my/address.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 190px;
     height: 75px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 334px;
     left: 8px;
   }
 
-  .headimg{
+  .headimg {
     width: 80px;
     height: 80px;
     position: relative;
     top: 140px;
     left: 60px;
-    img{
+
+    img {
       height: 100%;
       width: auto;
       border-radius: 40px;
     }
   }
 
-  .nickname{
+  .nickname {
     position: absolute;
     top: 220px;
     left: 20px;
     width: 160px;
-    color:#66ccff;
+    color: #66ccff;
     font-size: 22px;
     text-align: center;
   }
 
-  .catchwawanum{
+  .catchwawanum {
     position: absolute;
     top: 250px;
     left: 20px;
     width: 160px;
-    color:#66ccff;
+    color: #66ccff;
     font-size: 22px;
     text-align: center;
   }
 
-  .moneynum{
+  .moneynum {
     position: absolute;
     top: 278px;
     left: 116px;
     width: 50px;
-    color:#fff;
+    color: #fff;
     font-size: 20px;
     text-align: center;
   }
 
-  .address-all{
+  .address-all {
     background: url('./../images/my/addressbg.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    width:100%;
-    height:70vh;
-    z-index:20;
+    width: 100%;
+    height: 70vh;
+    z-index: 20;
     top: 10vh;
     position: absolute;
-    .sure-btn{
+
+    .sure-btn {
       position: absolute;
       top: 490px;
-      left:140px;
+      left: 140px;
       width: 220px;
       height: 60px;
       background: url('./../images/my/close.png');
@@ -677,10 +738,11 @@ body{
       background-repeat: no-repeat;
       z-index: 22;
     }
-    .addadd-btn{
+
+    .addadd-btn {
       position: absolute;
       top: 420px;
-      left:140px;
+      left: 140px;
       width: 220px;
       height: 60px;
       background: url('./../images/my/addadd.png');
@@ -691,21 +753,22 @@ body{
 
     }
 
-    .address-list{
+    .address-list {
       position: relative;
       top: 80px;
       left: 0%;
       width: 100%;
     }
 
-    .address-item{
+    .address-item {
       position: relative;
       top: 5px;
       left: 0%;
       width: 100%;
       height: 80px;
     }
-    .addr-person{
+
+    .addr-person {
       position: absolute;
       top: 4px;
       left: 60px;
@@ -713,7 +776,8 @@ body{
       font-size: 20px;
       height: 20px;
     }
-    .addr-mobile{
+
+    .addr-mobile {
       position: absolute;
       top: 4px;
       left: 250px;
@@ -721,21 +785,23 @@ body{
       font-size: 20px;
       height: 20px;
     }
-    .addr-address{
+
+    .addr-address {
       position: absolute;
       top: 30px;
-      left:60px;
+      left: 60px;
       width: 66%;
       font-size: 18px;
       height: 20px;
     }
-    .addr-del{
+
+    .addr-del {
       position: absolute;
       top: 30px;
-      left:430px;
+      left: 430px;
       width: 35px;
       height: 50px;
-     
+
       background: url('./../images/my/laji.png');
       background-size: 100% auto;
       background-repeat: no-repeat;
@@ -746,31 +812,31 @@ body{
 
   }
 
-  .address-box{
+  .address-box {
     background: url('./../images/my/userinfo.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 360px;
     height: 425px;
-    z-index:30;
+    z-index: 30;
     position: absolute;
     top: 220px;
     left: 70px;
   }
 
-  .addressbtn{
+  .addressbtn {
     background: url('./../images/my/submit.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     width: 170px;
     height: 55px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 350px;
     left: 90px;
   }
 
-  .name-input{
+  .name-input {
     position: absolute;
     top: 50px;
     left: 94px;
@@ -779,10 +845,10 @@ body{
     height: 20px;
     border: 0px;
     background: transparent;
-    color:#fff;
+    color: #fff;
   }
 
-  .phone-input{
+  .phone-input {
     position: absolute;
     top: 95px;
     left: 94px;
@@ -791,10 +857,10 @@ body{
     height: 20px;
     border: 0px;
     background: transparent;
-    color:#fff;
+    color: #fff;
   }
 
-  .addresstext{
+  .addresstext {
     position: absolute;
     top: 190px;
     left: 54px;
@@ -803,27 +869,29 @@ body{
     font-size: 20px;
     border: 0px;
     background: transparent;
-    color:#fff;
+    color: #fff;
   }
 
-  
-  .wawalist{
+
+  .wawalist {
     position: absolute;
     top: 0px;
     left: 220px;
     overflow: scroll;
     width: 280px;
     height: 94vh;
-    .list-title{
-        position: relative;
-        top: 70px;
-        left: 40px;
-        font-size: 30px;
-        color:#66ccff;
-        
-      }
+
+    .list-title {
+      position: relative;
+      top: 70px;
+      left: 40px;
+      font-size: 30px;
+      color: #66ccff;
+
+    }
   }
-  .wawabox{
+
+  .wawabox {
     background: url('./../images/my/wawabg.png');
     background-size: 100% 100%;
     width: 255px;
@@ -833,28 +901,34 @@ body{
     top: 100px;
     left: 10px;
     margin-top: -40px;
-    .wawaitem1,.wawaitem2{
+
+    .wawaitem1,
+    .wawaitem2 {
       position: absolute;
       top: 50px;
       left: 12px;
       width: 90px;
       height: 110px;
-      img{
+
+      img {
         height: 100%;
         width: auto;
 
       }
     }
-    .wawaitem2{
+
+    .wawaitem2 {
       left: 137px;
     }
   }
-  .wawabox:first-child{
-    margin-top:0px;
+
+  .wawabox:first-child {
+    margin-top: 0px;
   }
 
 }
-.setpage{
+
+.setpage {
   width: 100%;
   height: 140%;
   background-color: #f9b0b9;
@@ -862,34 +936,37 @@ body{
   background-size: 100% 100%;
   background-repeat: repeat-x;
   position: relative;
-  .settop{
+
+  .settop {
     width: 100%;
     height: 24vh;
     background-color: #f9b0b9;
     background: url('./../images/setting/top.png');
-    background-size: 100% auto ;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     // overflow: visible;
     position: absolute;
     top: 0;
-  } 
-  .leftbox{
+  }
+
+  .leftbox {
     background-size: 100% 100%;
     width: 70%;
     height: 600px;
-    z-index:20;
+    z-index: 20;
     position: absolute;
     top: 10px;
     left: 10px;
   }
-  .setitem{
+
+  .setitem {
     background: url('./../images/setting/iconleft.png');
     background-size: 100% auto;
     background-position: 0% 100%;
     background-color: #fff6f7;
     width: 100%;
     height: 60px;
-    z-index:20;
+    z-index: 20;
     position: relative;
     top: 100px;
     left: -35px;
@@ -897,27 +974,32 @@ body{
     border: 1px solid #ffffff;
     box-shadow: 2px 2px 3px #888888;
     margin-bottom: 10px;
-    color:#887272;
+    color: #887272;
     font-weight: 110;
-    p{
+
+    p {
       position: relative;
       left: 40px;
       top: 10px;
       font-size: 16px;
-      span{
+
+      span {
         font-size: 28px;
       }
     }
-    &:hover{
+
+    &:hover {
       background-color: #da4859;
       border: 1px solid #da4859;
-      color:#fff;
+      color: #fff;
     }
   }
-  .setitem2{
+
+  .setitem2 {
     margin-bottom: 40px;
   }
-  .copyright{
+
+  .copyright {
     position: relative;
     top: 100px;
     width: 140%;
@@ -925,10 +1007,10 @@ body{
     font-size: 14px;
   }
 
-  .helpbox{
+  .helpbox {
     position: relative;
     top: 280px;
-    left:-3%;
+    left: -3%;
     width: 100%;
     height: 190px;
     background: url('./../images/setting/help.png');
@@ -937,12 +1019,12 @@ body{
     z-index: 22;
   }
 
- 
 
-  .invebox{
+
+  .invebox {
     position: relative;
     top: 200px;
-    left:5%;
+    left: 5%;
     width: 90%;
     height: 240px;
     background: url('./../images/setting/inve.png');
@@ -951,7 +1033,7 @@ body{
     z-index: 22;
   }
 
-  .inve-input{
+  .inve-input {
     position: absolute;
     top: 60px;
     left: 110px;
@@ -960,14 +1042,14 @@ body{
     height: 40px;
     border: 0px;
     background: transparent;
-    color:#fff;
+    color: #fff;
     text-align: center;
   }
 
-  .inte-btn{
+  .inte-btn {
     position: relative;
     top: 140px;
-    left:110px;
+    left: 110px;
     width: 220px;
     height: 60px;
     background: url('./../images/setting/sure.png');
@@ -976,10 +1058,10 @@ body{
     z-index: 22;
   }
 
-  .logbox{
+  .logbox {
     position: relative;
     top: 200px;
-    left:5%;
+    left: 5%;
     width: 90%;
     height: 240px;
     background: url('./../images/setting/log.png');
@@ -987,8 +1069,8 @@ body{
     background-repeat: no-repeat;
     z-index: 22;
   }
-  
-  .msgbox{
+
+  .msgbox {
     position: absolute;
     top: 40px;
     left: 110px;
@@ -997,14 +1079,14 @@ body{
     height: 40px;
     border: 0px;
     background: transparent;
-    color:#000;
+    color: #000;
     text-align: center;
   }
 
-  .log-btn{
+  .log-btn {
     position: relative;
     top: 90px;
-    left:110px;
+    left: 110px;
     width: 220px;
     height: 60px;
     background: url('./../images/setting/sure.png');
@@ -1013,10 +1095,10 @@ body{
     z-index: 22;
   }
 
-  .myinvebox{
+  .myinvebox {
     position: relative;
     top: 200px;
-    left:5%;
+    left: 5%;
     width: 90%;
     height: 240px;
     background: url('./../images/setting/myinve.png');
@@ -1026,42 +1108,42 @@ body{
   }
 }
 
-.logbox{
-    position: relative;
-    top: 200px;
-    left:5%;
-    width: 90%;
-    height: 240px;
-    background: url('./../images/setting/log.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    z-index: 22;
-  }
-  
-  .msgbox{
-    position: absolute;
-    top: 40px;
-    left: 110px;
-    width: 220px;
-    font-size: 28px;
-    height: 40px;
-    border: 0px;
-    background: transparent;
-    color:#000;
-    text-align: center;
-  }
+.logbox {
+  position: relative;
+  top: 200px;
+  left: 5%;
+  width: 90%;
+  height: 240px;
+  background: url('./../images/setting/log.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  z-index: 22;
+}
 
-  .log-btn{
-    position: relative;
-    top: 90px;
-    left:110px;
-    width: 220px;
-    height: 60px;
-    background: url('./../images/setting/sure.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    z-index: 22;
-  }
+.msgbox {
+  position: absolute;
+  top: 40px;
+  left: 110px;
+  width: 220px;
+  font-size: 28px;
+  height: 40px;
+  border: 0px;
+  background: transparent;
+  color: #000;
+  text-align: center;
+}
+
+.log-btn {
+  position: relative;
+  top: 90px;
+  left: 110px;
+  width: 220px;
+  height: 60px;
+  background: url('./../images/setting/sure.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  z-index: 22;
+}
 
 
 .orderpage {
@@ -1071,21 +1153,25 @@ body{
   background: url('./../images/my/bg.jpg');
   background-size: 100% 100%;
   position: relative;
-  .orderbox{
+
+  .orderbox {
     height: 95%;
   }
 }
-.theorderlist{
+
+.theorderlist {
   position: relative;
   height: 95%;
 }
-.orderlist{
+
+.orderlist {
   position: relative;
   top: 13vh;
   padding: 5px 30px 2px 15px;
   height: 80vh;
   overflow: scroll;
-  li{
+
+  li {
     position: relative;
     width: 100%;
     border: 1px solid #da4859;
@@ -1095,35 +1181,40 @@ body{
     margin-bottom: 5px;
     border-radius: 20px;
   }
-  .titleimg{
+
+  .titleimg {
     position: relative;
     width: 80px;
     height: 80px;
-    img{
+
+    img {
       width: 100%;
       height: auto;
     }
   }
-  .goodname{
+
+  .goodname {
     position: absolute;
     left: 25%;
     top: 10%;
     font-size: 20px;
   }
-  .statusbox{
+
+  .statusbox {
     position: absolute;
     left: 25%;
     top: 40%;
     font-size: 20px;
   }
 
-  .timebox{
+  .timebox {
     position: absolute;
     left: 25%;
     top: 68%;
     font-size: 20px;
   }
-  .goodmore{
+
+  .goodmore {
     position: absolute;
     left: 75%;
     top: 30%;
@@ -1133,12 +1224,12 @@ body{
     background: url('./../images/my/more.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-  
+
   }
 
 }
 
-.ordermore{
+.ordermore {
   position: absolute;
   left: 0%;
   top: 0%;
@@ -1148,19 +1239,22 @@ body{
   background: url('./../images/my/order.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
-  .doll-img{
+
+  .doll-img {
     position: absolute;
     left: 42px;
     top: 192px;
     width: 100px;
     height: 100px;
-    img{
+
+    img {
       height: 100%;
       width: auto;
       border-radius: 20px;
     }
   }
-  .doll-name{
+
+  .doll-name {
     position: absolute;
     left: 160px;
     top: 192px;
@@ -1169,7 +1263,8 @@ body{
     font-size: 30px;
     color: #7e4248;
   }
-  .doll-person{
+
+  .doll-person {
     position: absolute;
     left: 160px;
     top: 305px;
@@ -1178,7 +1273,8 @@ body{
     font-size: 26px;
     color: #7e4248;
   }
-  .doll-address{
+
+  .doll-address {
     position: absolute;
     left: 160px;
     top: 338px;
@@ -1187,7 +1283,8 @@ body{
     font-size: 24px;
     color: #7e4248;
   }
-  .doll-phone{
+
+  .doll-phone {
     position: absolute;
     left: 160px;
     top: 394px;
@@ -1197,8 +1294,8 @@ body{
     color: #7e4248;
   }
 
-  
-  .statusbox{
+
+  .statusbox {
     position: absolute;
     left: 160px;
     top: 450px;
@@ -1208,10 +1305,10 @@ body{
     color: #7e4248;
   }
 
-  .fahuo-btn{
+  .fahuo-btn {
     position: relative;
     top: 490px;
-    left:140px;
+    left: 140px;
     width: 220px;
     height: 60px;
     background: url('./../images/my/fahuo.png');
@@ -1220,10 +1317,10 @@ body{
     z-index: 22;
   }
 
-  .sure-btn{
+  .sure-btn {
     position: relative;
     top: 620px;
-    left:140px;
+    left: 140px;
     width: 220px;
     height: 60px;
     background: url('./../images/my/close.png');
@@ -1233,145 +1330,801 @@ body{
   }
 }
 
+header {
+  width: 100%;
+  height: 96px;
+}
 
-@media screen and (min-width: 500px) {
-  body{ 
-      height:600px;
-      width: 8rem;
-      // margin: 0 auto;
-  }
-  .headerimg{
-    height: 4.7rem;
-  }
+.header-box {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  /* background-color: red; */
+  height: 50px;
+}
 
-  .live{
-    .gameinfo{
-    width: 8rem;
-    }
-    .gamestart{
-      margin-left: 2rem;
-      left: 0px;
-    }
-    .game_control{
-      left: 2rem;
-    }
-    .game_downzhua{
-      left:6.1rem;
-    }
-    .wawalist{
-      width: 8rem;
-    }
-    .game_control{
-      top:500px;
-    }
-    .game_downzhua{
-      top:580px;
+.header-box .logo {
+  height: 60px;
+  width: 80px;
+  top: 0%;
+  left: 0px;
+  position: absolute;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
 
-    }
+.header-box .login-box {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  color: #409eff;
+}
 
-  } 
+.header-box .login-box a {
+  color: #409eff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.header-box .login-box .arrow {
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #c03 #fc0 #69c #6c6;
+  /* 红 黄 蓝 绿 */
+  border-width: 6px 6px 0;
+  border-color: #409eff transparent transparent;
+  /* 红 透明 透明 */
+  position: relative;
+  left: 0px;
+  top: 11px;
+}
+
+.nav-box {
+  position: relative;
+  background-color: #1b75c8;
+  width: 100%;
+  height: 45px;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-list {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  height: 45px;
+  color: #000;
+  font-size: 12px;
+  /* float: left; */
+}
+
+.nav-list span {
+  color: #000;
+  display: inline-block;
+  float: left;
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+}
+
+.nav-list .nav-item {
+  position: relative;
+  width: 100px;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+}
+
+.nav-list .ischoose {
+  background-color: #13528c;
+}
+
+.nav-list .nav-item .hotico {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  top: 9px;
+  right: 0px;
+  background-image: url("../img/hotico.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.nav-list .nav-item .newico {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  top: 9px;
+  right: 0px;
+  background-image: url("../img/newico.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.search-box {
+  width: 100%;
+  background-color: #227dd2;
+  height: 175px;
+}
+
+.search-type {
+  width: 200px;
+  margin: 0 auto;
+  height: 30px;
+  position: relative;
+  padding-top: 30px;
+}
+
+.search-type-item {
+  width: 70px;
+  background-color: #227dd2;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  float: left;
+  left: 60px;
+  display: inline-block;
+}
+
+.search-type .ischoose {
+  background-color: #fff;
+  color: #409eff;
+}
+
+.search-input-box {
+  width: 1000px;
+  margin: 0 auto;
+  height: 50px;
+  position: relative;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.search-input {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  width: 800px;
+  height: 30px;
+  font-size: 20px;
+  color: #ccc;
+  border: 0px;
+}
+
+.search-input-ico {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 16px;
+  left: 5px;
+  background-image: url("../img/searchico.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.search-hot-box {
+  width: 1000px;
+  margin: 0 auto;
+  height: 30px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.search-hot-ico {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  top: 1px;
+  left: 5px;
+  background-image: url("../img/searchhotico.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.search-hot-box span {
+  color: #fff;
+  font-size: 16px;
+}
+
+.search-hot-box .search-list {
+  position: relative;
+  font-size: 16px;
+  left: 75px;
+}
+
+.search-hot-box .search-list span {
+  padding-right: 20px;
+}
+
+.main-box {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+}
+
+.main-box .hot-list {
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 10px;
+}
+
+.main-box .hot-list .hot-ico {
+  position: relative;
+  width: 40px;
+  height: 23px;
+  top: 1px;
+  left: 5px;
+  background-image: url("../img/home-hot.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.main-box .hot-list .hot-line {
+  width: 1000px;
+  height: 1px;
+  position: relative;
+  top: 0px;
+  background-color: #409eff;
+}
+
+.main-box .hot-box {
+  width: 1000px;
+  height: auto;
+  position: relative;
+  top: 3px;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.main-box .hot-item {
+  width: 190px;
+  height: 140px;
+  position: relative;
+  top: 10px;
+  left: 8px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.main-box .hot-item .hot-img {
+  width: 190px;
+  height: 120px;
+  position: relative;
+}
+
+.main-box .hot-item .hot-img img {
+  width: 100%;
+  height: auto;
+}
+
+.main-box .hot-item .hot-img .hot-img-img {
+  background-image: url("../img/test.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
 
 
-  #id_test_video {
-    top: 2.2rem;
-    left: -190px;
-    .vcp-player{
-      // width: 8rem !important;
-    }
+.main-box .hot-item .hot-name {
+  width: 188px;
+  height: 20px;
+  position: relative;
+  text-align: left;
+  font-size: 12px;
+  /* padding-left: 5px;   */
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  line-height: 20px;
+}
 
-  }
-  .footerbar{
-    width: 8rem;
-    .footerli{
-      width: 21%;
-      top: 12px;
-    }
-  }
 
-  .goodlist li{
-    width: 3.5rem;
-    .titlebar{
-      width: 3.35rem;
-    }
-    .titlebar{
-      width: 3.3rem;
-      .wawastatus{
-        font-size: 12px;
-      }
-       .wawaprice{
-        left: 70px;
-      }
-    }
 
-    .wawaimg{
-      width: 2.36rem;
-    }
-    
-  }
-  .mypage{
-    .topbar{
-      width: 7.8rem;
-    }
-    .leftbox{
-      width: 3.2rem;
-      height: 9rem;
-    }
-    .headimg{
-      width: 1rem;
-      height: 1rem;
-      top: 2.2rem;
-    }
-    .nickname{
-      width: 1rem;
-      height: 1rem;
-      top: 3.3rem;
-      left:1.2rem;
-      font-size: 0.35rem;
-    }
-    .catchwawanum{
-      width: 2rem;
-      height: 1rem;
-      top: 3.75rem;
-      left:0.7rem;
-      font-size: 0.26rem;
-    }
-    .moneynum{
-      width: 1rem;
-      height: 0.5rem;
-      top: 4.15rem;
-      left:1.7rem;
-      font-size: 0.32rem;
-    }
-    .wawalist{
-      top: 0px;
-      left: 3.6rem;
+.main-box .labs-list {
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 30px;
+  margin-bottom: 30px;
+}
 
-      .wawabox{
-        width: 3.6rem;
-        height: 3rem;
-        .wawaitem1, .wawaitem2{
-          top: 40px;
-          left: 6px;
-          width: 78px;
-          img{
-            width: 100%;
-            height: auto;
-          }
-        }
-        .wawaitem2{
-          left: 95px;
-        }
-      }
-      
-    }
-  }
+.main-box .labs-list .labs-ico {
+  position: relative;
+  width: 65px;
+  height: 23px;
+  top: 1px;
+  left: 5px;
+  background-image: url("../img/home-labs.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
 
-  .orderbox{
-    .goodname,.statusbox,.timebox,.goodmore{
-      font-size: 16px;
-    }
-  }
-  
+.main-box .labs-list .labs-line {
+  width: 1000px;
+  height: 1px;
+  position: relative;
+  top: 0px;
+  background-color: #409eff;
+}
+
+.main-box .labs-box {
+  width: 1000px;
+  height: auto;
+  position: relative;
+  top: 3px;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.labs-table {
+  width: 1000px;
+  /* height: 300px; */
+  position: relative;
+  top: 0px;
+  table-layout: fixed;
+}
+
+.labs-table thead {
+  height: 40px;
+  background-color: #ccc;
 
 }
 
+.labs-table thead td {
+  font-size: 12px;
+  height: 30px;
+}
+
+.labs-table td {
+  text-align: center;
+  font-size: 12px;
+  height: 30px;
+  overflow: hidden;
+  /*内容超出后隐藏*/
+  white-space: nowrap;
+  /*nowrap让内容只显示为一行 */
+  text-overflow: ellipsis;
+  /*  内容超出后显示为省略号 */
+}
+
+.labs-table tr {
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* lab-hot.png */
+
+.main-box .news-list {
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 10px;
+  margin-bottom: 40px;
+}
+
+.main-box .news-list .news-ico {
+  position: relative;
+  width: 40px;
+  height: 23px;
+  top: 1px;
+  left: 5px;
+  background-image: url("../img/home-news.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.main-box .news-list .news-line {
+  width: 1000px;
+  height: 1px;
+  position: relative;
+  top: 0px;
+  background-color: #409eff;
+}
+
+.main-box .news-box {
+  width: 1000px;
+  height: auto;
+  position: relative;
+  top: 3px;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.main-box .news-box .news-item {
+  width: 100%;
+  height: 170px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  /* display: inline-block; */
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-box .news-box .new-title {
+  width: 700px;
+  height: 40px;
+  position: relative;
+  top: 20px;
+  left: 10px;
+  font-size: 18px;
+}
+
+.main-box .news-box .new-des {
+  width: 700px;
+  height: 40px;
+  position: relative;
+  top: 20px;
+  left: 10px;
+  font-size: 14px;
+}
+
+.main-box .news-box .new-time {
+  width: 700px;
+  height: 20px;
+  position: relative;
+  top: 68px;
+  left: 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.main-box .news-box .new-time .new-timeico {
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  left: 0px;
+  background-image: url("../img/home-newstime.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  display: inline-block;
+  position: relative;
+}
+
+
+.main-box .news-box .news-image {
+  background-image: url("../img/test.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 10px;
+  left: 780px;
+}
+
+.footerr {
+  position: relative;
+  background-color: #409eff;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+
+  p {
+    line-height: 30px;
+  }
+}
+
+
+.world-box {
+  background-color: #f5f5f5;
+}
+
+.world-box .worlddrug-typelist {
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 10px;
+  margin-bottom: 25px;
+}
+
+.world-box .worlddrug-typelist .worlddrug-ico {
+  position: relative;
+  width: 40px;
+  height: 23px;
+  top: 1px;
+  left: 5px;
+  background-image: url("../img/world-drug.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+
+.world-box .worlddrug-typelist .worlddrug-line {
+  width: 1000px;
+  height: 1px;
+  position: relative;
+  top: 0px;
+  background-color: #409eff;
+}
+
+.world-box .worlddrug-box {
+  width: 1000px;
+  height: auto;
+  position: relative;
+  top: 3px;
+  background-color: #fff;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.world-box .worlddrug-box .drug-box {
+  width: 970px;
+  left: 30px;
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.world-box .worlddrug-box .drug-title {
+  font-weight: bold;
+  /* display: inline-block; */
+  width: 80px;
+}
+
+.world-box .worlddrug-box .drug-list {
+  /* font-weight: bold; */
+  position: absolute;
+  width: 900px;
+  top: 0;
+  left: 80px;
+}
+
+.world-box .worlddrug-box .drug-item {
+  display: inline-block;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  right: 20px;
+  font-size: 12px;
+
+  a {
+    color: #000;
+  }
+}
+
+.worlddrug-list {
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 10px;
+  margin-bottom: 40px;
+  background-color: #fff;
+}
+
+.worlddrug-list .drug-item {
+  width: 1000px;
+  left: 0px;
+  position: relative;
+  height: 110px;
+  border-bottom: 1px solid #ccc;
+}
+
+.worlddrug-list .drug-title {
+  width: 200px;
+  height: 40px;
+  position: relative;
+  top: 10px;
+  left: 140px;
+  font-size: 16px;
+  color: #409eff;
+}
+
+.worlddrug-list .drug-des {
+  width: 700px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+  font-size: 14px;
+}
+
+.worlddrug-list .drug-zheng {
+  width: 700px;
+  height: 40px;
+  position: absolute;
+  top: 40px;
+  left: 140px;
+  font-size: 14px;
+}
+
+.worlddrug-list .drug-liang {
+  width: 700px;
+  height: 40px;
+  position: absolute;
+  top: 65px;
+  left: 140px;
+  font-size: 14px;
+}
+
+.worlddrug-list .drug-chang {
+  width: 700px;
+  height: 40px;
+  position: absolute;
+  top: 90px;
+  left: 140px;
+  font-size: 14px;
+}
+
+.worlddrug-list .drug-image {
+  background-image: url("../img/test.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.drugdes-box {
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: 10px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  color: #000;
+
+
+  .drug-title {
+    width: 1000px;
+    margin: 0 auto;
+    height: 80px;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #000;
+
+    .tilte-title {
+      font-size: 20px;
+      font-weight: bold;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .title-en {
+      font-size: 14px;
+      height: 26px;
+      line-height: 26px;
+    }
+
+    border-bottom: 1px solid #ccc;
+
+  }
+
+  .drug-des-box{
+    width: 1000px;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    top: 10px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    color: #000;
+    min-height: 490px;
+    .drug-des-left{
+      position: absolute;
+      width: 150px;
+      top: 0;
+      left: 0;
+      
+      // display: inline-block;
+      
+      .drug-des-left-item{
+        position: relative;
+        width: 120px;
+        border: 1px solid #ccc;
+        height: 30px;
+        line-height: 30px;
+        background-color: #e7f3ff;
+        text-align: left;
+        padding-left: 30px;
+      }
+      .activeClass{
+        background-color: #fff;
+      }
+    }
+
+    .drug-des-right{
+      position: relative;
+      width: 830px;
+      top: 0;
+      left: 170px;
+      height: auto;
+      // float: left;
+      // display: inline-block;
+      .drug-type{
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: auto;
+        .type-title{
+          font-size: 16px;
+          height: 20px;
+          line-height: 20px;
+        }
+        .type1-type{
+          position: relative;
+          width: 830px;
+          height: 24px;
+          line-height: 24px;
+          
+          .type1-subtype{
+            position: relative;
+            border: 1px solid #ccc;
+            display: inline-block;
+            width: 413px;
+            height: 24px;
+            font-size: 16px;
+            float: left;
+            text-align: center;
+          
+
+          }
+          .type1-subtypeA{
+            background-color: #aaddff;
+          }
+        }
+
+        .pic-list{
+          position: relative;
+          width: 100%;
+          height: auto;
+          .pic-item{
+            position: relative;
+            width: 200px;
+            height: 300px;
+            float: left;
+            .pic-item-img{
+              position: relative;
+            width: 180px;
+            height: 280px;
+            top: 10px;
+            left: 10px;
+              background-image: url("../img/test.jpg");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              background-position: center center;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

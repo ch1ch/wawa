@@ -97,62 +97,6 @@ export default {
       var answer= this.$refs.answer.value;
       console.log(answer);
 
-      switch(this.questid){
-        case 0:
-          if (answer=='项链') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-          break;
-        case 1:
-          if (answer=='冰镇果盘') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-          break;
-        case 2:
-          if (answer=='忘川花海') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };break;
-        case 3:
-          if (answer=='两败俱伤') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-          break;
-        case 4:
-          if (answer=='大腿') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-          break;
-        case 5:
-          if (answer=='喵呜') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-          break;
-        case 6:
-          if (answer=='大衍天玄剑') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-          break;
-        default:
-         if (answer=='大衍天玄剑') {
-            tureAnswer()
-          }else{
-            falseAnswer()
-          };
-      }
 
       function tureAnswer(){
         console.log("yes")
@@ -201,41 +145,8 @@ export default {
   },
   mounted () {  
     var now=Date.now();
-    var times=now-1516897384000;
-    var questid=parseInt(times/86400000);
-    this.questid=questid;
-    //1514218816
-    console.log(this.questid);
-    switch(questid)
-    {
-    case 0:
-      this.questtext="肖奈何一直在找的还魂丹是什么？(是一种首饰哦~)";
-      break;
-    case 1:
-      this.questtext="清雪为秦斩送去了什么解暑？(夏天最完美的零食！)";
-      break;
-    case 2:
-      this.questtext="秦斩和雨晨在哪里一吻定情？(秦斩特意为雨晨准备的地方)";
-      break;
-    case 3:
-      this.questtext="舒尔和明月相拥而泣的时候用了什么成语描述自己？(都怪宫主这个负心汉)";
-      break;
-    case 4:
-      this.questtext="秦斩身上哪个部位最受大家欢迎？(很多人都抱过哦~)";
-      break;
-    case 5:
-      this.questtext="舒尔找雨晨时说了什么将雨晨引了出来？(模拟了某种小动物)";
-      break;
-    case 6:
-      this.questtext="雨晨用来刺伤笑天真的剑的名字是什么？(秦斩送给她的礼物)";
-      break;
-    default:
-     this.questtext="雨晨用来刺伤笑天真的剑的名字是什么？(秦斩送给她的礼物)";
-      break;
     
-    }
-
-    this.swiper.slideTo(3, 1000, false)
+  
   },
   created () {
     this.getUserInfo();

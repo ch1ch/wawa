@@ -1,16 +1,7 @@
 <template>
-  <div class="footerbar">
+  <div class="footerr">
       
-      <!-- <div class="footerli hover" v-on:click="gotoHomePage()" v-if="hover==1">首页 -->
-
-      <div class="footerli" v-on:click="gotoHomePage()">首页
-      </div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoRankPage()">订单</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoMyPage()">我的</div>
-      <div class="footerpaddig">|</div>
-      <div class="footerli" v-on:click="gotoSetPage()">设置</div>
+     <p>京ICP备20017696号-2  |  任何关于疾病和药品的信息仅供参考，不能代替专业医生药师的意见。</p>
     </div>
 </template>
 
@@ -65,10 +56,7 @@
           name:'orderpage'
         })
       },
-       
     },
-     
-
 
   }
 </script>

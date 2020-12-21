@@ -6,6 +6,9 @@ import Livepage from '@/components/Livepage'
 import Mypage from '@/components/Mypage'
 import Setpage from '@/components/Setpage'
 import Orderpage from '@/components/OrderPage'
+import Worldpage from '@/components/World'
+import Freepage from '@/components/Free'
+import Drugpage from '@/components/Drug'
 import OrdershowPage from '@/components/OrderShowPage'
 
 Vue.use(Router)
@@ -21,6 +24,21 @@ export default new Router({
       path: '/',
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/world',
+      name: 'World',
+      component: Worldpage
+    },
+    {
+      path: '/drug',
+      name: 'Drug',
+      component: Drugpage
+    },
+    {
+      path: '/free',
+      name: 'free',
+      component: Freepage
     },
     {
       path: '/live',
