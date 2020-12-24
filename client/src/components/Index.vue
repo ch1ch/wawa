@@ -10,7 +10,7 @@
         <div class="hot-ico"></div>
         <div class="hot-line"></div>
         <div class="hot-box" id="hot-box">
-          <div class="hot-item" v-for="item in druglist" v-bind:key="item.id">
+          <div class="hot-item" v-for="item in druglist" v-bind:key="item.id" v-on:click="gotoDrugPage(item.id)">
             <div class="hot-img">
               <div class="hot-img-img" :style="{backgroundImage:'url('+item.showimg+')'}"></div>
             </div>
@@ -32,7 +32,7 @@
               <td style="width: 250px;">适应症</td>
             </thead>
 
-            <tr v-for="item in experList" v-bind:key="item.id">
+            <tr v-for="item in experList" v-bind:key="item.id" v-on:click="gotoExperPage(item.id)">
               <td style="width: 250px;">{{item.title}}</td>
               <td style="width: 100px;">一线（初治）</td>
               <td style="width: 250px;">{{item.shorttitle}}</td>
@@ -53,7 +53,7 @@
             <div class="new-des">{{item.describtion}}</div>
             <div class="new-time">
               <div class="new-timeico"></div>
-              >{{item.createtime}}
+              {{item.createtime}}
             </div>
             <div class="news-image" :style="{backgroundImage:'url('+item.showimg+')'}"></div>
           </div>
@@ -87,7 +87,23 @@ export default {
   },
   computed: {},
   methods: {
-    wxpage: function(id) {}
+    wxpage: function(id) {},
+     gotoDrugPage:function(id){
+      console.log("drug="+id);
+       this.$router.push({
+          name:'Drug',
+          params:{drugid:id}
+        })
+    },
+      gotoExperPage:function(id){
+      console.log("experid="+id);
+       this.$router.push({
+          name:'Exper',
+          params:{experid:id}
+        })
+    },
+
+    
   },
   mounted() {
     let url = buildUrl("/index/index/index");

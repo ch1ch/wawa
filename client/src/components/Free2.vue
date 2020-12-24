@@ -9,10 +9,10 @@
         <div class="tilte-title">{{drugitem.c_name}}</div>
         <div class="title-en">品牌及其他姓名：{{drugitem.e_name}}</div>
         <div class="title-en">类别：抗肿瘤药物，抗HER2；抗肿瘤药物，酪氨酸激酶抑制剂；抗肿瘤药物，EGFR抑制剂</div>
-        <div class="favor-box" v-if="drugitem.collect==0">
+        <div class="favor-box">
           <button v-on:click="FavorThis()">收藏</button>
         </div>
-        <div class="favor-box"  v-if="drugitem.collect==1">
+         <div class="favor-box">
           <button v-on:click="CancelFavorThis()">取消收藏</button>
         </div>
       </div>
@@ -187,14 +187,12 @@ import headerBlock from "./../components/block/header";
 import searchBlock from "./../components/block/search";
 
 export default {
-  name: "drug",
+  name: "free2",
   data() {
     return {
-      msg: "",
       drugitem: {},
-      ActiveType: 1,
+       ActiveType: 1,
       ActiveSbuType: 1
-      //   activeClass:"activeClass"
     };
   },
   components: {
@@ -209,7 +207,7 @@ export default {
       // console.log(this.drugitem.id);
       // console.log(localStorage.token.length);
       if (this.drugitem.id > 0 && localStorage.token.length > 10) {
-        let url = buildUrl("/index/drug/cancel_collect");
+        let url = buildUrl("/index/Charitable/cancel_collect");
         axios
           .post(
             url,
@@ -225,7 +223,6 @@ export default {
             console.log(response.data);
             if (response.data.code == "600000") {
               console.log("成功");
-              this.Initdata();
             } else {
               console.log("失败原因：" + response.data.msg);
             }
@@ -242,7 +239,7 @@ export default {
       // console.log(this.drugitem.id);
       // console.log(localStorage.token.length);
       if (this.drugitem.id > 0 && localStorage.token.length > 10) {
-        let url = buildUrl("/index/drug/collect");
+        let url = buildUrl("/index/Charitable/collect");
         axios
           .post(
             url,
@@ -258,7 +255,6 @@ export default {
             console.log(response.data);
             if (response.data.code == "600000") {
               console.log("成功");
-              this.Initdata();
             } else {
               console.log("失败原因：" + response.data.msg);
             }
@@ -270,51 +266,35 @@ export default {
         console.log("信息有问题");
       }
     },
-    wxpage: function(id) {},
-    gotoDrugPage: function(id) {
-      // this.$router.push({
-      //   name:'livepage',
-      //   params:{liveid:id}
-      // })
-    },
-    ShowDesType: function(typeid) {
-      this.ActiveType = typeid;
-    },
-    ShowSubType: function(typeid) {
-      console.log("ShowSubType=" + typeid);
-      this.ActiveSbuType = typeid;
-    },
-    Initdata: function() {
-      var drugid = this.$route.params.drugid;
-      console.log("drug=" + drugid);
-
-      let url = buildUrl("/index/drug/detail");
-      axios
-      .post(
-            url,
-            {
-             id: drugid
-            },
-            {
-              headers: { token: localStorage.token }
-            }
-          )
-      
-        .then(response => {
-          console.log(response.data.data);
-          this.drugitem = response.data.data;
-
-          this.drugitem.pic.forEach(element => {
-            element.showimg = buildUrl(element.url);
-          });
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
   },
   mounted() {
-    this.Initdata();
+    var drugid = this.$route.params.drugid;
+    console.log("drug=" + drugid);
+    drugid = 1;
+    let url = buildUrl("/index/Charitable/detail");
+    axios
+      .post(
+        url,
+        {
+          id: drugid
+        },
+        {
+          headers: { token: localStorage.token }
+        }
+      )
+      .then(response => {
+        console.log(response.data.data);
+        this.drugitem = response.data.data;
+
+        // this.druglist.forEach(element => {
+        //   element.showimg = buildUrl(element.pic[0].url);
+        // });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    
   }
 };
 </script>
