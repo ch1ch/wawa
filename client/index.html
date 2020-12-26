@@ -9,7 +9,7 @@
     <div id="header"></div>
     <div id="main"></div>
     <div id="footer"></div>
-    <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.0.js" charset="utf-8"></script>
+    <!-- <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.0.js" charset="utf-8"></script> -->
     <!-- <script src="http://legendream.cn/myjs/flvjs/flv.js" charset="utf-8"></script> -->
     <script src="http://legendream.cn/myjs/axios.min.js"></script>
     <script type="text/javascript">
@@ -38,33 +38,14 @@
       function getUserInfo(info) {
         console.log(info);
         // alert(info);
-        var infos=JSON.parse(info);
-        localStorage.id=infos.id;
-        localStorage.headimgurl=infos.headUrl;
-        localStorage.userLevel=infos.userLevel;
-        localStorage.openid=infos.token;
-        localStorage.nickname=infos.nickName;
-        localStorage.gameMoney=infos.gameMoney;
-        localStorage.dollCount=infos.dollCount;
-        localStorage.info=info;
-        setCookie("info",info,1);
-        // alert(getCookie("info"));
-        // alert(localStorage.headimgurl);
-
-        setCookie("id",infos.id,1);
-        setCookie("headimgurl",infos.headUrl,1);
-        setCookie("userLevel",infos.userLevel,1);
-        setCookie("openid",infos.token,1);
-        setCookie("nickname",infos.nickName,1);
-        setCookie("gameMoney",infos.gameMoney,1);
-        setCookie("dollCount",infos.dollCount,1);
+       
 
         location.href="../#/home";
       }
 
-      var currentUrl = window.location.href;
+      // var currentUrl = window.location.href;
     
-      const BaseUrl = "http://www.headkonconsulting.com";
+      const BaseUrl = "http://api.yaodey.com";
       // if (/wawa/ig.test(currentUrl)) {
       //   BaseUrl = "http://47.94.236.45:9000/";
       // }     

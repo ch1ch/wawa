@@ -5,7 +5,7 @@
       <div class="login-title">注册</div>
 
       <div class="reg-line">
-        <div class="login-type">昵称</div>
+        <div class="login-type2"></div>
         <div class="inputbox">
           <input
             type="text"
@@ -22,7 +22,7 @@
       </div>
 
       <div class="reg-line">
-        <div class="login-type">帐号</div>
+        <div class="login-type2"></div>
         <div class="inputbox">
           <input
             type="text"
@@ -39,7 +39,7 @@
       </div>
 
       <div class="reg-line">
-        <div class="login-type">手机号</div>
+        <div class="login-type2"></div>
         <div class="inputbox">
           <input
             type="text"
@@ -56,7 +56,7 @@
       </div>
 
       <div class="reg-line">
-        <div class="login-type">密码</div>
+        <div class="login-type2"></div>
         <div class="inputbox">
           <input
             type="text"

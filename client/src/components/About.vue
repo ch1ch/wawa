@@ -6,15 +6,17 @@
 
     <div class="main-box about-box">
       <div class="about-title">公司简介</div>
-      <div
-        class="about-des"
-      >药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简介药得公司简</div>
+      <div class="about-des" v-html="company.value"></div>
       <div class="about-title">联系我们</div>
-      <div class="about-des">联系电话：400-1241-1147</div>
+      <div class="about-des">联系电话：{{tel.value}}</div>
       <div class="about-title">企业地址</div>
+      <div class="about-des">{{addr.value}}</div>
+
       <div class="about-des">
-          <div class="about-map"></div>
-          </div>
+        
+       <el-amap class="about-map" :vid="'amap-vue'"></el-amap>
+       
+      </div>
     </div>
     <footerBlock></footerBlock>
   </div>
@@ -26,25 +28,47 @@ import footerBlock from "./../components/block/footer";
 import headerBlock from "./../components/block/header";
 import searchBlock from "./../components/block/search";
 
+
 export default {
   name: "about",
   data() {
     return {
       msg: "",
-      experitem: {},
-      ActiveType: 1,
-      ActiveSbuType: 1
-      //   activeClass:"activeClass"
+      company: "",
+      tel: "",
+      addr: ""
     };
   },
   components: {
     footerBlock,
     headerBlock,
     searchBlock
+
   },
   computed: {},
   methods: {
     wxpage: function(id) {},
+    Getbase: function() {
+      let url = buildUrl("/index/index/baseinfo");
+      axios
+        .post(url, {
+          uid: localStorage.uid
+        })
+        .then(response => {
+          console.log(response.data.data);
+          if (response.data.code == "600000") {
+            // console.log("成功");
+            this.company = response.data.data[3];
+            this.tel = response.data.data[4];
+            this.addr = response.data.data[5];
+          } else {
+            console.log("失败原因：" + response.data.msg);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
 
     InitData: function() {
       var experid = this.$route.params.experid;
@@ -72,6 +96,7 @@ export default {
   },
   mounted() {
     // this.InitData();
+    this.Getbase();
   }
 };
 </script>

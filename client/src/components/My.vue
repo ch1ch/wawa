@@ -24,7 +24,7 @@
             <span></span>
           </div>
           <div class="menu-item" v-on:click="gotoSelfPage()">
-            个人信息  
+            个人信息
             <span></span>
           </div>
         </div>
@@ -33,46 +33,45 @@
           <div class="right-line"></div>
           <div class="right-collect">
             <table class="labs-table" id="labs-table">
-              <thead>
+              <!-- <thead>
                 <td style="width: 150px;">类别</td>
                 <td style="width: 450px;">名称</td>
                 <td style="width: 250px;">时间</td>
-              </thead>
+              </thead> -->
 
-              <tr
-                v-for="item in collectList"
-                v-bind:key="item.id"
-                
-              >
-                <td style="width: 150px;" v-if="item.recruit==0">{{item.title}}</td>
-                <td style="width: 250px;">{{item.shorttitle}}</td>
-                <td style="width: 100px;" v-if="item.recruit==0">招募中</td>
-                <td style="width: 100px;" v-if="item.recruit==1">未招募</td>
-                <td style="width: 250px;">{{item.adaptation}}</td>
+              <tr v-for="item in collectlist" v-bind:key="item.id">
+                <td style="width: 150px;" v-if="item.type==1">药品</td>
+                <td style="width: 150px;" v-if="item.type==2">实验</td>
+                <td style="width: 150px;" v-if="item.type==3">文章</td>
+
+                <td style="width: 450px;" v-if="item.type==1">{{item.c_name}}</td>
+                <td style="width: 450px;" v-if="item.type==2">{{item.title}}</td>
+                <td style="width: 450px;" v-if="item.type==3">{{item.title}}</td>
+
+                <td style="width: 250px;">{{item.datetime}}</td>
               </tr>
             </table>
           </div>
 
-           <div class="right-ico2"></div>
+          <div class="right-ico2"></div>
           <div class="right-line"></div>
           <div class="right-collect">
             <table class="labs-table" id="labs-table">
-              <thead>
+              <!-- <thead>
                 <td style="width: 150px;">类别</td>
                 <td style="width: 450px;">名称</td>
                 <td style="width: 250px;">时间</td>
-              </thead>
+              </thead> -->
+              <tr v-for="item in collectlist" v-bind:key="item.id">
+                <td style="width: 150px;" v-if="item.type==1">药品</td>
+                <td style="width: 150px;" v-if="item.type==2">实验</td>
+                <td style="width: 150px;" v-if="item.type==3">文章</td>
 
-              <tr
-                v-for="item in collectList"
-                v-bind:key="item.id"
-                
-              >
-                <td style="width: 150px;" v-if="item.recruit==0">{{item.title}}</td>
-                <td style="width: 250px;">{{item.shorttitle}}</td>
-                <td style="width: 100px;" v-if="item.recruit==0">招募中</td>
-                <td style="width: 100px;" v-if="item.recruit==1">未招募</td>
-                <td style="width: 250px;">{{item.adaptation}}</td>
+                <td style="width: 450px;" v-if="item.type==1">{{item.c_name}}</td>
+                <td style="width: 450px;" v-if="item.type==2">{{item.title}}</td>
+                <td style="width: 450px;" v-if="item.type==3">{{item.title}}</td>
+
+                <td style="width: 250px;">{{item.datetime}}</td>
               </tr>
             </table>
           </div>
@@ -94,6 +93,8 @@ export default {
   data() {
     return {
       msg: "",
+      collectlist: [],
+      borwnlist: []
     };
   },
   components: {
@@ -111,15 +112,31 @@ export default {
       axios
         .post(
           url,
-          {
-            
-          },
+          {},
           {
             headers: { token: localStorage.token }
           }
         )
         .then(response => {
           console.log(response.data.data);
+          this.collectlist = response.data.data.collect;
+          for (let index = this.collectlist - 1; index >= 0; index) {
+            const element = array[index];
+            if (element.id) {
+            } else {
+              this.collectlist.splice(index, 1);
+            }
+          }
+
+          this.borwnlist = response.data.data.browse;
+          for (let index = this.borwnlist - 1; index >= 0; index) {
+            const element = array[index];
+            if (element.id) {
+            } else {
+              this.borwnlist.splice(index, 1);
+            }
+          }
+          console.log(this.collectlist);
         })
         .catch(error => {
           console.log(error);
@@ -131,7 +148,7 @@ export default {
         name: "Login"
       });
     },
-     gotoSelfPage: function() {
+    gotoSelfPage: function() {
       console.log("gotoMyselfPage");
       this.$router.push({
         name: "Myself"

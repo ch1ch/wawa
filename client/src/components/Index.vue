@@ -2,15 +2,19 @@
   <div class="mainpage">
     <headerBlock></headerBlock>
 
-       <searchBlock></searchBlock>
-
+    <searchBlock></searchBlock>
 
     <div class="main-box">
       <div class="hot-list">
         <div class="hot-ico"></div>
         <div class="hot-line"></div>
         <div class="hot-box" id="hot-box">
-          <div class="hot-item" v-for="item in druglist" v-bind:key="item.id" v-on:click="gotoDrugPage(item.id)">
+          <div
+            class="hot-item"
+            v-for="item in druglist"
+            v-bind:key="item.id"
+            v-on:click="gotoDrugPage(item.id)"
+          >
             <div class="hot-img">
               <div class="hot-img-img" :style="{backgroundImage:'url('+item.showimg+')'}"></div>
             </div>
@@ -48,7 +52,7 @@
         <div class="news-ico"></div>
         <div class="news-line"></div>
         <div class="news-box" id="news-box">
-          <div class="news-item" v-for="item in artList" v-bind:key="item.id">
+          <div class="news-item" v-for="item in artList" v-bind:key="item.id" v-on:click="gotoArtPage(item.id)">
             <div class="new-title">{{item.title}}</div>
             <div class="new-des">{{item.describtion}}</div>
             <div class="new-time">
@@ -88,22 +92,27 @@ export default {
   computed: {},
   methods: {
     wxpage: function(id) {},
-     gotoDrugPage:function(id){
-      console.log("drug="+id);
-       this.$router.push({
-          name:'Drug',
-          params:{drugid:id}
-        })
+    gotoDrugPage: function(id) {
+      console.log("drug=" + id);
+      this.$router.push({
+        name: "Drug",
+        params: { drugid: id }
+      });
     },
-      gotoExperPage:function(id){
-      console.log("experid="+id);
-       this.$router.push({
-          name:'Exper',
-          params:{experid:id}
-        })
+    gotoExperPage: function(id) {
+      console.log("experid=" + id);
+      this.$router.push({
+        name: "Exper",
+        params: { experid: id }
+      });
     },
-
-    
+      gotoArtPage: function(id) {
+      console.log("artid=" + id);
+      this.$router.push({
+        name: "Artdes",
+        params: { artid: id }
+      });
+    }
   },
   mounted() {
     let url = buildUrl("/index/index/index");

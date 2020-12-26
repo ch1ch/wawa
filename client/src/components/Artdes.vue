@@ -8,10 +8,10 @@
         <div class="art-title">
             {{artitem.title}}
         </div>
-         <div class="favor-box" v-if="artitem.collect==0">
+         <div class="favor-box" v-if="artitem.collect==0&&islogin">
           <button v-on:click="FavorThis()">收藏</button>
         </div>
-        <div class="favor-box"  v-if="artitem.collect==1">
+        <div class="favor-box"  v-if="artitem.collect==1&&islogin">
           <button v-on:click="CancelFavorThis()">取消收藏</button>
         </div>
         <div class="art-time">
@@ -37,7 +37,8 @@ export default {
   data() {
     return {
       msg: "",
-      artitem: {}
+      artitem: {},
+      islogin:false
     };
   },
   components: {
@@ -139,6 +140,11 @@ export default {
   },
   mounted() {
    this.Initdata();
+   if (localStorage.token.length>10) {
+      this.islogin=true;
+    }else{
+      this.islogin=false;
+    }
   }
 };
 </script>

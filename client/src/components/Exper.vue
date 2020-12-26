@@ -28,10 +28,10 @@
         <div class="exper-des-des-state" v-if="experitem.recruit==0">招募中</div>
         <div class="exper-des-des-state" v-if="experitem.recruit==1">未招募</div>
         <div class="exper-des-des-state2">提示：找不到相关临床试验项目？没关系，联系我们，为您精准匹配！</div>
-        <div class="favor-box" v-if="experitem.collect==0">
+        <div class="favor-box" v-if="experitem.collect==0&&islogin">
           <button v-on:click="FavorThis()">收藏</button>
         </div>
-         <div class="favor-box" v-if="experitem.collect==1">
+         <div class="favor-box" v-if="experitem.collect==1&&islogin">
           <button v-on:click="CancelFavorThis()">取消收藏</button>
         </div>
       </div>
@@ -63,7 +63,8 @@ export default {
       msg: "",
       experitem: {},
       ActiveType: 1,
-      ActiveSbuType: 1
+      ActiveSbuType: 1,
+      islogin:false
       //   activeClass:"activeClass"
     };
   },
@@ -181,6 +182,11 @@ export default {
   },
   mounted() {
     this.InitData();
+    if (localStorage.token.length>10) {
+      this.islogin=true;
+    }else{
+      this.islogin=false;
+    }
   }
 };
 </script>

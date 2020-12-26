@@ -9,10 +9,10 @@
         <div class="tilte-title">{{drugitem.c_name}}</div>
         <div class="title-en">品牌及其他姓名：{{drugitem.e_name}}</div>
         <div class="title-en">类别：抗肿瘤药物，抗HER2；抗肿瘤药物，酪氨酸激酶抑制剂；抗肿瘤药物，EGFR抑制剂</div>
-        <div class="favor-box" v-if="drugitem.collect==0">
+        <div class="favor-box" v-if="drugitem.collect==0 &&islogin">
           <button v-on:click="FavorThis()">收藏</button>
         </div>
-        <div class="favor-box"  v-if="drugitem.collect==1">
+        <div class="favor-box" v-if="drugitem.collect==1&&islogin">
           <button v-on:click="CancelFavorThis()">取消收藏</button>
         </div>
       </div>
@@ -193,7 +193,9 @@ export default {
       msg: "",
       drugitem: {},
       ActiveType: 1,
-      ActiveSbuType: 1
+      ActiveSbuType: 1,
+      islogin: false,
+      drugidquery:"",
       //   activeClass:"activeClass"
     };
   },
@@ -286,20 +288,24 @@ export default {
     },
     Initdata: function() {
       var drugid = this.$route.params.drugid;
-      console.log("drug=" + drugid);
+      // console.log(this.drugidquery);
+      if (this.drugidquery.length>0) {
+        drugid=this.drugidquery;
+      }
+      // console.log("drug=" + drugid);
 
       let url = buildUrl("/index/drug/detail");
       axios
-      .post(
-            url,
-            {
-             id: drugid
-            },
-            {
-              headers: { token: localStorage.token }
-            }
-          )
-      
+        .post(
+          url,
+          {
+            id: drugid
+          },
+          {
+            headers: { token: localStorage.token }
+          }
+        )
+
         .then(response => {
           console.log(response.data.data);
           this.drugitem = response.data.data;
@@ -313,8 +319,34 @@ export default {
         });
     }
   },
+  watch: {
+    $route(to, from) {
+      // 对路由变化作出响应...
+      // console.log(to);
+      // console.log(from);
+    }
+  },
+  beforeRouteUpdate(to, from, next) {
+    // console.log(to);
+    // console.log(to.query);
+    // console.log(from);
+    // console.log(next);
+    this.drugidquery=to.query.drugid;
+    // console.log("drugidquery="+this.drugidquery);
+    this.Initdata();
+  },
+  updated: function () {
+  this.$nextTick(function () {
+    // console.log("updata");
+  })
+},
   mounted() {
     this.Initdata();
+    if (localStorage.token.length > 10) {
+      this.islogin = true;
+    } else {
+      this.islogin = false;
+    }
   }
 };
 </script>

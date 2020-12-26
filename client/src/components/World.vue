@@ -13,27 +13,13 @@
                 <div class="drug-box" v-for="item in durgList" v-bind:key="item.id">
                     <div class="drug-title">{{item.dname}}:</div>
                     <div class="drug-list" >
-                        <div class="drug-item" v-for="subitem in item.drug" v-bind:key="subitem.id">
+                        <div class="drug-item" v-for="subitem in item.drug" v-bind:key="subitem.id"  v-bind:class="[drugId==subitem.id ? 'choose' : '', ]">
                           <a v-on:click="gotoDrugPage(subitem.id)">{{subitem.c_name}}</a>
                           </div>
-                      
                     </div>
                 </div>
             </div>
         </div>
-
-       <!-- <div class="worlddrug-list">
-            <div class="drug-item">
-                    <div class="drug-title">鲨肝醇片</div>
-                    <div class="drug-des">规格：200mg*100s</div>
-                    <div class="drug-zheng">适应症： 暂无 </div>
-                    <div class="drug-liang">用法用量：暂无 </div>
-                    <div class="drug-chang">生产厂商： 江苏鹏鹞药业有限公司</div>
-                    
-                    <div class="drug-image"></div>
-            </div>
-        </div> -->
-
     </div>
     <footerBlock></footerBlock>
   </div>
@@ -53,7 +39,8 @@ export default {
       drugtypelist: [],
       experList: [],
       artList: [],
-      durgList:[]
+      durgList:[],
+      drugId:""
     };
   },
   components: {
@@ -66,6 +53,7 @@ export default {
     wxpage: function(id) {},
     gotoDrugPage:function(id){
       console.log("drug"+id);
+      this.drugId=id;
        this.$router.push({
           name:'Drug',
           params:{drugid:id}

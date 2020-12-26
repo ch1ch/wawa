@@ -3,7 +3,7 @@
     <headerBlock></headerBlock>
     <div class="main-box logins-box">
       <div class="login-title">登录</div>
-      <div class="login-type">手机号</div>
+      <div class="login-type2"></div>
       <input
         type="text"
         name
@@ -15,7 +15,7 @@
         min="11"
         max="11"
       />
-      <div class="login-type">密码</div>
+      <div class="login-type2"></div>
       <input
         type="text"
         name

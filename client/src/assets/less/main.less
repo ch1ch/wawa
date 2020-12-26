@@ -194,53 +194,104 @@ header {
   height: 96px;
 }
 
+.headerbar {}
+
 .header-box {
   position: relative;
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
   /* background-color: red; */
   height: 50px;
+
+
+  .logo {
+    height: 60px;
+    width: 80px;
+    top: 0%;
+    left: 0px;
+    position: absolute;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+  }
+
+  .login-box {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    color: #409eff;
+  }
+
+  .login-box a {
+    color: #409eff;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .login-box .arrow {
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #c03 #fc0 #69c #6c6;
+    /* 红 黄 蓝 绿 */
+    border-width: 6px 6px 0;
+    border-color: #409eff transparent transparent;
+    /* 红 透明 透明 */
+    position: relative;
+    left: 0px;
+    top: 11px;
+  }
+
+  .centerbox {
+    position: absolute;
+    top: 15px;
+    right: 230px;
+    height: 58px;
+    width: 80px;
+    // border: 1px solid #000;
+    z-index: 100;
+    background-image: url("../img/popbox.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+
+    // padding-top: 10px;
+    .popbox {
+      position: relative;
+      top: 10px;
+      left: 5px;
+    }
+
+    .popitem {
+      position: relative;
+      height: 20px;
+      line-height: 20px;
+      font-size: 13px;
+      text-align: center;
+      width: 70px;
+      color: #999999;
+    }
+  }
+
+  .qrcode {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    height: 80px;
+    width: 140px;
+    // border: 1px solid #000;
+    z-index: 100;
+    background-image: url("../img/popqrcode.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+  }
+
+
 }
 
-.header-box .logo {
-  height: 60px;
-  width: 80px;
-  top: 0%;
-  left: 0px;
-  position: absolute;
-  background-image: url("../img/logo.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center center;
-}
-
-.header-box .login-box {
-  position: absolute;
-  right: 0px;
-  top: 10px;
-  color: #409eff;
-}
-
-.header-box .login-box a {
-  color: #409eff;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.header-box .login-box .arrow {
-  width: 0;
-  height: 0;
-  border-width: 6px;
-  border-style: solid;
-  border-color: #c03 #fc0 #69c #6c6;
-  /* 红 黄 蓝 绿 */
-  border-width: 6px 6px 0;
-  border-color: #409eff transparent transparent;
-  /* 红 透明 透明 */
-  position: relative;
-  left: 0px;
-  top: 11px;
-}
 
 .nav-box {
   position: relative;
@@ -252,7 +303,7 @@ header {
 
 .nav-list {
   position: relative;
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
   height: 45px;
   color: #000;
@@ -271,7 +322,7 @@ header {
 
 .nav-list .nav-item {
   position: relative;
-  width: 100px;
+  width: 80px;
   font-size: 15px;
   color: #fff;
   text-align: center;
@@ -279,6 +330,10 @@ header {
   display: inline-block;
   height: 45px;
   line-height: 45px;
+
+  a {
+    color: #fff;
+  }
 }
 
 .nav-list .ischoose {
@@ -313,100 +368,136 @@ header {
   width: 100%;
   background-color: #227dd2;
   height: 175px;
-}
-
-.search-type {
-  width: 200px;
-  margin: 0 auto;
-  height: 30px;
   position: relative;
-  padding-top: 30px;
-}
 
-.search-type-item {
-  width: 70px;
-  background-color: #227dd2;
-  color: #fff;
-  font-size: 16px;
-  text-align: center;
-  height: 25px;
-  line-height: 25px;
-  float: left;
-  left: 60px;
-  display: inline-block;
-}
+  .search-type {
+    width: 200px;
+    margin: 0 auto;
+    height: 30px;
+    position: relative;
+    padding-top: 30px;
+  }
 
-.search-type .ischoose {
-  background-color: #fff;
-  color: #409eff;
-}
+  .search-type-item {
+    width: 70px;
+    background-color: #227dd2;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    left: 60px;
+    display: inline-block;
+  }
 
-.search-input-box {
-  width: 1000px;
-  margin: 0 auto;
-  height: 50px;
-  position: relative;
-  margin-top: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-}
+  .search-type .ischoose {
+    background-color: #fff;
+    color: #409eff;
+  }
 
-.search-input {
-  position: absolute;
-  top: 10px;
-  left: 50px;
-  width: 800px;
-  height: 30px;
-  font-size: 20px;
-  color: #ccc;
-  border: 0px;
-}
+  .search-input-box {
+    width: 1000px;
+    margin: 0 auto;
+    height: 50px;
+    position: relative;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
 
-.search-input-ico {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 16px;
-  left: 5px;
-  background-image: url("../img/searchico.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center center;
-}
+  .search-input {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 800px;
+    height: 30px;
+    font-size: 20px;
+    color: #ccc;
+    border: 0px;
+  }
 
-.search-hot-box {
-  width: 1000px;
-  margin: 0 auto;
-  height: 30px;
-  position: relative;
-  margin-top: 10px;
-}
+  .search-input-ico {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 16px;
+    left: 5px;
+    background-image: url("../img/searchico.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+  }
 
-.search-hot-ico {
-  position: absolute;
-  width: 60px;
-  height: 20px;
-  top: 1px;
-  left: 5px;
-  background-image: url("../img/searchhotico.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center center;
-}
 
-.search-hot-box span {
-  color: #fff;
-  font-size: 16px;
-}
+  .searchpopbox {
+    width: 1000px;
+    margin: 0 auto;
+    // height: 50px;
+    position: relative;
+  }
 
-.search-hot-box .search-list {
-  position: relative;
-  font-size: 16px;
-  left: 75px;
-}
+  .searchbox {
+    width: 1000px;
+    z-index: 100;
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    height: auto;
+    background-color: #fff;
+    // border: 1px solid #000;
+    // border-top:1px solid #000;
+    // border-radius: 0px 0px 10px 10px;
 
-.search-hot-box .search-list span {
-  padding-right: 20px;
+    .serach-item {
+      position: relative;
+      height: 30px;
+      line-height: 30px;
+      border-bottom: 1px solid #000;
+      padding-left: 5%;
+      width: 95%;
+      text-align: left;
+      font-size: 18px;
+    }
+  }
+
+  .search-hot-box {
+    width: 1000px;
+    margin: 0 auto;
+    height: 30px;
+    position: relative;
+    margin-top: 10px;
+
+    span {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .search-list {
+      position: relative;
+      font-size: 16px;
+      left: 75px;
+    }
+
+    .search-list span {
+      padding-right: 20px;
+    }
+  }
+
+  .search-hot-ico {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    top: 1px;
+    left: 5px;
+    background-image: url("../img/searchhotico.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+  }
+
+
+
 }
 
 .main-box {
@@ -698,81 +789,88 @@ header {
 
 .world-box {
   background-color: #f5f5f5;
-}
 
-.world-box .worlddrug-typelist {
-  width: 1000px;
-  margin: 0 auto;
-  height: auto;
-  position: relative;
-  top: 10px;
-  margin-bottom: 25px;
-}
+  .worlddrug-typelist {
+    width: 1000px;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    top: 10px;
+    margin-bottom: 25px;
+  }
 
-.world-box .worlddrug-typelist .worlddrug-ico {
-  position: relative;
-  width: 40px;
-  height: 23px;
-  top: 1px;
-  left: 5px;
-  background-image: url("../img/world-drug.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center center;
-}
+  .worlddrug-typelist .worlddrug-ico {
+    position: relative;
+    width: 40px;
+    height: 23px;
+    top: 1px;
+    left: 5px;
+    background-image: url("../img/world-drug.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+  }
 
-.world-box .worlddrug-typelist .worlddrug-line {
-  width: 1000px;
-  height: 1px;
-  position: relative;
-  top: 0px;
-  background-color: #409eff;
-}
+  .worlddrug-typelist .worlddrug-line {
+    width: 1000px;
+    height: 1px;
+    position: relative;
+    top: 0px;
+    background-color: #409eff;
+  }
 
-.world-box .worlddrug-box {
-  width: 1000px;
-  height: auto;
-  position: relative;
-  top: 3px;
-  background-color: #fff;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
+  .worlddrug-box {
+    width: 1000px;
+    height: auto;
+    position: relative;
+    top: 3px;
+    background-color: #fff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
 
-.world-box .worlddrug-box .drug-box {
-  width: 970px;
-  left: 30px;
-  position: relative;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
+  .worlddrug-box .drug-box {
+    width: 970px;
+    left: 30px;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 
-.world-box .worlddrug-box .drug-title {
-  font-weight: bold;
-  /* display: inline-block; */
-  width: 80px;
-}
+  .worlddrug-box .drug-title {
+    font-weight: bold;
+    /* display: inline-block; */
+    width: 80px;
+  }
 
-.world-box .worlddrug-box .drug-list {
-  /* font-weight: bold; */
-  position: absolute;
-  width: 900px;
-  top: 0;
-  left: 80px;
-}
+  .worlddrug-box .drug-list {
+    /* font-weight: bold; */
+    position: absolute;
+    width: 900px;
+    top: 0;
+    left: 80px;
 
-.world-box .worlddrug-box .drug-item {
-  display: inline-block;
-  float: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  right: 20px;
-  font-size: 12px;
+    .choose {
+      background-color: #409eff;
+      color: #fff;
+    }
+  }
 
-  a {
-    color: #000;
+
+  .worlddrug-box .drug-item {
+    display: inline-block;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    right: 20px;
+    font-size: 12px;
+
+    a {
+      color: #000;
+    }
   }
 }
+
 
 .worlddrug-list {
   width: 1000px;
@@ -1030,7 +1128,7 @@ header {
     height: 30px;
     line-height: 30px;
     font-size: 20px;
-    font-weight: bolder;
+    // font-weight: bolder;
     text-align: center;
   }
 
@@ -1046,12 +1144,11 @@ header {
     margin-bottom: 0px;
   }
 
-  .login-name {
+  .login-type2 {
     position: relative;
-    width: 30%;
-    left: 35%;
-    height: 20px;
-    line-height: 20px;
+    width: 100%;
+    height: 1px;
+    line-height: 30px;
     font-size: 16px;
     // font-weight: bolder;
     text-align: center;
@@ -1059,9 +1156,23 @@ header {
     margin-bottom: 0px;
   }
 
+  .login-name {
+    position: relative;
+    width: 30%;
+    left: 35%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    // font-weight: bolder;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border: 1px solid#999999;
+  }
+
   .loginbtn {
     position: relative;
-    width: 100px;
+    width: 100%;
     // left: 400px;
     top: 0;
     height: 30px;
@@ -1069,7 +1180,9 @@ header {
     font-size: 16px;
     // font-weight: bolder;
     text-align: center;
-
+    background-color: #409eff;
+    border: 0px;
+    color: #fff;
   }
 
   .login-btn {
@@ -1077,7 +1190,7 @@ header {
     margin-top: 30px;
     position: relative;
     width: 30%;
-    left: 40%;
+    left: 35%;
     height: 60px;
   }
 }
@@ -1100,7 +1213,8 @@ header {
     font-size: 20px;
     font-weight: bolder;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+    margin-top: 10px;
   }
 
   .reg-line {
@@ -1123,42 +1237,59 @@ header {
     text-align: center;
   }
 
-  .login-name {
-    width: 200px;
-    height: 20px;
-    line-height: 20px;
+  .login-type2 {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    line-height: 30px;
     font-size: 16px;
     // font-weight: bolder;
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
 
-  .inputbox {
-    position: absolute;
+  .login-name {
     width: 200px;
-    left: 120px;
-    top: 0px;
-    height: 20px;
-  }
-
-  .loginbtn {
-    position: relative;
-    width: 100px;
-    // left: 400px;
-    top: 0;
     height: 30px;
     line-height: 30px;
     font-size: 16px;
     // font-weight: bolder;
     text-align: center;
+    border: 1px solid #999;
+  }
 
+  .inputbox {
+    position: absolute;
+    width: 200px;
+    left: 60px;
+    top: 0px;
+    height: 30px;
+
+  }
+
+  .loginbtn {
+    position: relative;
+    width: 100%;
+    // left: 400px;
+    top: 0;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    // font-weight: bolder;
+    text-align: center;
+    // border: 1px solid #999;
+    background-color: #409eff;
+    border: 0px;
+    color: #fff;
   }
 
   .login-btn {
     margin-bottom: 40px;
-    margin-top: 30px;
+    margin-top: 20px;
     position: relative;
-    width: 30%;
-    left: 40%;
+    width: 200px;
+    left: 200px;
     height: 60px;
   }
 }
@@ -1552,10 +1683,10 @@ header {
     top: 0%;
     left: 0px;
     position: relative;
-    background-image: url("../img/map.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center center;
+    // background-image: url("../img/map.jpg");
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    // background-position: center center;
   }
 }
 
@@ -1845,7 +1976,7 @@ header {
 
 
 .self-box {
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
   height: auto;
   position: relative;
@@ -1854,90 +1985,143 @@ header {
   background-color: #fff;
   color: #000;
 
-  .login-title {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    font-size: 20px;
-    font-weight: bolder;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .reg-line {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    left: 100px;
-    line-height: 30px;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .reg-sex{
-    margin-bottom: 30px;
-  }
-  .head-sex{
-    margin-bottom: 60px;
-  }
-  .login-type {
-    position: relative;
-    width: 140px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .login-name {
-    width: 200px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 16px;
-    // font-weight: bolder;
-    text-align: center;
-  }
-
-  .inputbox {
+  .left-menu {
     position: absolute;
-    width: 200px;
-    left: 140px;
-    top: 0px;
-    height: 20px;
+    width: 140px;
+    background-color: #fff;
+    top: 20px;
+    left: 0;
+
+    .menu-item {
+      position: relative;
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 20px;
+      border-bottom: 1px solid #ccc;
+
+      span {
+        left: 50px;
+        top: 4px;
+        height: 14px;
+        width: 18px;
+        position: relative;
+        background-image: url("../img/arrow.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+        display: inline-block;
+      }
+    }
+    .choose{
+      background-color: #409eff;
+      color: #fff;
+    }
   }
 
-  .loginbtn {
+  .right-menu {
     position: relative;
-    width: 100px;
-    // left: 400px;
-    top: 0;
-    height: 30px;
-    line-height: 30px;
-    font-size: 16px;
-    // font-weight: bolder;
-    text-align: center;
+    left: 130px;
+    .login-title {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px;
+      font-weight: bolder;
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-  }
-  .hot-img-img{
-    position: relative;
-    width: 50px;
-    height: 50px;
-    top: 10px;
-    left: 10px;
-    background-image: url("../img/searchico.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center center;
+    .reg-line {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      left: 100px;
+      line-height: 30px;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .reg-sex {
+      margin-bottom: 30px;
+    }
+
+    .head-sex {
+      margin-bottom: 60px;
+    }
+
+    .login-type {
+      position: relative;
+      width: 140px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .login-name {
+      width: 200px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 16px;
+      // font-weight: bolder;
+      text-align: center;
+      border: 1px solid #999;
+    }
+
+    .inputbox {
+      position: absolute;
+      width: 200px;
+      left: 140px;
+      top: 0px;
+      height: 20px;
+    }
+
+    .login-btn {
+      margin-bottom: 40px;
+      margin-top: 40px;
+      position: relative;
+      width: 200px;
+      left: 240px;
+      height: 60px;
+      top: 20px;
+    }
+
+    .loginbtn {
+      position: relative;
+      width: 100%;
+      // left: 400px;
+      top: 0;
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+      // font-weight: bolder;
+      text-align: center;
+      background-color: #409eff;
+      color: #fff;
+      border: 0px;
+
+    }
+
+    .hot-img-img {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      top: 00px;
+      left: 10px;
+      background-image: url("../img/searchico.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center center;
+      // margin-bottom: 10px;
+    }
+
+    
   }
 
-  .login-btn {
-    margin-bottom: 40px;
-    margin-top: 30px;
-    position: relative;
-    width: 30%;
-    left: 40%;
-    height: 60px;
-  }
+
 }
+
 // 
