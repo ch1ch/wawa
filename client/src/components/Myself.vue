@@ -1,19 +1,21 @@
 <template>
   <div class="mainpage">
     <headerBlock></headerBlock>
+    <searchBlock></searchBlock>
 
+    <div class="selfslef">
     <div class="main-box self-box">
       <div class="left-menu">
-        <div class="menu-item">
-          我的咨询
-          <span></span>
-        </div>
-        <div class="menu-item">
+        <div class="menu-item" v-on:click="gotoCenterPage()">
           我的收藏
           <span></span>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" v-on:click="gotoHistoryPage()">
           浏览历史
+          <span></span>
+        </div>
+        <div class="menu-item">
+          我的咨询
           <span></span>
         </div>
         <div class="menu-item">
@@ -28,7 +30,8 @@
 
       <div class="right-menu">
         <!-- <div class="login-title">个人信息</div> -->
-
+         <div class="right-my"></div>
+          <div class="right-line"></div>
         <div class="reg-line">
           <div class="login-type">昵称</div>
           <div class="inputbox">
@@ -46,7 +49,7 @@
         </div>
 
         <div class="reg-line">
-          <div class="login-type">手机号</div>
+          <div class="login-type">手机</div>
           <div class="inputbox">
             <input
               type="text"
@@ -62,13 +65,13 @@
         </div>
 
         <div class="reg-line">
-          <div class="login-type">密码(留空则不修改)</div>
+          <div class="login-type">密码</div>
           <div class="inputbox">
             <input
               type="text"
               name
               class="login-name"
-              placeholder="输入密码"
+              placeholder="(留空则不修改)"
               maxlength="13"
               min="3"
               max="13"
@@ -164,6 +167,7 @@
           <button class="loginbtn" v-on:click="LoginFn">修改</button>
         </div>
       </div>
+    </div>
     </div>
     <footerBlock></footerBlock>
   </div>
@@ -365,7 +369,32 @@ export default {
         .catch(error => {
           console.log(error);
         });
-    }
+    },
+     gotoRegPage: function() {
+      console.log("gotoLoginPage");
+      this.$router.push({
+        name: "Login"
+      });
+    },
+    gotoSelfPage: function() {
+      console.log("gotoMyselfPage");
+      this.$router.push({
+        name: "Myself"
+      });
+    },
+    gotoHistoryPage: function() {
+      console.log("gotoMyHistoryPage");
+      this.$router.push({
+        name: "MyHistory"
+      });
+    },
+     gotoCenterPage: function() {
+      console.log("gotoMyHistoryPage");
+      this.$router.push({
+        name: "center"
+      });
+    },
+
   },
   mounted() {
     this.GetInfo();

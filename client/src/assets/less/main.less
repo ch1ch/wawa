@@ -733,6 +733,9 @@ header {
   top: 20px;
   left: 10px;
   font-size: 14px;
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 
 .main-box .news-box .new-time {
@@ -783,6 +786,9 @@ header {
 
   p {
     line-height: 30px;
+  }
+  a{
+    color: #fff;
   }
 }
 
@@ -983,6 +989,28 @@ header {
       height: 30px;
       top: 0px;
       left: 400px;
+      .favico{
+        position: relative;
+        width: 65px;
+        height: 30px;
+        top: 1px;
+        left: 5px;
+        background-image: url("../img/fav.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+      }
+      .favico2{
+        position: relative;
+        width: 65px;
+        height: 30px;
+        top: 1px;
+        left: 5px;
+        background-image: url("../img/fav2.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+      }
 
       button {
         width: 80px;
@@ -1411,6 +1439,28 @@ header {
       height: 30px;
       top: 20px;
       left: 400px;
+      .favico{
+        position: relative;
+        width: 65px;
+        height: 30px;
+        top: 1px;
+        left: 5px;
+        background-image: url("../img/fav.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+      }
+      .favico2{
+        position: relative;
+        width: 65px;
+        height: 30px;
+        top: 1px;
+        left: 5px;
+        background-image: url("../img/fav2.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+      }
 
       button {
         width: 80px;
@@ -1418,17 +1468,18 @@ header {
         font-size: 16px;
       }
     }
-
   }
 
   .exper-des-box {
     width: 1000px;
-    margin: 0 auto;
+    // left: 200px;
+    position: relative;
+    // margin: 0 auto;
     height: auto;
     min-height: 300px;
     position: relative;
     top: 10px;
-    left: 70px;
+    left: 200px;
     margin-bottom: 40px;
     background-color: #fff;
     color: #000;
@@ -1834,6 +1885,28 @@ header {
     height: 30px;
     top: 10px;
     left: 400px;
+    .favico{
+      position: relative;
+      width: 65px;
+      height: 30px;
+      top: 1px;
+      left: 5px;
+      background-image: url("../img/fav.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center center;
+    }
+    .favico2{
+      position: relative;
+      width: 65px;
+      height: 30px;
+      top: 1px;
+      left: 5px;
+      background-image: url("../img/fav2.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center center;
+    }
 
     button {
       width: 80px;
@@ -1892,13 +1965,18 @@ header {
         display: inline-block;
       }
     }
+    .choose{
+      background-color: #409eff;
+      color: #fff;
+    }
+
   }
 
   .right-list {
     position: relative;
     width: 850px;
     background-color: #fff;
-    top: 20px;
+    top: 0px;
     left: 160px;
     min-height: 250px;
 
@@ -1924,7 +2002,18 @@ header {
       background-repeat: no-repeat;
       background-size: 100% auto;
       background-position: center center;
-      margin-top: 50px;
+      // margin-top: 50px;
+    }
+    .right-my {
+      position: relative;
+      width: 140px;
+      height: 34px;
+      top: 10px;
+      left: 0px;
+      background-image: url("../img/my-self.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center center;
     }
 
     .right-line {
@@ -1974,15 +2063,20 @@ header {
   }
 }
 
-
+.selfslef{
+  background-color: #f5f5f5;
+  margin-top: 0px;
+  height: auto;
+  padding-bottom: 30px;
+}
 .self-box {
   width: 800px;
   margin: 0 auto;
   height: auto;
   position: relative;
-  top: 10px;
+  top: 0px;
   margin-bottom: 40px;
-  background-color: #fff;
+  // background-color: #ccc;
   color: #000;
 
   .left-menu {
@@ -2021,7 +2115,14 @@ header {
 
   .right-menu {
     position: relative;
-    left: 130px;
+    left: 150px;
+    top: 20px;
+    width: 600px;
+    padding-top: 5px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    height: auto;
     .login-title {
       position: relative;
       width: 100%;
@@ -2031,6 +2132,25 @@ header {
       font-weight: bolder;
       text-align: center;
       margin-bottom: 30px;
+    }
+    .right-my {
+      position: relative;
+      width: 140px;
+      height: 34px;
+      top: 10px;
+      left: 0px;
+      background-image: url("../img/my-self.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center center;
+    }
+    .right-line {
+      width: 600px;
+      height: 1px;
+      position: relative;
+      top: 9px;
+      background-color: #9f9f9f;
+      margin-bottom: 20px;
     }
 
     .reg-line {

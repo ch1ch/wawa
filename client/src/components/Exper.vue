@@ -28,21 +28,21 @@
         <div class="exper-des-des-state" v-if="experitem.recruit==0">招募中</div>
         <div class="exper-des-des-state" v-if="experitem.recruit==1">未招募</div>
         <div class="exper-des-des-state2">提示：找不到相关临床试验项目？没关系，联系我们，为您精准匹配！</div>
-        <div class="favor-box" v-if="experitem.collect==0&&islogin">
-          <button v-on:click="FavorThis()">收藏</button>
+        <div class="favor-box" v-if="experitem.collect==0&&islogin" v-on:click="FavorThis()">
+          <div class="favico"></div>
         </div>
-         <div class="favor-box" v-if="experitem.collect==1&&islogin">
-          <button v-on:click="CancelFavorThis()">取消收藏</button>
+         <div class="favor-box" v-if="experitem.collect==1&&islogin" v-on:click="CancelFavorThis()">
+          <div class="favico2"></div>
         </div>
       </div>
 
       <div class="exper-des-box">
         <div class="des-type">
           <div class="type-item choose">试验详情</div>
-          <div class="type-item">项目介绍</div>
+          <!-- <div class="type-item">项目介绍</div> -->
         </div>
-        <div class="des-des">
-         {{experitem.content}}
+        <div class="des-des" v-html="experitem.content">
+         <!-- {{experitem.content}} -->
         </div>
       </div>
     </div>

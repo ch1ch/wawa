@@ -15,6 +15,8 @@ import Centerpage from '@/components/My'
 import Artpage from '@/components/Artlist'
 import ArtDespage from '@/components/Artdes'
 import Myselfpage from '@/components/Myself'
+import Historypage from '@/components/MyHistory'
+
 
 Vue.use(Router)
 
@@ -50,6 +52,11 @@ export default new Router({
       path: '/myself',
       name: 'Myself',
       component: Myselfpage
+    },
+    {
+      path: '/myhistory',
+      name: 'MyHistory',
+      component: Historypage
     },
     
     {

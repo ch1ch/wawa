@@ -8,11 +8,11 @@
         <div class="art-title">
             {{artitem.title}}
         </div>
-         <div class="favor-box" v-if="artitem.collect==0&&islogin">
-          <button v-on:click="FavorThis()">收藏</button>
+         <div class="favor-box" v-if="artitem.collect==0&&islogin" v-on:click="FavorThis()">
+           <div class="favico"></div>
         </div>
-        <div class="favor-box"  v-if="artitem.collect==1&&islogin">
-          <button v-on:click="CancelFavorThis()">取消收藏</button>
+        <div class="favor-box"  v-if="artitem.collect==1&&islogin" v-on:click="CancelFavorThis()">
+         <div class="favico2"></div>
         </div>
         <div class="art-time">
             {{artitem.createtime}}

@@ -8,11 +8,11 @@
       <div class="my-boxs">
         <div class="left-menu">
          
-          <div class="menu-item choose" v-on:click="gotoCenterPage()">
+          <div class="menu-item" v-on:click="gotoCenterPage()">
             我的收藏
             <span></span>
           </div>
-          <div class="menu-item" v-on:click="gotoHistoryPage()">
+          <div class="menu-item choose" v-on:click="gotoHistoryPage()">
             浏览历史
             <span></span>
           </div>
@@ -22,7 +22,7 @@
           </div>
            <div class="menu-item">
             我的咨询
-            <span></span>  
+            <span></span>
           </div>
           <div class="menu-item" v-on:click="gotoSelfPage()">
             个人信息
@@ -30,31 +30,12 @@
           </div>
         </div>
         <div class="right-list">
-          <div class="right-ico"></div>
+          <!-- <div class="right-ico"></div>
           <div class="right-line"></div>
           <div class="right-collect">
             <table class="labs-table" id="labs-table">
-            
+           
 
-              <tr v-for="item in collectlist" v-bind:key="item.id">
-                <td style="width: 150px;" v-if="item.type==1">药品</td>
-                <td style="width: 150px;" v-if="item.type==2">实验</td>
-                <td style="width: 150px;" v-if="item.type==3">文章</td>
-
-                <td style="width: 450px;" v-if="item.type==1">{{item.c_name}}</td>
-                <td style="width: 450px;" v-if="item.type==2">{{item.title}}</td>
-                <td style="width: 450px;" v-if="item.type==3">{{item.title}}</td>
-
-                <td style="width: 250px;">{{item.datetime}}</td>
-              </tr>
-            </table>
-          </div>
-
-          <!-- <div class="right-ico2"></div>
-          <div class="right-line"></div>
-          <div class="right-collect">
-            <table class="labs-table" id="labs-table">
-             
               <tr v-for="item in collectlist" v-bind:key="item.id">
                 <td style="width: 150px;" v-if="item.type==1">药品</td>
                 <td style="width: 150px;" v-if="item.type==2">实验</td>
@@ -69,7 +50,28 @@
             </table>
           </div> -->
 
+          <div class="right-ico2"></div>
+          <div class="right-line"></div>
+          <div class="right-collect">
+            <table class="labs-table" id="labs-table">
+              <!-- <thead>
+                <td style="width: 150px;">类别</td>
+                <td style="width: 450px;">名称</td>
+                <td style="width: 250px;">时间</td>
+              </thead> -->
+              <tr v-for="item in borwnlist" v-bind:key="item.id">
+                <td style="width: 150px;" v-if="item.type==1">药品</td>
+                <td style="width: 150px;" v-if="item.type==2">实验</td>
+                <td style="width: 150px;" v-if="item.type==3">文章</td>
 
+                <td style="width: 450px;" v-if="item.type==1">{{item.c_name}}</td>
+                <td style="width: 450px;" v-if="item.type==2">{{item.title}}</td>
+                <td style="width: 450px;" v-if="item.type==3">{{item.title}}</td>
+
+                <td style="width: 250px;">{{item.datetime}}</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -155,13 +157,12 @@ export default {
         name: "MyHistory"
       });
     },
-      gotoCenterPage: function() {
+     gotoCenterPage: function() {
       console.log("gotoMyHistoryPage");
       this.$router.push({
         name: "center"
       });
     },
-
   },
   mounted() {
     // console.log("localStorage.token"+localStorage.token);

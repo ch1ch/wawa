@@ -5,7 +5,7 @@
       <div class="login-box">
         <a href="/#/center/"
           v-on:click="gotCenterPage()"
-          v-if="islogin"
+          
           @mouseenter="focusThis()"
           @mouseleave="blurThis()"
         >
@@ -26,12 +26,12 @@
         </span>
 
         <span v-if="islogin">
-          <a v-on:click="LoginOut()" href="#">退出</a>
+          <a v-on:click="LoginOut()" href="#">{{username}} 退出</a>
         </span>
         <div class="centerbox" v-if="isshowpop" @mouseenter="focusThis()" @mouseleave="blurThis()">
           <div class="popbox">
             <div class="popitem" v-on:click="gotCenterPage()"><a href="/#/center/"> 我的收藏</a></div>
-            <div class="popitem" v-on:click="gotCenterPage()"><a href="/#/center/">浏览历史</a></div>
+            <div class="popitem" v-on:click="gotoHistoryPage()"><a href="/#/myhistory/">浏览历史</a></div>
           </div>
         </div>
 
@@ -40,20 +40,20 @@
     </div>
     <div class="nav-box">
       <div class="nav-list">
-        <div class="nav-item" v-on:click="gotoWorldPages()"><a href="./#/">首页</a></div>
+        <div class="nav-item" v-on:click="gotoWorldPages()"  v-bind:class="[showtype==0 ? 'ischoose' : '', ]"><a href="./#/">首页</a></div>
         <span>|</span>
-        <a href="./#/world/"><div class="nav-item" v-on:click="gotoWorldPage()">
+        <a href="./#/world/"><div class="nav-item" v-bind:class="[showtype==1 ? 'ischoose' : '', ]"  v-on:click="gotoWorldPage()">
           全球找药
           <div class="hotico"></div>
         </div></a>
         <span>|</span>
-        <div class="nav-item" v-on:click="gotoFreePage()"><a href="/#/free/">免费用药</a></div>
+        <div class="nav-item" v-on:click="gotoFreePage()" v-bind:class="[showtype==2 ? 'ischoose' : '', ]" ><a href="/#/free/">免费用药</a></div>
         <span>|</span>
-        <div class="nav-item" v-on:click="gotoAboutPage()"><a href="/#/about/">关于药得</a></div>
+        <div class="nav-item" v-on:click="gotoAboutPage()" v-bind:class="[showtype==3 ? 'ischoose' : '', ]"><a href="/#/about/">关于药得</a></div>
         <span>|</span>
-        <div class="nav-item" v-on:click="gotCenterPage()"><a href="/#/center/">个人中心</a></div>
-        <span>|</span>
-        <div class="nav-item" v-on:click="gotoArtlistPage()">
+        <div class="nav-item" v-on:click="gotCenterPage()" v-if="islogin" v-bind:class="[showtype==4 ? 'ischoose' : '', ]"><a href="/#/center/">个人中心</a></div>
+        <span v-if="islogin">|</span>
+        <div class="nav-item" v-on:click="gotoArtlistPage()" v-bind:class="[showtype==5 ? 'ischoose' : '', ]">
           <a href="/#/artlist/">最新资讯</a>
           <div class="newico"></div>
         </div>
@@ -76,7 +76,9 @@ export default {
       nickname: "",
       islogin: false,
       isshowpop: false,
-      isshowqr: false
+      isshowqr: false,
+      username:"",
+      showtype:0
     };
   },
   components: {},
@@ -100,6 +102,9 @@ export default {
           // console.log(response.data);
           if (response.data.code == 600000) {
             this.islogin = true;
+            this.username=response.data.data.userIdex[0].username;
+            // console.log(response.data.data.userIdex[0]);
+            // console.log(" this.username"+ this.username);
           } else {
             this.islogin = false;
             localStorage.token = "";
@@ -132,6 +137,22 @@ export default {
       .catch(error => {
         console.log(error);
       });
+
+      //
+      console.log(this.$route.path);
+      if (this.$route.path=="/world"||this.$route.path=="/drug") {
+        this.showtype=1;
+      }else  if (this.$route.path=="/free"||this.$route.path=="/exper") {
+        this.showtype=2;
+      }else  if (this.$route.path=="/about") {
+        this.showtype=3;
+      }else  if (this.$route.path=="/center"||this.$route.path=="/myhistory"||this.$route.path=="/myself"||this.$route.path=="/reg"||this.$route.path=="/login") {
+        this.showtype=4;
+      }else  if (this.$route.path=="/artlist"||this.$route.path=="/artdes") {
+        this.showtype=5;
+      }else{
+        this.showtype=0;
+      }
   },
   watch: {
     $route(to, from) {
@@ -161,6 +182,7 @@ export default {
     },
     gotoIndexPages: function() {
       console.log("gotoIndexPage");
+      this.showtype=0;
       this.$router.push({
         name: "Index"
       });
@@ -173,6 +195,7 @@ export default {
     },
     gotoWorldPage: function() {
       console.log("gotoWorldPage");
+      this.showtype=1;
       this.$router.push({
         name: "World"
       });
@@ -189,6 +212,19 @@ export default {
       this.$router.push({
         name: "about"
       });
+    },
+    gotoHistoryPage: function() {
+      console.log("gotoMyHistoryPage");
+     
+      if (localStorage.token.length > 10) {
+        this.$router.push({
+        name: "MyHistory"
+      });
+      } else {
+        this.$router.push({
+          name: "Login"
+        });
+      }
     },
     gotCenterPage: function() {
       console.log("gotocenterPage");

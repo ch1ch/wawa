@@ -179,6 +179,8 @@ export default {
           this.experlist = response.data.data.data;
           if (this.experlist.length == 0) {
             this.showexper = false;
+          }else{
+            this.expnum=this.experlist.length;
           }
           // this.druglist.forEach(element => {
           //   element.showimg = buildUrl(element.pic[0].url);

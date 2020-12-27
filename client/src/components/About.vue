@@ -14,7 +14,10 @@
 
       <div class="about-des">
         
-       <el-amap class="about-map" :vid="'amap-vue'"></el-amap>
+       <el-amap class="about-map" :vid="'amap-vue'" :center="center"
+        :zoom="zoom">
+        <el-amap-marker vid="component-marker" :position="componentMarker.position" :content-render="componentMarker.contentRender" ></el-amap-marker>
+       </el-amap>
        
       </div>
     </div>
@@ -28,6 +31,10 @@ import footerBlock from "./../components/block/footer";
 import headerBlock from "./../components/block/header";
 import searchBlock from "./../components/block/search";
 
+ const exampleComponents = {
+      props: ['text'],
+      template: `<div>{{text}}</div>`
+    }
 
 export default {
   name: "about",
@@ -36,7 +43,13 @@ export default {
       msg: "",
       company: "",
       tel: "",
-      addr: ""
+      addr: "",
+       center: [116.55927658, 39.7759939],
+       zoom: 12,
+     componentMarker: {
+            position: [116.55927658, 39.7759939],
+            contentRender: (h, instance) => h(exampleComponents,{style: {backgroundColor: '#fff'}, props: {text: '药得'}}, ['xxxxxxx'])
+          },
     };
   },
   components: {
