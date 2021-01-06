@@ -106,53 +106,53 @@
                 v-bind:class="[ActiveSbuType==2 ? 'type1-subtypeA' : '', ]"
               >儿童</div>
             </div>
-            <div class="type-des" v-if="ActiveSbuType==1">{{drugitem.p_info}}</div>
-            <div class="type-des" v-if="ActiveSbuType==2">{{drugitem.c_info}}</div>
+            <div class="type-des" v-if="ActiveSbuType==1" v-html="drugitem.p_info"></div>
+            <div class="type-des" v-if="ActiveSbuType==2" v-html="drugitem.c_info"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==2">
             <div class="type-title">药物互相作用</div>
-            <div class="type-des">{{drugitem.interactions}}</div>
+            <div class="type-des" v-html="drugitem.interactions"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==3">
             <div class="type-title">副作用</div>
-            <div class="type-des">{{drugitem.effect}}</div>
+            <div class="type-des" v-html="drugitem.effect"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==4">
             <div class="type-title">注意事项</div>
-            <div class="type-des">{{drugitem.waring}}</div>
+            <div class="type-des" v-html="drugitem.waring"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==5">
             <div class="type-title">孕妇注意</div>
-            <div class="type-des">{{drugitem.pregnant}}</div>
+            <div class="type-des" v-html="drugitem.pregnant"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==6">
             <div class="type-title">药理</div>
-            <div class="type-des">{{drugitem.pharmacology}}</div>
+            <div class="type-des" v-html="drugitem.pharmacology"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==7">
             <div class="type-title">用前须知</div>
-            <div class="type-des">{{drugitem.before}}</div>
+            <div class="type-des" v-html="drugitem.before"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==9">
             <div class="type-title">服用方法</div>
-            <div class="type-des">{{drugitem.method}}</div>
+            <div class="type-des" v-html="drugitem.method"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==10">
             <div class="type-title">服用过量处理</div>
-            <div class="type-des">{{drugitem.treatment}}</div>
+            <div class="type-des" v-html="drugitem.treatment"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==13">
             <div class="type-title">剂量说明</div>
-            <div class="type-des">{{drugitem.dose}}</div>
+            <div class="type-des" v-html="drugitem.dose"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==8">

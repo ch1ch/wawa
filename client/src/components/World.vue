@@ -2,24 +2,32 @@
   <div class="mainpage">
     <headerBlock></headerBlock>
 
-   <searchBlock></searchBlock>
+    <searchBlock></searchBlock>
 
     <div class="main-box world-box">
-        
-          <div class="worlddrug-typelist">
-            <div class="worlddrug-ico"></div>
-            <div class="worlddrug-line"></div>
-            <div class="worlddrug-box" id="worlddrug-box">
-                <div class="drug-box" v-for="item in durgList" v-bind:key="item.id">
-                    <div class="drug-title">{{item.dname}}:</div>
-                    <div class="drug-list" >
-                        <div class="drug-item" v-for="subitem in item.drug" v-bind:key="subitem.id"  v-bind:class="[drugId==subitem.id ? 'choose' : '', ]">
-                          <a v-on:click="gotoDrugPage(subitem.id)">{{subitem.c_name}}</a>
-                          </div>
-                    </div>
+      <div class="worlddrug-typelist">
+        <!-- <div class="worlddrug-ico"></div> -->
+        <div class="worlddrug-alllist" v-for="Bigitem in durgAllList" v-bind:key="Bigitem.id">
+          <div class="worlddrug-name">{{Bigitem.dname}}</div>
+          <div class="worlddrug-arrow"></div>
+          <div class="worlddrug-line"></div>
+          <div class="worlddrug-box" id="worlddrug-box">
+            <div class="drug-box" v-for="item in Bigitem.list" v-bind:key="item.id">
+              <div class="drug-title">{{item.dname}}:</div>
+              <div class="drug-list">
+                <div
+                  class="drug-item"
+                  v-for="subitem in item.drug"
+                  v-bind:key="subitem.id"
+                  v-bind:class="[drugId==subitem.id ? 'choose' : '', ]"
+                >
+                  <a v-on:click="gotoDrugPage(subitem.id)">{{subitem.c_name}}</a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <footerBlock></footerBlock>
   </div>
@@ -37,10 +45,9 @@ export default {
     return {
       msg: "",
       drugtypelist: [],
-      experList: [],
-      artList: [],
-      durgList:[],
-      drugId:""
+      durgList: [],
+      durgAllList: [],
+      drugId: ""
     };
   },
   components: {
@@ -51,13 +58,13 @@ export default {
   computed: {},
   methods: {
     wxpage: function(id) {},
-    gotoDrugPage:function(id){
-      console.log("drug"+id);
-      this.drugId=id;
-       this.$router.push({
-          name:'Drug',
-          params:{drugid:id}
-        })
+    gotoDrugPage: function(id) {
+      console.log("drug" + id);
+      this.drugId = id;
+      this.$router.push({
+        name: "Drug",
+        params: { drugid: id }
+      });
     }
   },
   mounted() {
@@ -71,15 +78,13 @@ export default {
       .then(response => {
         console.log(response.data.data);
         this.drugtypelist = response.data.data;
-
+        this.durgAllList = response.data.data;
         this.drugtypelist.forEach(element => {
           // element.showimg = buildUrl(element.pic[0].url);
           element.list.forEach(subelement => {
-              this.durgList.push(subelement);
+            this.durgList.push(subelement);
           });
         });
-
-      
       })
       .catch(error => {
         console.log(error);
