@@ -28,6 +28,11 @@
             class="drug-des-left-item"
             v-on:click="ShowDesType(13)"
           >剂量说明</div>
+           <div
+            v-bind:class="[ActiveType==14 ? 'activeClass' : '', ]"
+            class="drug-des-left-item"
+            v-on:click="ShowDesType(14)"
+          >适应症</div>
 
           <div
             v-bind:class="[ActiveType==2 ? 'activeClass' : '', ]"
@@ -69,11 +74,7 @@
             class="drug-des-left-item"
             v-on:click="ShowDesType(10)"
           >服用过量处理</div>
-          <div
-            v-bind:class="[ActiveType==8 ? 'activeClass' : '', ]"
-            class="drug-des-left-item"
-            v-on:click="ShowDesType(13)"
-          >剂量说明</div>
+         
           <div
             v-bind:class="[ActiveType==8 ? 'activeClass' : '', ]"
             class="drug-des-left-item"
@@ -153,6 +154,11 @@
           <div class="drug-type" v-if="ActiveType==13">
             <div class="type-title">剂量说明</div>
             <div class="type-des" v-html="drugitem.dose"></div>
+          </div>
+
+           <div class="drug-type" v-if="ActiveType==14">
+            <div class="type-title">适应症</div>
+            <div class="type-des" v-html="drugitem.adaptation"></div>
           </div>
 
           <div class="drug-type" v-if="ActiveType==8">
