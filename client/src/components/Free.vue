@@ -82,9 +82,9 @@
           v-on:click="GetExperList(item.drug_id)"
         >
           <div class="drug-title">{{item.drug.c_name}}</div>
-          <div class="drug-des">规格：{{item.drug.dose}}</div>
-          <div class="drug-zheng">适应症： {{item.drug.effect}}</div>
-          <div class="drug-liang">用法用量：{{item.drug.p_info}}</div>
+          <div class="drug-des" v-html="item.drug.doseshow"></div>
+          <div class="drug-zheng" vhtml="item.drug.effectshow"></div>
+          <div class="drug-liang" v-html="item.drug.p_infoshow"></div>
           <!-- <div class="drug-chang">生产厂商： {{item.dose}}</div> -->
 
           <div class="drug-image" :style="{backgroundImage:'url('+item.showimg+')'}"></div>
@@ -157,7 +157,10 @@ export default {
 
           this.druglist.forEach(element => {
             element.showimg = buildUrl(element.drug.pic[0].url);
-          });
+            element.drug.doseshow="规格："+element.drug.dose;
+            element.drug.effectshow="适应症："+element.drug.effect;
+            element.drug.p_infoshow="用法用量："+element.drug.p_info;
+    用法用量   });
         })
         .catch(error => {
           console.log(error);
