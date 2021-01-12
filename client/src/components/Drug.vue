@@ -80,6 +80,12 @@
             class="drug-des-left-item"
             v-on:click="ShowDesType(8)"
           >药品图片</div>
+
+           <div
+            v-bind:class="[ActiveType==15 ? 'activeClass' : '', ]"
+            class="drug-des-left-item"
+            v-on:click="ShowDesType(15)"
+          >说明书</div>
           <!-- <div
             v-bind:class="[ActiveType==8 ? 'activeClass' : '', ]"
             class="drug-des-left-item"
@@ -168,6 +174,24 @@
                 <div class="pic-item-img" :style="{backgroundImage:'url('+item.showimg+')'}"></div>
               </div>
             </div>
+          </div>
+
+            <div class="drug-type" v-if="ActiveType==15">
+            <div class="type-title">说明书</div>
+            <div class="type1-type">
+              <div
+                class="type1-subtype"
+                v-on:click="ShowSubType(1)"
+                v-bind:class="[ActiveSbuType==1 ? 'type1-subtypeA' : '', ]"
+              >原研说明书</div>
+              <div
+                class="type1-subtype"
+                v-on:click="ShowSubType(2)"
+                v-bind:class="[ActiveSbuType==2 ? 'type1-subtypeA' : '', ]"
+              >仿制说明书</div>
+            </div>
+            <div class="type-des" v-if="ActiveSbuType==1"> <a :href="drugitem.yy_instructions">下载说明书</a> </div>
+            <div class="type-des" v-if="ActiveSbuType==2" ><a :href="drugitem.fz_instructions">下载说明书</a></div>
           </div>
 
           <!-- <div class="drug-type" v-if="ActiveType==11">

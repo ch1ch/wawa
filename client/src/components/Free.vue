@@ -82,9 +82,9 @@
           v-on:click="GetExperList(item.drug_id)"
         >
           <div class="drug-title">{{item.drug.c_name}}</div>
-          <div class="drug-des" v-html="item.drug.doseshow"></div>
+          <!-- <div class="drug-des" v-html="item.drug.doseshow"></div>
           <div class="drug-zheng" vhtml="item.drug.effectshow"></div>
-          <div class="drug-liang" v-html="item.drug.p_infoshow"></div>
+          <div class="drug-liang" v-html="item.drug.p_infoshow"></div> -->
           <!-- <div class="drug-chang">生产厂商： {{item.dose}}</div> -->
 
           <div class="drug-image" :style="{backgroundImage:'url('+item.showimg+')'}"></div>
