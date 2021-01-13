@@ -59,7 +59,7 @@
         <div class="login-type2"></div>
         <div class="inputbox">
           <input
-            type="text"
+            type="password"
             name
             id="password"
             class="login-name"

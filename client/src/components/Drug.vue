@@ -317,12 +317,18 @@ export default {
       this.ActiveSbuType = typeid;
     },
     Initdata: function() {
-      var drugid = this.$route.params.drugid;
-      // console.log(this.drugidquery);
-      if (this.drugidquery.length>0) {
+      console.log(this.$route);
+      var drugid = this.$route.query.drugid;
+      console.log("drugid"+drugid);
+      console.log("this.drugidquery="+this.drugidquery);
+      console.log("this.$route.params.drugid="+this.$route.params.drugid);
+      if (this.$route.params.drugid>0) {
+        drugid = this.$route.params.drugid;
+      }else if (this.drugidquery.length>0) {
         drugid=this.drugidquery;
       }
-      // console.log("drug=" + drugid);
+      console.log("drug=" + drugid);
+      
 
       let url = buildUrl("/index/drug/detail");
       axios
@@ -362,7 +368,7 @@ export default {
     // console.log(from);
     // console.log(next);
     this.drugidquery=to.query.drugid;
-    // console.log("drugidquery="+this.drugidquery);
+    console.log("drugidquery="+this.drugidquery);
     this.Initdata();
   },
   updated: function () {

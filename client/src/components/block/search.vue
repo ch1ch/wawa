@@ -55,7 +55,7 @@
           v-for="item in searchHotList"
           v-bind:key="item.id"
           v-on:click="gotoDrugPage(item.id)"
-        >{{item.c_name}}</span>
+        > <a href=""> {{item.c_name}}</a></span>
       </div>
     </div>
   </div>

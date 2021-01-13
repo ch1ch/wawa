@@ -17,7 +17,7 @@
       />
       <div class="login-type2"></div>
       <input
-        type="text"
+        type="password"
         name
         id="password"
         class="login-name"

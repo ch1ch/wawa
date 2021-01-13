@@ -164,7 +164,7 @@
         </div>
 
         <div class="login-btn">
-          <button class="loginbtn" v-on:click="LoginFn">修改</button>
+          <button class="loginbtn" v-on:click="LoginFn">保存</button>
         </div>
       </div>
     </div>
@@ -361,13 +361,17 @@ export default {
           console.log(response.data);
           if (response.data.code == "600000") {
             console.log("成功");
+              alert("保存成功！");
             this.GetInfo();
           } else {
             console.log("失败原因：" + response.data.msg);
+              alert("保存失败！");
+
           }
         })
         .catch(error => {
           console.log(error);
+              alert("保存失败！");
         });
     },
      gotoRegPage: function() {

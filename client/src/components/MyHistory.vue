@@ -30,25 +30,7 @@
           </div>
         </div>
         <div class="right-list">
-          <!-- <div class="right-ico"></div>
-          <div class="right-line"></div>
-          <div class="right-collect">
-            <table class="labs-table" id="labs-table">
-           
-
-              <tr v-for="item in collectlist" v-bind:key="item.id">
-                <td style="width: 150px;" v-if="item.type==1">药品</td>
-                <td style="width: 150px;" v-if="item.type==2">实验</td>
-                <td style="width: 150px;" v-if="item.type==3">文章</td>
-
-                <td style="width: 450px;" v-if="item.type==1">{{item.c_name}}</td>
-                <td style="width: 450px;" v-if="item.type==2">{{item.title}}</td>
-                <td style="width: 450px;" v-if="item.type==3">{{item.title}}</td>
-
-                <td style="width: 250px;">{{item.datetime}}</td>
-              </tr>
-            </table>
-          </div> -->
+        
 
           <div class="right-ico2"></div>
           <div class="right-line"></div>
@@ -59,7 +41,7 @@
                 <td style="width: 450px;">名称</td>
                 <td style="width: 250px;">时间</td>
               </thead> -->
-              <tr v-for="item in borwnlist" v-bind:key="item.id">
+              <tr v-for="item in borwnlist" v-bind:key="item.id" v-on:click="gotoType(item.type,item.id)">
                 <td style="width: 150px;" v-if="item.type==1">药品</td>
                 <td style="width: 150px;" v-if="item.type==2">实验</td>
                 <td style="width: 150px;" v-if="item.type==3">文章</td>
@@ -101,6 +83,36 @@ export default {
   },
   computed: {},
   methods: {
+    gotoType: function(type,id) {
+      if (type==1) {
+        this.gotoDrugPage(id);   
+      }else if (type==2) {
+        this.gotoExperPage(id);   
+      }else{
+        this.gotoArtPage(id);   
+      }
+    },
+     gotoDrugPage: function(id) {
+      console.log("drug=" + id);
+      this.$router.push({
+        name: "Drug",
+        params: { drugid: id }
+      });
+    },
+    gotoExperPage: function(id) {
+      console.log("experid=" + id);
+      this.$router.push({
+        name: "Exper",
+        params: { experid: id }
+      });
+    },
+      gotoArtPage: function(id) {
+      console.log("artid=" + id);
+      this.$router.push({
+        name: "Artdes",
+        params: { artid: id }
+      });
+    },
     InitData: function() {
       var experid = this.$route.params.experid;
       console.log("drug=" + experid);

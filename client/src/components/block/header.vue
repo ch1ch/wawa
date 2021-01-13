@@ -1,7 +1,7 @@
 <template>
   <div class="headerbar">
     <div class="header-box">
-      <div class="logo"></div>
+      <div class="logo" v-on:click="gotoIndexPages()"></div>
       <div class="login-box">
         <a href="/#/center/"
           v-on:click="gotCenterPage()"
@@ -49,14 +49,15 @@
         <span>|</span>
         <div class="nav-item" v-on:click="gotoFreePage()" v-bind:class="[showtype==2 ? 'ischoose' : '', ]" ><a href="/#/free/">免费用药</a></div>
         <span>|</span>
-        <div class="nav-item" v-on:click="gotoAboutPage()" v-bind:class="[showtype==3 ? 'ischoose' : '', ]"><a href="/#/about/">关于药得</a></div>
+         <div class="nav-item" v-on:click="gotoArtlistPage()" v-bind:class="[showtype==5 ? 'ischoose' : '', ]">
+          <a href="/#/artlist/">最新资讯</a>
+          <div class="newico"></div>
+        </div> 
         <span>|</span>
         <div class="nav-item" v-on:click="gotCenterPage()" v-if="islogin" v-bind:class="[showtype==4 ? 'ischoose' : '', ]"><a href="/#/center/">个人中心</a></div>
         <span v-if="islogin">|</span>
-        <div class="nav-item" v-on:click="gotoArtlistPage()" v-bind:class="[showtype==5 ? 'ischoose' : '', ]">
-          <a href="/#/artlist/">最新资讯</a>
-          <div class="newico"></div>
-        </div>
+        <div class="nav-item" v-on:click="gotoAboutPage()" v-bind:class="[showtype==3 ? 'ischoose' : '', ]"><a href="/#/about/">关于药得</a></div>
+       
       </div>
     </div>
   </div>
